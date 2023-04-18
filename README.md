@@ -1,4 +1,4 @@
-![Logo](http://julia.togni-bucket-teste.s3-website-us-east-1.amazonaws.com)
+![Logo](https://s3.amazonaws.com/julia.togni-bucket-teste/Grupo+5-banner.png)
 
 
 # *APP Dispositivo Móvel*
@@ -8,7 +8,7 @@ Repositório dos arquivos dos alunos do Módulo 6, grupo 5, do curso de Engenhar
 #### Parceiro
 Dell Tecnologies 
 
-
+# Grupo: *Nome_do_seu_Grupo*
 
 ## Autores
 
@@ -22,10 +22,6 @@ Dell Tecnologies
 
 
 > Alunos do grupo: veja as [instruções para os alunos](LEIAME_aluno.md).
-
-# Projeto: *APP Dispositivo Móvel*
-
-# Grupo: *Nome_do_seu_Grupo*
 
 # Descrição
 
