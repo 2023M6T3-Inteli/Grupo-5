@@ -25,7 +25,7 @@ Dell Tecnologies
 
 # Descrição
 
-*Descrição_resumida_do_projeto*
+Criação de um aplicativo mobile para incentivar o aprendizado através de um sistema de recomendação baseado em projetos e documentários rotulados pelos colaboradores da empresa. O sistema permite compartilhamento de comentários e feedbacks construtivos, além de promover uma cultura colaborativa e engajamento dos funcionários. A solução visa otimizar o processo de seleção de conteúdos e aumentar a transparência e comunicação interna na empresa.
 
 # Documentação
 
