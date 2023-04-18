@@ -1,16 +1,25 @@
-<table>
-<tr>
-<td>
-<a href= "https://www.dell.com/pt-br"><img src="https://pt.wikipedia.org/wiki/Ficheiro:Dell_logo_2016.svg" alt="Dell" border="0" width="100%"></a>
-</td>
-<td><a href= "https://www.inteli.edu.br/"><img src="./docs/img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
-</td>
-</tr>
-</table>
+![Logo](http://julia.togni-bucket-teste.s3-website-us-east-1.amazonaws.com)
 
-# Introdução
 
-Este é o repositório dos arquivos dos alunos do Módulo 6 do curso de Engenharia de Software do Inteli no 2º trimestre de 2023. Durante este trimperíodoestre está sendo desenvolvido um projeto em parceria com a Dell.
+# *APP Dispositivo Móvel*
+
+Repositório dos arquivos dos alunos do Módulo 6, grupo 5, do curso de Engenharia de Software do Inteli no 2º trimestre de 2023. 
+
+#### Parceiro
+Dell Tecnologies 
+
+
+
+## Autores
+
+- [Emanuel De Oliveira Costa](https://www.linkedin.com/in/emanuel-45b637185/)
+- [Felipe Saadi Siegert](https://www.linkedin.com/in/felipe-saadi/)
+- [João Lucas Delistoianov Gonzalez](https://www.linkedin.com/in/jo%C3%A3o-lucas-gonzalez/)
+- [Julia Rodrigues Togni](https://www.linkedin.com/in/julia-togni/)
+- [Lívia Mattoso Bonotto Cabral](https://www.linkedin.com/in/l%C3%ADvia-bonotto-9064641a3/)
+- [Marcelo Gomes Feitoza](https://www.linkedin.com/in/marcelofeitoza7/)
+- [Marcos Aurélio Florêncio da Silva](https://www.linkedin.com/in/marcos-florencio-n/)
+
 
 > Alunos do grupo: veja as [instruções para os alunos](LEIAME_aluno.md).
 
