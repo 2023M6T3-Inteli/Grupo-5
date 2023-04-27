@@ -166,8 +166,9 @@ Esta seção da documentação do software fornece uma descrição detalhada dos
 
 ## Requisitos não Funcionais
 
-Descreve os recursos necessários para sua execução, os requisitos de segurança e privacidade.
-
+<img src="./img/requisitos/requisitos-nao-funcionais-1.png"/>  
+<img src="./img/requisitos/requisitos-nao-funcionais-2.png"/>  
+<img src="./img/requisitos/requisitos-nao-funcionais-3.png"/>
 
 ## Perfis de Usuários 
 
