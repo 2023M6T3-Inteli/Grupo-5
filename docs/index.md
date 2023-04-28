@@ -51,8 +51,9 @@ Solução de otimização de corte de bobinas de papel
   - [Mapeamento do processo em alto nível](#mapeamento-do-processo-em-alto-nível)
   - [Requisitos Funcionais](#requisitos-funcionais)
   - [Requisitos não Funcionais](#requisitos-não-funcionais)
-  - [Perfis de Usuários](#perfis-de-usuários)
   - [Casos de Uso](#casos-de-uso)
+  - [Matriz de Ratreabilidade](#matriz de ratreabilidade)
+  - [Perfis de Usuários](#perfis-de-usuários)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframes](#wireframes)
@@ -166,14 +167,9 @@ Esta seção da documentação do software fornece uma descrição detalhada dos
 
 ## Requisitos não Funcionais
 
-<img src="./img/requisitos/requisitos-nao-funcionais-1.png"/>  
-<img src="./img/requisitos/requisitos-nao-funcionais-2.png"/>  
-<img src="./img/requisitos/requisitos-nao-funcionais-3.png"/>
-
-## Perfis de Usuários 
-
-A seção de perfil de usuário da documentação de software é responsável por descrever instruções detalhadas sobre o uso de cada opção e recursos relacionados ao perfil do usuário, garantindo uma experiência fácil e intuitiva para o usuário final.
-
+<img src="./assets/requisitos/requisitos-nao-funcionais-1.png"/>  
+<img src="./assets/requisitos/requisitos-nao-funcionais-2.png"/>  
+<img src="./assets/requisitos/requisitos-nao-funcionais-3.png"/>
 
 ## Casos de Uso
 
@@ -194,6 +190,14 @@ OBJETIVO: qual a finalidade da ação.
 Exemplo de Diagrama de Casos de Uso
 </center>
 
+## Matriz de Ratreabilidade
+
+Matriz de rastreabilidade dos requisitos não funcionais:
+<img src="./assets/matriz-rastreabilidade/matriz-rastreabilida-requisitos-nao-funcionais.png"/>
+
+## Perfis de Usuários 
+
+A seção de perfil de usuário da documentação de software é responsável por descrever instruções detalhadas sobre o uso de cada opção e recursos relacionados ao perfil do usuário, garantindo uma experiência fácil e intuitiva para o usuário final.
 
 # Arquitetura do Sistema
 
@@ -201,8 +205,9 @@ Atualizar a cada revisão/atualização da arquitetura, mantendo todas as 3 vers
 
 
 <center>
-![template-documento4](./img/template-documento4.jpg)
-
+![template-documento4](assets\template-documento4.jpg)
+  <object data="./assets\arquitetura\arquitetura-infraestrutura-cloud.pdf" type="application/pdf" width="100%"> 
+</object>
 Exemplo de Diagrama de Arquitetura
 </center>
 
