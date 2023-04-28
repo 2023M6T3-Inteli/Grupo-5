@@ -55,7 +55,7 @@ Solução de otimização de corte de bobinas de papel
   - [Requisitos não Funcionais](#requisitos-não-funcionais)
   - [Casos de Uso](#casos-de-uso)
   - [Fluxograma de casos de uso](#fluxograma-de-casos-de-uso)
-  - [Matriz de Ratreabilidade](#matriz de ratreabilidade)
+  - [Matriz de Ratreabilidade](#matriz-de-ratreabilidade)
   - [Perfis de Usuários](#perfis-de-usuários)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
 - [UX e UI Design](#ux-e-ui-design)
@@ -107,7 +107,7 @@ Análise da indústria (Modelo de 5 Forças de Porter) em relação ao cenário 
 Apresenta a Matriz SWOT com análise da empresa parceira.
 
 ### Análise financeira do projeto
-<a href= "https://docs.google.com/spreadsheets/d/1iuQKR2hm8kHP3JdPiyHrx9R4Y7Woh1GwVLPRzMEOW6U/edit?usp=sharing">
+<a href= "https://docs.google.com/spreadsheets/d/1iuQKR2hm8kHP3JdPiyHrx9R4Y7Woh1GwVLPRzMEOW6U/edit?usp=sharing"></a>
 <img src="./assets/Análise financeira de projeto-Dell.png"/>
 
 
@@ -121,7 +121,7 @@ Apresenta o Canvas de Proposta de Valor com relação à solução.
 Apresenta a matriz de risco com relação ao projeto.
 
 
-# Matriz de Oceano Azul
+### Matriz de Oceano Azul
 <img src="./assets/Matriz de Oceano Azul - Copia.png"/>
 
 ## Descritivo da Solução
