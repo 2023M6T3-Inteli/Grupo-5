@@ -39,6 +39,7 @@ Solução de otimização de corte de bobinas de papel
     - [Análise do Problema](#análise-do-problema)
     - [Análise da Indústria](#análise-da-indústria)
     - [Análise do cenário e Matriz SWOT](#análise-do-cenário-e-Matriz-SWOT)
+    - [Análise finceira do projeto Inteli-Dell](#análise-financeira-do-projeto)
     - [Proposta de Valor e Value Proposition Canvas](#proposta-de-valor-e-value-proposition-canvas)
     - [Matriz de Risco](#matriz-de-risco)
   - [Descritivo da Solução](#descritivo-da-solução)
@@ -101,6 +102,10 @@ Análise da indústria (Modelo de 5 Forças de Porter) em relação ao cenário 
 ### Análise do cenário e Matriz SWOT
 
 Apresenta a Matriz SWOT com análise da empresa parceira.
+
+### Análise financeira do projeto
+<a href= "https://docs.google.com/spreadsheets/d/1iuQKR2hm8kHP3JdPiyHrx9R4Y7Woh1GwVLPRzMEOW6U/edit?usp=sharing">
+<img src="./assets/Análise financeira de projeto-Dell.png"/>
 
 
 ### Proposta de Valor e Value Proposition Canvas
