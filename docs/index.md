@@ -42,6 +42,7 @@ Solução de otimização de corte de bobinas de papel
     - [Análise finceira do projeto Inteli-Dell](#análise-financeira-do-projeto)
     - [Proposta de Valor e Value Proposition Canvas](#proposta-de-valor-e-value-proposition-canvas)
     - [Matriz de Risco](#matriz-de-risco)
+    - [Matriz de Oceano Azul](#matriz-de-oceano-azul)
   - [Descritivo da Solução](#descritivo-da-solução)
     - [Objetivos](#objetivos)
       - [ObjetivosObjetivos gerais](#objetivos-gerais)
@@ -53,6 +54,7 @@ Solução de otimização de corte de bobinas de papel
   - [Requisitos Funcionais](#requisitos-funcionais)
   - [Requisitos não Funcionais](#requisitos-não-funcionais)
   - [Casos de Uso](#casos-de-uso)
+  - [Fluxograma de casos de uso](#fluxograma-de-casos-de-uso)
   - [Matriz de Ratreabilidade](#matriz de ratreabilidade)
   - [Perfis de Usuários](#perfis-de-usuários)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
@@ -117,6 +119,9 @@ Apresenta o Canvas de Proposta de Valor com relação à solução.
 
 Apresenta a matriz de risco com relação ao projeto.
 
+
+# Matriz de Oceano Azul
+<img src="./assets/Matriz de Oceano Azul - Copia.png"/>
 
 ## Descritivo da Solução
 
@@ -196,6 +201,9 @@ OBJETIVO: qual a finalidade da ação.
 
 Exemplo de Diagrama de Casos de Uso
 </center>
+
+# Fluxograma de casos de uso 
+<img src="./assets/Materiais Grupo 5 Developers (4).png"/>
 
 ## Matriz de Ratreabilidade
 
