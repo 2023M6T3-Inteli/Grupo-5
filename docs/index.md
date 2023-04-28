@@ -163,6 +163,8 @@ Exemplo de Modelo (bpmn/Diagrama de Atividades)
 ## Requisitos Funcionais
 Esta seção da documentação do software fornece uma descrição detalhada dos requisitos do sistema. Ela inclui informações sobre as funcionalidades esperadas do software, as restrições e limitações do sistema e outras especificações relevantes.
 
+<img src="./img/requisitos/requisitos-funcionais-1.png"/>
+<img src="./img/requisitos/requisitos-funcionais-2.png"/>
 
 ## Requisitos não Funcionais
 
