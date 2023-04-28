@@ -58,6 +58,7 @@ Solução de otimização de corte de bobinas de papel
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframes](#wireframes)
   - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
+  - [Benchmarking de Design Systems](#Benchmarking-de-Design-Systems)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
   - [Modelo Lógico](#modelo-conceitual)
@@ -231,6 +232,14 @@ Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na
 Refere-se ao design visual, cores, tipografia, imagens, logotipos, ou seja, os elementos visuais que compõem o produto.
 Aqu
 i você deve colocar o link para seu documento de guia de estilos
+
+
+
+## Benchmarking de Design Systems
+<img src="./assets/benchmark/benchmark-1.png"/>
+<img src="./assets/benchmark/benchmark-2.png"/>
+<img src="./assets/benchmark/benchmark-3.png"/>
+<img src="./assets/benchmark/benchmark-4.png"/>
 
 
 
