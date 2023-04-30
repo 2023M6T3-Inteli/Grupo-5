@@ -27,7 +27,7 @@ Módulo 6 - Engenharia de Software
 Solução de otimização de corte de bobinas de papel
 </center></font>
 
->*Observação 1: A estrutura inicial deste documento é só um exemplo. O seu grupo deverá alterar esta estrutura de acordo com o que está sendo solicitado nos artefatos.*
+>*Observação 1: A estrutura inicial deste documento é só um exemplo. O seu ar deverá alterar esta estrutura de acordo com o que está sendo solicitado nos artefatos.*
 
 >*Observação 2: O índice abaixo não precisa ser editado se você utilizar o Visual Studio Code com a extensão **Markdown All in One**. Essa extensão atualiza o índice automaticamente quando o arquivo é salvo.*
 
@@ -220,11 +220,18 @@ A seção de perfil de usuário da documentação de software é responsável po
 Atualizar a cada revisão/atualização da arquitetura, mantendo todas as 3 versões no documento..
 
 
+Arquitetura do sistema:
 <center>
-![template-documento4](assets\template-documento4.jpg)
-  <object data="./assets\arquitetura\arquitetura-infraestrutura-cloud.pdf" type="application/pdf" width="100%"> 
-</object>
-Exemplo de Diagrama de Arquitetura
+<img src="./assets/arquitetura/infraestrutura-arquitetura-cloud.png"/>
+</center>
+<a href="./assets/arquitetura/arquitetura-infraestrutura-cloud.pdf">Link para a arquitetura</a> 
+
+
+<hr>
+
+Diagram do fluxo de dados:
+<center>
+<img src="./assets/arquitetura/diagrama-de-fluxo-de-dados.png"/>
 </center>
 
 
