@@ -255,7 +255,7 @@ Esta seção da documentação do software fornece uma descrição detalhada dos
 
 ## Requisitos não Funcionais
 
-<img src="./assets/requisitos/requisitos-nao-funcionais-1.png"/>  
+<img src="./assets/requisitos/requisitos-nao-funcionais.png"/>  
 <img src="./assets/requisitos/requisitos-nao-funcionais-2.png"/>  
 <img src="./assets/requisitos/requisitos-nao-funcionais-3.png"/>
 
@@ -282,6 +282,9 @@ Exemplo de Diagrama de Casos de Uso
 <img src="./assets/Materiais Grupo 5 Developers (7).png/>
 
 ## Matriz de Ratreabilidade
+
+Matriz de rastreabilidade dos requisitos funcionais:
+<img src="./assets/matriz-rastreabilidade/matriz-rastreabilidade-requisitos-funcionais.png"/>
 
 Matriz de rastreabilidade dos requisitos não funcionais:
 <img src="./assets/matriz-rastreabilidade/matriz-rastreabilida-requisitos-nao-funcionais.png"/>
@@ -323,10 +326,16 @@ Exemplos: tela da home, tela de login, etc. Em cada tela colocar: cabeçalho, ro
 
 Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na sequência correta do fluxo de navegação
 
-## Design de Interface - Guia de Estilos
-Refere-se ao design visual, cores, tipografia, imagens, logotipos, ou seja, os elementos visuais que compõem o produto.
-Aqu
-i você deve colocar o link para seu documento de guia de estilos
+## Guia de Estilos
+<hr>
+<center>
+<img src="./assets/DesignSystem/design_system.png"/>
+<a href="https://www.figma.com/file/XwY8Q3XWazGLRDzCBPN2xM/Style-Guide-Sprint-3?node-id=294%3A2896&t=M85J2JGabpMNqBbr-1">
+  Link Guia de Estilos
+</a>
+</center>
+
+<hr>
 
 
 
