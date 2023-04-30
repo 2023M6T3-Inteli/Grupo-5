@@ -1,5 +1,5 @@
 <center>
-![template-documento1](./img/template-documento1.jpg)
+![template-documento1](./assets/template-documento1.jpg)
 </center>
 <table>
 <tr>
@@ -8,7 +8,7 @@
 <td>
 <a href= "https://klabin.com.br/"><img src="https://klabin.com.br/o/klabinklabinonline-theme/images/klabin-logo.png" alt="Klabin" border="0" width="100%"></a>
 </td>
-<td><a href= "https://www.inteli.edu.br/"><img src="./img/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
+<td><a href= "https://www.inteli.edu.br/"><img src="./assets/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
 </tr>
 </table>
@@ -27,7 +27,7 @@ Módulo 6 - Engenharia de Software
 Solução de otimização de corte de bobinas de papel
 </center></font>
 
->*Observação 1: A estrutura inicial deste documento é só um exemplo. O seu grupo deverá alterar esta estrutura de acordo com o que está sendo solicitado nos artefatos.*
+>*Observação 1: A estrutura inicial deste documento é só um exemplo. O seu ar deverá alterar esta estrutura de acordo com o que está sendo solicitado nos artefatos.*
 
 >*Observação 2: O índice abaixo não precisa ser editado se você utilizar o Visual Studio Code com a extensão **Markdown All in One**. Essa extensão atualiza o índice automaticamente quando o arquivo é salvo.*
 
@@ -163,20 +163,95 @@ A seção de requisitos do sistema é atualizada constantemente durante o ciclo 
 
 ## Mapeamento do processo em alto nível
 
-Crie um modelo (tipo BPMN/Diagrama de atividades) que represente em alto nível o fluxo de trabalho a ser realizado dentro da solução.
+Esta seção é responsável por mostrar todo o fluxo de processos da aplicação, facilitando o entendimento do fluxo de trabalho e entendimento da aplicação como um todo.
+
+<br>
+
+<picture>
+<img width=100% src="./assets/modelagem/bpm-criacao-de-conteudo.png" />
+<center>
+<legend><strong>Criação de conteúdo</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/modelagem/bpm-edicao-de-conteudo.png" />
+<center>
+<legend><strong>Edição de conteúdo</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/modelagem/bpm-remocao-de-conteudo.png" />
+<center>
+<legend><strong>Remoção de conteúdo</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/modelagem/bpm-denuncia-de-conteudo.png" />
+<center>
+<legend><strong>Denuncia de conteúdo</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/modelagem/bpm-criacao-de-projeto.png" />
+<center>
+<legend><strong>Criação de projeto</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/modelagem/bpm-aprovacao-de-projeto.png" />
+<center>
+<legend><strong>Aprovação de projeto</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/modelagem/bpm-edicao-de-projeto.png" />
+<center>
+<legend><strong>Edição de projeto</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/modelagem/bpm-remocao-de-projeto.png" />
+<center>
+<legend><strong>Remoção de projeto</strong></legend>
+</center>
+</picture>
+
+<br>
 
 <center>
-![template-documento2](./img/template-documento2.jpg)
-
-Exemplo de Modelo (bpmn/Diagrama de Atividades)
+<a href="https://drive.google.com/file/d/1j2Ik02OfCWQiwnE5S1We6IuDW__ADTo5/view?usp=sharing">
+  Link do mapeamento de processos
+</a>
 </center>
 
+<br>
 
 ## Requisitos Funcionais
 Esta seção da documentação do software fornece uma descrição detalhada dos requisitos do sistema. Ela inclui informações sobre as funcionalidades esperadas do software, as restrições e limitações do sistema e outras especificações relevantes.
 
-<img src="./img/requisitos/requisitos-funcionais-1.png"/>
-<img src="./img/requisitos/requisitos-funcionais-2.png"/>
+<img src="./assets/requisitos/requisitos-funcionais-1.png"/>
+<img src="./assets/requisitos/requisitos-funcionais-2.png"/>
 
 ## Requisitos não Funcionais
 
@@ -198,7 +273,7 @@ OBJETIVO: qual a finalidade da ação.
 
 
 <center>
-![template-documento3](./img/template-documento3.jpg)
+![template-documento3](./assets/template-documento3.jpg)
 
 Exemplo de Diagrama de Casos de Uso
 </center>
@@ -220,11 +295,18 @@ A seção de perfil de usuário da documentação de software é responsável po
 Atualizar a cada revisão/atualização da arquitetura, mantendo todas as 3 versões no documento..
 
 
+Arquitetura do sistema:
 <center>
-![template-documento4](assets\template-documento4.jpg)
-  <object data="./assets\arquitetura\arquitetura-infraestrutura-cloud.pdf" type="application/pdf" width="100%"> 
-</object>
-Exemplo de Diagrama de Arquitetura
+<img src="./assets/arquitetura/infraestrutura-arquitetura-cloud.png"/>
+</center>
+<a href="./assets/arquitetura/arquitetura-infraestrutura-cloud.pdf">Link para a arquitetura</a> 
+
+
+<hr>
+
+Diagram do fluxo de dados:
+<center>
+<img src="./assets/arquitetura/diagrama-de-fluxo-de-dados.png"/>
 </center>
 
 
