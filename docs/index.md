@@ -6,9 +6,9 @@
 <table>
 <tr>
 <td>
-<a href= "https://klabin.com.br/"><img src="https://klabin.com.br/o/klabinklabinonline-theme/images/klabin-logo.png" alt="Klabin" border="0" width="100%"></a>
+<a href= "[https://klabin.com.br/](https://www.dell.com/pt-br)"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Dell_logo_2016.svg/72px-Dell_logo_2016.svg.png" alt="Dell" border="0" width="100%"></a>
 </td>
-<td><a href= "https://www.inteli.edu.br/"><img src="./assets/inteli-logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
+<td><a href= "https://www.inteli.edu.br/"><img src="https://s3.amazonaws.com/gupy5/production/companies/26702/career/63484/images/2022-04-28_16-56_logo.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0" width="30%"></a>
 </td>
 </tr>
 </table>
@@ -38,15 +38,15 @@ Solução de otimização de corte de bobinas de papel
   - [Problema](#problema)
     - [Análise do Problema](#análise-do-problema)
     - [Análise da Indústria](#análise-da-indústria)
-    - [Análise do cenário e Matriz SWOT](#análise-do-cenário-e-Matriz-SWOT)
-    - [Análise finceira do projeto Inteli-Dell](#análise-financeira-do-projeto)
+    - [Análise do cenário e Matriz SWOT](#análise-do-cenário-e-matriz-swot)
+    - [Análise financeira do projeto](#análise-financeira-do-projeto)
     - [Proposta de Valor e Value Proposition Canvas](#proposta-de-valor-e-value-proposition-canvas)
     - [Matriz de Risco](#matriz-de-risco)
     - [Matriz de Oceano Azul](#matriz-de-oceano-azul)
   - [Descritivo da Solução](#descritivo-da-solução)
     - [Objetivos](#objetivos)
-      - [ObjetivosObjetivos gerais](#objetivos-gerais)
-      - [ObjetivosObjetivos específicos](#objetivos-específicos)
+      - [Objetivos gerais](#objetivos-gerais)
+      - [Objetivos específicos](#objetivos-específicos)
     - [Justificativa](#justificativa)
   - [Partes Interessadas](#partes-interessadas)
 - [Requisitos](#requisitos)
@@ -54,17 +54,19 @@ Solução de otimização de corte de bobinas de papel
   - [Requisitos Funcionais](#requisitos-funcionais)
   - [Requisitos não Funcionais](#requisitos-não-funcionais)
   - [Casos de Uso](#casos-de-uso)
-  - [Fluxograma de casos de uso](#fluxograma-de-casos-de-uso)
+- [Fluxograma de casos de uso](#fluxograma-de-casos-de-uso)
   - [Matriz de Ratreabilidade](#matriz-de-ratreabilidade)
   - [Perfis de Usuários](#perfis-de-usuários)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
+  - [Arquitetura do sistema V1:](#arquitetura-do-sistema-v1)
+  - [Diagrama do fluxo de dados V1:](#diagrama-do-fluxo-de-dados-v1)
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframes](#wireframes)
-  - [Design de Interface - Guia de Estilos](#design-de-interface---guia-de-estilos)
-  - [Benchmarking de Design Systems](#Benchmarking-de-Design-Systems)
+  - [Guia de Estilos](#guia-de-estilos)
+  - [Benchmarking de Design Systems](#benchmarking-de-design-systems)
 - [Projeto de Banco de Dados](#projeto-de-banco-de-dados)
   - [Modelo Conceitual](#modelo-conceitual)
-  - [Modelo Lógico](#modelo-conceitual)
+  - [Modelo Lógico](#modelo-lógico)
 - [Testes de Software](#testes-de-software)
   - [Teste Unitário](#teste-unitário)
   - [Teste de Integração](#teste-de-integração)
@@ -73,7 +75,7 @@ Solução de otimização de corte de bobinas de papel
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
   - [Teste de API](#teste-de-api)
 - [Documentação da API](#documentação-da-api)
-- [Manual do Usuário](#Manual-do-usuário)
+- [Manual do Usuário](#manual-do-usuário)
 - [Referências](#referências)
 - [Apêndice](#apêndice)
 
@@ -84,52 +86,99 @@ Solução de otimização de corte de bobinas de papel
 
 ## Parceiro de Negócios
 
-Breve descrição da instituição representada pelo parceiro de negócios, porte, onde atua, área de mercado que atua e posicionamento no mercado.
+A Dell é uma empresa global de tecnologia com sede no Texas (EUA) e é considerada uma das maiores empresas de tecnologia do mundo e é líder no mercado brasileiro. Fundada em 1984 por Michael Dell, a empresa começou vendendo computadores pessoais diretamente aos consumidores e rapidamente se tornou uma das maiores fabricantes de computadores do mundo.
 
+A empresa tem uma presença global forte, com operações em todo o mundo e uma ampla base de clientes em setores como saúde, governo, educação e negócios. Além disso, é conhecida por seu compromisso com a inovação e a sustentabilidade, investindo em tecnologias verdes e soluções eficientes do ponto de vista energético.
+
+Atualmente, a Dell oferece uma ampla gama de produtos e soluções de tecnologia, incluindo computadores pessoais, periféricos, servidores, dispositivos de armazenamento, soluções de segurança e outros equipamentos de tecnologia. A empresa também oferece serviços de suporte e consultoria, incluindo soluções personalizadas para empresas - que representam a maior fatia de faturamento da Dell atualmente.
+
+Para mostrar a sua posição de liderança, o relatório IDC Quarterly Personal Computing Devide Tracker mostrou que a Dell foi a líder de vendas no ano de 2021, superando rivais consagradas como Samsung, Lenovo e Acer. Em relação às vendas em 2020, a Dell cresceu 23,8% no último trimestre de 2021.
+
+<br>
 
 ## Problema
 
+TODO DESCRIÇÃO DO PROBLEMA
 Descrever o problema ou a oportunidade de negócio.
 
+<br>
 
 ### Análise do Problema
 
+TODO ANÁLISE DO PROBLEMA
 Nesta seção, serão apresentados os problemas identificados e as necessidades do usuário, bem como uma avaliação da situação atual e as possíveis soluções para cada questão. Além disso, serão identificados os obstáculos e limitações do projeto, a fim de assegurar que todas as preocupações sejam abordadas antes do início da implementação. A Análise do Problema é essencial para garantir que a solução do software seja eficaz e atenda às necessidades dos usuários. É importante que seja realizada uma pesquisa exaustiva e que todas as perspectivas sejam consideradas para garantir que a solução seja bem-sucedida.
 
+<br>
 
 ### Análise da Indústria
 
+TODO ANÁLISE DA INDÚSTRIA (é necessário fazer?)
 Análise da indústria (Modelo de 5 Forças de Porter) em relação ao cenário da empresa parceira.
 
+<br>
 
 ### Análise do cenário e Matriz SWOT
 
+TODO SWOT (é necessário fazer?)
 Apresenta a Matriz SWOT com análise da empresa parceira.
 
-### Análise financeira do projeto
-<a href= "https://docs.google.com/spreadsheets/d/1iuQKR2hm8kHP3JdPiyHrx9R4Y7Woh1GwVLPRzMEOW6U/edit?usp=sharing"></a>
-<img src="./assets/Análise financeira de projeto-Dell.png"/>
+<br>
 
+### Análise financeira do projeto
+A análise financeira do projeto é a avaliação sistemática das informações financeiras e econômicas relacionadas a um projeto. É utilizado para avaliar a viabilidade financeira de um projeto, considerando seus custos e benefícios ao longo do tempo. Dessa forma, realizar essa análise no projeto da Dell ajuda a estimar o custo com desenvolvedores e serviços em cloud e assim, prosseguir e ajudar a definir os investimentos necessários. Também ajuda a determinar a estrutura de financiamento mais adequada para o projeto e a avaliar o seu desempenho financeiro ao longo do projeto
+
+<img src="./assets/analise-financeira/analise-financeira.jpg"/>
+
+<center>
+<a href="https://docs.google.com/spreadsheets/d/1k5JqLywyi4KK6r3jXJmujw_Ilqd6i4GMYNOsI5SMET4/edit#gid=0">
+  Link da análise financeira.
+</a>
+</center>
+
+<br>
 
 ### Proposta de Valor e Value Proposition Canvas
+O Canvas de Proposta de Valor é uma ferramenta que auxilia na exploração mais aprofundada da relação entre produto e cliente por meio do detalhamento da solução e dos clientes, permitindo observar os principais benefícios e destaques do produto e possíveis pontos de melhorias.
 
-Apresenta o Canvas de Proposta de Valor com relação à solução.
+<img src="./assets/canvas-proposta-valor/Canvas%20(1).jpg">
 
+
+<center>
+<a href="https://www.figma.com/file/wB3ODv1lq5WcRQpHaIrv9n/Value-Proposition-Canvas---G5-M6?node-id=861-74&t=AbxH6HWxiy78ovUV-0">
+  Link do Value Proposition Canvas.
+</a>
+</center>
+
+<br>
 
 ### Matriz de Risco
 
-Apresenta a matriz de risco com relação ao projeto.
+A partir do escopo geral do projeto, foi elaborada uma matriz de riscos, onde foram pontuadas possíveis oportunidades e riscos para o desenvolvimento do projeto a partir de observações feitas em um primeiro momento. Dessa forma, é possível observar o impacto dessas possibilidades na performance do produto e do projeto, além de uma classificação da probabilidade de acontecerem. A partir da atualização e análise constante da matriz, será possível mitigar ou evitar que os cenários de risco ocorram durante o projeto.
+<img src="./assets/matriz-riscos/matriz%20de%20risco.png">
 
+<center>
+<a href="https://docs.google.com/spreadsheets/d/1FMFbKFAxigFDO9KlahrsahnO4_PfPoTVvx7aFA9tdmo/edit#gid=0">
+  Link da Matriz de Risco.
+</a>
+</center>
+
+
+<br>
 
 ### Matriz de Oceano Azul
+O objetivo da matriz de oceano azul é ajudar as empresas a identificar oportunidades de mercado inexploradas e criar novos espaços de mercado únicos para oferecer valor único aos seus clientes e aumentar a rentabilidade. A empresa pode explorar a matriz, buscando áreas onde possa inovar sem competição direta ou onde a concorrência é limitada e pode explorar novas oportunidades. Ao criar um oceano azul, a Dell Tecnologias pode reduzir  uma possível concorrência e aumentar a margem de lucro.
 <img src="./assets/Matriz de Oceano Azul - Copia.png"/>
+
+<br>
 
 ## Descritivo da Solução
 
 Descrição da solução a ser desenvolvida (o que é, quais principais funcionalidades, como usar) . Caso ainda não esteja definida a solução na Sprint 1, o faça assim que possível.
 
+<br>
 
 ### Objetivos
+TODO OBJETIVOS
 
 Descrever os objetivos do projeto, objetivos gerais e objetivos específicos. 
 
@@ -253,64 +302,86 @@ Esta seção da documentação do software fornece uma descrição detalhada dos
 <img src="./assets/requisitos/requisitos-funcionais-1.png"/>
 <img src="./assets/requisitos/requisitos-funcionais-2.png"/>
 
+<br>
+
+
 ## Requisitos não Funcionais
 
 <img src="./assets/requisitos/requisitos-nao-funcionais.png"/>  
 <img src="./assets/requisitos/requisitos-nao-funcionais-2.png"/>  
 <img src="./assets/requisitos/requisitos-nao-funcionais-3.png"/>
 
+<br>
+
 ## Casos de Uso
 
 A seção de casos de uso da documentação de software é uma parte crucial que descreve as funcionalidades 
 do software e como elas serão utilizadas pelos usuários. Aqui, são listados todos os cenários possíveis de uso do software, incluindo as ações que o usuário pode realizar, as interações com o sistema e os resultados esperados. Os casos de uso são descritos em detalhes, incluindo a descrição do objetivo da funcionalidade, as entradas de dados, as ações do usuário e os resultados esperados. Além disso, também são incluídos os critérios de aceitação, que são os padrões que o software precisa atender para ser considerado como funcionando corretamente.
 
-Neste projeto os casos de uso devem ser descritos  no formato de User Stories:
-Como PERFIL, DEVO/POSSO AÇÃO para OBJETIVO
-PERFIL: perfil do usuário que realizará a ação
-DEVO/POSSO: obrigatoriedade da ação
-AÇÃO: o que será realizado
-OBJETIVO: qual a finalidade da ação.
-
+<img src="./assets/user-stories/casos-uso.png"/>
 
 <center>
-![template-documento3](./assets/template-documento3.jpg)
+<a href="./assets/user-stories/user-stories.pdf">
+Link para User Stories detalhadas</a>
 
-Exemplo de Diagrama de Casos de Uso
+<a href="https://docs.google.com/spreadsheets/d/1e9aWhXz67T5jla8nRPAbVWR8u6_57sKMgWBk40O_KxY/edit?usp=sharing">Link para User Stories resumidas</a>
 </center>
 
+<br>
+
 # Fluxograma de casos de uso 
-<img src="./assets/Materiais Grupo 5 Developers (7).png/>
+<center>
+
+<img src="./assets/user-stories/fluxograma.png"/>
+
+<a href="./assets/user-stories/fluxograma-uc.pdf">Link para o Fluxograma</a>
+</center>
+
+<br>
 
 ## Matriz de Ratreabilidade
+Na tabela a seguir, foram listados os requisitos, os casos de uso e ao final foi elaborada a tabela de rastreabilidade de requisitos funcionais e não funciona em relação ao casos de uso.
 
-Matriz de rastreabilidade dos requisitos funcionais:
+Matriz de rastreabilidade para os requisitos funcionais:
 <img src="./assets/matriz-rastreabilidade/matriz-rastreabilidade-requisitos-funcionais.png"/>
 
-Matriz de rastreabilidade dos requisitos não funcionais:
+Matriz de rastreabilidade para os requisitos não funcionais:
 <img src="./assets/matriz-rastreabilidade/matriz-rastreabilida-requisitos-nao-funcionais.png"/>
+
+<center>
+<a href="https://docs.google.com/spreadsheets/d/1e9aWhXz67T5jla8nRPAbVWR8u6_57sKMgWBk40O_KxY/edit?usp=sharing">
+  Link da matriz de rastreabilidade.
+</a>
+</center>
+
+<br>
 
 ## Perfis de Usuários 
 
 A seção de perfil de usuário da documentação de software é responsável por descrever instruções detalhadas sobre o uso de cada opção e recursos relacionados ao perfil do usuário, garantindo uma experiência fácil e intuitiva para o usuário final.
 
+<br>
+
 # Arquitetura do Sistema
 
-Atualizar a cada revisão/atualização da arquitetura, mantendo todas as 3 versões no documento..
-
-
-Arquitetura do sistema:
+## Arquitetura do sistema V1:
 <center>
 <img src="./assets/arquitetura/infraestrutura-arquitetura-cloud.png"/>
 </center>
-<a href="./assets/arquitetura/arquitetura-infraestrutura-cloud.pdf">Link para a arquitetura</a> 
 
+<br>
 
-<hr>
-
-Diagram do fluxo de dados:
+## Diagrama do fluxo de dados V1:
 <center>
 <img src="./assets/arquitetura/diagrama-de-fluxo-de-dados.png"/>
 </center>
+
+<center>
+<a href="./assets/arquitetura/arquitetura-infraestrutura-cloud.pdf">Link para a arquitetura</a> 
+</center>
+
+<br>
+
 
 
 # UX e UI Design
@@ -319,15 +390,32 @@ Aborda o design e a funcionalidade da aplicação ou sistema em questão. Ela fo
 
 
 ## Wireframes
+O desenvolvimento da aplicação tem como prioridade a interatividade e usabilidade, visto que a maior preocupação é criar uma plataforma de fácil entendimento para os usuários, com as funcionalidades necessárias. Além disso, foi elaborada uma ideia de gamificação proposta pelo parceiro.
 
-Telas de baixa fidelidade das áreas do usuário, conectados, demonstrando a diagramação e o fluxo de navegação
+Assim, uma primeira versão da solução proposta de interface mobile foi prototipada na plataforma Figma e pode ser acessada através do seguinte endereço: <a href="https://www.figma.com/file/cLznFm8xajrbxyqVEKE8da/DellHub?node-id=0-1&t=MvWd3RhCig4XBaMV-0"> Protótipo Interface Mobile </a>. É recomendado o acesso ao Figma para uma visualização melhor qualidade e detalhamento dos objetivos de cada tela. Para visualizar com interação com os botões, basta fazer o atalho do teclado “Ctrl + Alt + Enter” ou basta <a href="https://www.figma.com/proto/cLznFm8xajrbxyqVEKE8da/DellHub?node-id=1-10&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A10&show-proto-sidebar=1"> clicar aqui. </a>
 
-Exemplos: tela da home, tela de login, etc. Em cada tela colocar: cabeçalho, rodapé, barra lateral, área de conteúdo
+Telas e features pendentes: 
+- Editar projetos e conteúdos;
+- Descrição de projeto e conteúdo;
+- Denúncia de conteúdo;
+- Telas de confirmação e erros;
+- Filtros;
+- Dashboard para Managers e Moderadores;
+- Aprimorar gamificação;
+- Modo escuro;
+- Tela de notificação;
+- Criação de perfil;
+- FAQ e About;
+- Configurações.
 
-Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na sequência correta do fluxo de navegação
+<img src="./assets/wireframe/dellhub.png"/>
+
+<br>
 
 ## Guia de Estilos
-<hr>
+
+O link a seguir dará acesso ao guia de estilos desenvolvido nessa primeira versão do protótipo que segue, em partes, o DDS. Na próxima versão, serão usados mais padrões definidos no Dell Design System.
+
 <center>
 <img src="./assets/DesignSystem/design_system.png"/>
 <a href="https://www.figma.com/file/XwY8Q3XWazGLRDzCBPN2xM/Style-Guide-Sprint-3?node-id=294%3A2896&t=M85J2JGabpMNqBbr-1">
@@ -335,16 +423,26 @@ Aqui você deve colocar o link para o wireframe ou colocar as imagens geradas na
 </a>
 </center>
 
-<hr>
-
-
+<br>
 
 ## Benchmarking de Design Systems
+Design System consiste em conjuntos de bibliotecas reutilizáveis que são usados para criar e manter a padronização dos produtos de uma empresa, além de reduzir o retrabalho de desenvolvedores e designers.
+O Design System garante que todos os aspectos do design, (como cores, tipografia, componentes, interação com o produto e seu comportamento) sejam coesos e consistentes em todas as plataformas e produtos de uma empresa.
+
+A estrutura do Design System se baseia em blocos de construção (paletas de cor, tipografia, grid e ícones), bibliotecas de padrões (templates, módulos, componentes e elementos) e regras (design, guidelines, componentes e elementos), compondo o guia de estilos.
+
 <img src="./assets/benchmark/benchmark-1.png"/>
 <img src="./assets/benchmark/benchmark-2.png"/>
 <img src="./assets/benchmark/benchmark-3.png"/>
 <img src="./assets/benchmark/benchmark-4.png"/>
 
+<center>
+<a href="https://docs.google.com/spreadsheets/d/1oTFCLJUo3UDkt5zDLPFDjmQW5Oju5LLC35BEhbmIWk0/edit?usp=sharing">
+  Link para o Benchmark.
+</a>
+</center>
+
+<br>
 
 
 # Projeto de Banco de Dados
