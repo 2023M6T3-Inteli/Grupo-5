@@ -2,10 +2,10 @@
 import { Module } from "@nestjs/common";
 
 /** controllers */
-import { UserController } from "./user.controller";
+import { PostController } from "./post.controller";
 ////////////////////////////////////////////////////////////////////////////////
 
 @Module({
-  controllers: [UserController]
+  controllers: [PostController],
 })
-export class UserModule {}
+export class PostModule {}

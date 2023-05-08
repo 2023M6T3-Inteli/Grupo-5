@@ -6,7 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=prod nest build",
     "start": "NODE_ENV=prod nest start",
-    "start:dev": "NODE_ENV=dev nest start --watch",
+    "start:dev": "set NODE_ENV=dev && nest start --watch",
     "start:debug": "NODE_ENV=debug nest start --debug --watch",
     "start:prod": "NODE_ENV=prod node dist/main",
     "test": "NODE_ENV=test jest",
