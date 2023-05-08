@@ -1,14 +1,18 @@
-import { Col, Row } from "react-styled-flexboxgrid";
+import React from 'react'
+import { Col, Row } from 'react-styled-flexboxgrid'
+import styles from './onboarding/styles.module.scss'
 
-export default function Home() {
+const Home = () => {
   return (
-      <Row>
-        <Col xs={12} md={6}>
-          Item 1
-        </Col>
-        <Col xs={12} md={6}>
-          Item 2
-        </Col>
-      </Row>
-  );
+    <Row className={styles.container}>
+      <Col xs={12} md={6} className={styles.item}>
+        Item 1
+      </Col>
+      <Col xs={12} md={6}>
+        Item 2
+      </Col>
+    </Row>
+  )
 }
+
+export default Home
