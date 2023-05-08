@@ -22,7 +22,7 @@ export class UserController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    this.users.push({ ...createUserDto, id: this.users.length + 1 });
+    this.users.push({ ...createUserDto, id: this.users.length + 1, score: 0 });
     return this.users[this.users.length - 1];
   }
 
