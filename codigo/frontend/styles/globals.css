@@ -6,6 +6,7 @@
   --secundary: #0C32A4;
   --terceary: #DAEDFF;
   --background: #E6EAEE;
+  --background-secundary: #EFF5FB;
   --disabled: #9A9A9A;
   --error: #BB2A33;
   --success: #4F7D00;
@@ -19,6 +20,11 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 html,
