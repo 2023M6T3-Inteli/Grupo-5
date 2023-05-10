@@ -2,6 +2,7 @@ import { Grid } from "react-styled-flexboxgrid"
 import styled from "styled-components";
 
 import { Inter } from 'next/font/google'
+import Header from '@/components/header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,15 +11,14 @@ export const Layout = ({
     children,
     navbar = true,
 }: {
-    header?: boolean;
+    header?: boolean | any;
     children: React.ReactNode;
     navbar?: boolean;
 }) => {
     return (
         <Container fluid className={inter.className}>
-            {header ? <header>
-                <p>Header</p>
-            </header> : null}
+            {header ? <Header navigation={header} matchs={5} title='Projects' active={1} />
+                : null}
 
             {children}
 
