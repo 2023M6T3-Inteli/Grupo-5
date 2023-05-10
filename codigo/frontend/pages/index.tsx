@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Row } from 'react-styled-flexboxgrid'
 import styles from './onboarding/styles.module.scss'
 import Header from '@/components/header'
+import Navigation from '@/components/navigation'
 
 const Home = () => {
   const navigation = [
@@ -23,7 +24,10 @@ const Home = () => {
   ]
 
   return (
-    <Header navigation={navigation} matchs={5} title='Projects' active={1}/>
+    <>
+      <Header navigation={navigation} matchs={5} title='Projects' active={1} />
+      <Navigation />
+    </>
   )
 }
 
