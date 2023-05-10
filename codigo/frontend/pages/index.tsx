@@ -1,9 +1,10 @@
-import React from 'react'
-import { Col, Grid, Row } from 'react-styled-flexboxgrid'
-import styles from './onboarding/styles.module.scss'
-import Header from '@/components/header'
+import Link from 'next/link'
 
-const Home = () => {
+import { Col } from 'react-styled-flexboxgrid'
+import { Container } from "./styles"
+import { Layout } from '@/components/Layout'
+
+export default function Index() {
   const navigation = [
     {
       icon: '/burguer.png',
@@ -23,8 +24,12 @@ const Home = () => {
   ]
 
   return (
-    <Header navigation={navigation} matchs={5} title='Projects' active={1}/>
+    <Layout header={navigation}>
+      <Col xs={12} md={4}>
+        <p>Home page</p>
+        <Link href={"/start"}> Start </Link>
+      </Col>
+    </Layout>
   )
 }
 
-export default Home
