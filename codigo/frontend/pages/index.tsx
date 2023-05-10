@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Row } from 'react-styled-flexboxgrid'
+import { Col, Grid, Row } from 'react-styled-flexboxgrid'
 import styles from './onboarding/styles.module.scss'
 
 const Home = () => {
