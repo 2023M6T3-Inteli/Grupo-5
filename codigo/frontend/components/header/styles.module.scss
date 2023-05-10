@@ -1,0 +1,61 @@
+.header {
+  margin-top: 20px;
+
+  .row {
+    margin-bottom: 20px;
+
+    .options {
+      position: relative;
+      cursor: pointer;
+
+      .select {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: -220px;
+        width: 200px;
+        padding: 16px;
+        top: -10px;
+        background-color: var(--background-secundary);
+        gap: 20px;
+        z-index: 1;
+        border-radius: 13px;
+
+        ::after {
+          content: "";
+          width: 35px;
+          height: 35px;
+          transform: rotate(45deg);
+          display: block;
+          position: absolute;
+          top: 20px;
+          right: -10px;
+          background-color: var(--background-secundary);
+          z-index: 1;
+          border-radius: 3px;
+        }
+
+        .optionContainer {
+          display: flex;
+          min-width: 80%;
+          gap: 8px;
+
+          img, svg {
+            width: 20px;
+            height: 20px
+          }
+
+          p {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+
+  }
+  
+  .title {
+    margin-bottom: 16px;
+  }
+}
