@@ -1,13 +1,14 @@
 import { TextStyled } from "./styles"
 
-export const Text = ({ children, color, bold, variant }: {
+export const Text = ({ children, center, color, bold, variant }: {
     children: React.ReactNode,
+    center?: boolean,
     color?: string,
     bold?: boolean,
     variant?: string,
 }) => {
     return (
-        <TextStyled>{children}</TextStyled>
+        <TextStyled color={color} center={center} bold={bold} variant={variant}>{children}</TextStyled>
     )
 }
 

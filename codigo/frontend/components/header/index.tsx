@@ -10,6 +10,7 @@ import NavigationItem from './components/navigationItem'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 type Props = {
   title?: string;
@@ -25,6 +26,8 @@ type Props = {
 const Header: React.FC<Props> = (props: Props) => {
   const [optionsOpened, setOptionsOpened] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
+
+  const router = useRouter();
 
   const options = [
     {
@@ -51,9 +54,6 @@ const Header: React.FC<Props> = (props: Props) => {
 
   const useOutsideAlerter = (ref: any) => {
     useEffect(() => {
-      /**
-       * Alert if clicked on outside of element
-       */
       const handleClickOutside = (event: any) => {
         if (ref.current && !ref.current.contains(event.target)) {
           setOptionsOpened(false)
@@ -83,47 +83,39 @@ const Header: React.FC<Props> = (props: Props) => {
         </Col>
         <Col className={styles.options} ref={wrapperRef}>
           <Image src={'/options.png'} alt='More options' width={25} height={25} onClick={() => setOptionsOpened(!optionsOpened)} />
-          {
-            optionsOpened && (
-              <div className={styles.select}>
-                {
-                  options.map((option: any, index: number) => {
-                    {
-                      return option.onClick ? (
-                        <div className={styles.optionContainer} key={index} onClick={() => option.onClick()}>
-                          {option.icon}
-                          <p>{option.text}</p>
-                        </div>
-                      ) : (
-                        <Link className={styles.optionContainer} href={option.url} key={index}>
-                          <Image src={option.icon} alt='' width={0} height={0} />
-                          <p>{option.text}</p>
-                        </Link>
-                      )
-                    }
-                  })
-                }
-              </div>
-            )
-          }
+          {optionsOpened && (
+            <div className={styles.select}>
+              {options.map((option: any, index: number) => {
+                  {
+                    return option.onClick ? (
+                      <div className={styles.optionContainer} key={index} onClick={() => option.onClick()}>
+                        {option.icon}
+                        <p>{option.text}</p>
+                      </div>
+                    ) : (
+                      <Link className={styles.optionContainer} href={option.url} key={index}>
+                        <Image src={option.icon} alt='' width={0} height={0} />
+                        <p>{option.text}</p>
+                      </Link>
+                    )
+                  }
+                })}
+            </div>
+          )}
         </Col>
       </Row>
 
-      {
-        props.matchs && (
-          <Row className={styles.row} middle='xs'>
-            <MatchCard matchs={props.matchs} />
-          </Row>
-        )
-      }
+      {props.matchs && (
+        <Row className={styles.row} middle='xs'>
+          <MatchCard matchs={props.matchs} />
+        </Row>
+      )}
 
-      {
-        props.title && (
-          <Row center='xs' className={styles.titleRow}>
-            <h2 className={styles.title}>{props.title}</h2>
-          </Row>
-        )
-      }
+      {props.title && (
+        <Row center='xs' className={styles.titleRow}>
+          <h2 className={styles.title}>{props.title}</h2>
+        </Row>
+      )}
 
       <Row between='xs' center='xs' middle='xs'>
         {
