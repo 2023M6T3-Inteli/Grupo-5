@@ -1,10 +1,10 @@
 import React from "react";
-import { Col, Grid, Row } from 'react-styled-flexboxgrid'
-import { ProjectCard } from "@/components/projectCard";
-import Header from '@/components/header'
+import styles from './styles.module.scss';
+import { Col, Grid, Row } from 'react-styled-flexboxgrid';
+import { ProjectCard } from '@/components/projectCard';
+import Header from '@/components/header';
 
-
-const allProjects = () => {
+const applicationprojects = () => {
 
     const navigation = [
         {
@@ -36,4 +36,4 @@ const allProjects = () => {
     )
 }
 
-export default allProjects
+export default applicationprojects;

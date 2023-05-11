@@ -23,7 +23,7 @@ const Home = () => {
   ]
 
   return (
-    <Header navigation={navigation} matchs={5} title='Projects' active={1}/>
+    <Header navigation={navigation} matchs={5} title='Projects' active={0} />
   )
 }
 
