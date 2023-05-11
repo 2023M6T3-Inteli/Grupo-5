@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import styles from './styles.module.scss'
 import { Col, Grid, Row } from 'react-styled-flexboxgrid'
@@ -49,6 +49,28 @@ const Header: React.FC<Props> = (props: Props) => {
     },
   ]
 
+  const useOutsideAlerter = (ref: any) => {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      const handleClickOutside = (event: any) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setOptionsOpened(false)
+        }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
+
   useEffect(() => {
     setOptionsOpened(false)
   }, [darkMode])
@@ -60,7 +82,7 @@ const Header: React.FC<Props> = (props: Props) => {
           <Col>
             <Image src={'/Logo.png'} alt='Logo image' width={100} height={33} />
           </Col>
-          <Col className={styles.options}>
+          <Col className={styles.options} ref={wrapperRef}>
             <Image src={'/options.png'} alt='More options' width={25} height={25} onClick={() => setOptionsOpened(!optionsOpened)} />
             {
               optionsOpened && (
@@ -104,7 +126,7 @@ const Header: React.FC<Props> = (props: Props) => {
           )
         }
 
-        <Row between='xs' center='md' middle='md'>
+        <Row between='xs' center='xs' middle='xs'>
           {
             props.navigation.map((item: any, index: number) => {
               return (

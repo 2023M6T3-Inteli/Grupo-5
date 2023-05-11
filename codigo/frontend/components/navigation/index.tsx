@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import styles from './styles.module.scss'
 import { Col, Grid, Row } from 'react-styled-flexboxgrid'
@@ -6,6 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Navigation: React.FC = () => {
+  const ref = useRef(null)
+
   const [optionsCreateOpened, setOptionsCreateOpened] = useState(false)
   const navItems = [
     {
@@ -27,7 +29,7 @@ const Navigation: React.FC = () => {
     {
       icon: '/create.png',
       text: 'Create',
-      onclick: () => setOptionsCreateOpened(true),
+      onClick: () => setOptionsCreateOpened(true),
       alt: 'Create icon',
       width: 20,
       height: 20
@@ -50,6 +52,28 @@ const Navigation: React.FC = () => {
     },
   ]
 
+  const useOutsideAlerter = (ref: any) => {
+    useEffect(() => {
+      /**
+       * Alert if clicked on outside of element
+       */
+      const handleClickOutside = (event: any) => {
+        if (ref.current && !ref.current.contains(event.target)) {
+          setOptionsCreateOpened(false)
+        }
+      }
+      // Bind the event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        // Unbind the event listener on clean up
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, [ref]);
+  }
+
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef);
+
   return (
     <div className={styles.navigation}>
       <Grid className={styles.grid}>
@@ -59,8 +83,22 @@ const Navigation: React.FC = () => {
               return item.onClick ? (
                 <Col key={`${item.text}-${index}`} >
                   <div className={styles.item} onClick={() => item.onClick()}>
-                    <Image src={item.createIcon} alt={item.alt} width={item.width} height={item.height} />
+                    <Image src={item.icon} alt={item.alt} width={item.width} height={item.height} />
                     <p className={styles.text}>{item.text}</p>
+                    {
+                      optionsCreateOpened && (
+                        <div ref={wrapperRef} className={styles.select} onClick={() => item.onClick()}>
+                          <div className={styles.optionContainer} onClick={() => alert("Abre criação de projeto")}>
+                            <Image src={'/project.png'} alt='Imagem de projeto' width={0} height={0} />
+                            <p>Creat project</p>
+                          </div>
+                          <div className={styles.optionContainer} onClick={() => alert("Abre criação de post")}>
+                            <Image src={'/edit.png'} alt='Imagem de post' width={0} height={0} />
+                            <p>Creat a post</p>
+                          </div>
+                        </div>
+                      )
+                    }
                   </div>
                 </Col>
               ) : (
