@@ -7,7 +7,6 @@ import { UserModule } from "./user/user.module";
 import { PostModule } from "./post/post.module"
 import { ProfileModule } from './profile/profile.module';
 
-////////////////////////////////////////////////////////////////////////////////
 
 @Module({
   imports: [

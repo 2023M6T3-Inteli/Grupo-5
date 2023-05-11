@@ -1,7 +1,4 @@
-/** nestjs */
-import { NestFactory } from "@nestjs/core";
-import { ValidationPipe } from "@nestjs/common";
-
+import { NestFactory } from '@nestjs/core';
 /** modules */
 import { AppModule } from "./app.module";
 

@@ -1,18 +1,34 @@
-import React from 'react'
-import { Col, Row } from 'react-styled-flexboxgrid'
-import styles from './onboarding/styles.module.scss'
+import Link from 'next/link'
 
-const Home = () => {
+import { Col } from 'react-styled-flexboxgrid'
+import { Container } from "./styles"
+import { Layout } from '@/components/Layout'
+
+export default function Index() {
+  const navigation = [
+    {
+      icon: '/burguer.png',
+      text: 'All Posts',
+      url: '/allPosts'
+    },
+    {
+      icon: '/star.png',
+      text: 'Recommended',
+      url: '/recommended'
+    },
+    {
+      icon: '/community.png',
+      text: 'Community',
+      url: '/community'
+    }
+  ]
+
   return (
-    <Row className={styles.container}>
-      <Col xs={12} md={6} className={styles.item}>
-        Item 1
+    <Layout header={navigation} navbar={true}>
+      <Col xs={12} md={4}>
+        <p>Home page</p>
+        <Link href={"/start"}> Start </Link>
       </Col>
-      <Col xs={12} md={6}>
-        Item 2
-      </Col>
-    </Row>
+    </Layout>
   )
 }
-
-export default Home
