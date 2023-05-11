@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
@@ -33,4 +38,5 @@ body {
   overflow-x: hidden;
   background-color: var(--background);
   font-family: var(--font);
+  margin-bottom: 40px;
 }
