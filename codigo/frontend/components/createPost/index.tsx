@@ -5,12 +5,9 @@ import { Col, Grid, Row } from "react-styled-flexboxgrid";
 
 
 
-
-
-
-
-
 const CreatePost: React.FC = () => {
+
+    //Text lenght limiter
     const [text, setText] = useState("");
     const maxLength = 500;
 
@@ -19,21 +16,7 @@ const CreatePost: React.FC = () => {
     };
 
     const charactersUsed = text.length;
-
-    // const posts = [
-    //     {
-    //         title: 'Post 1',
-
-    //     }
-    // ]
-
-    // const createPost = () => {
-    //     posts.push({
-    //         title: 'Post 2',
-
-    //     })
-    // }
-
+    
   return (
     <div className={styles.createPost}>
       <form>
@@ -52,7 +35,7 @@ const CreatePost: React.FC = () => {
                     <h5>{charactersUsed}/{maxLength}</h5>
                 </div>
                 <textarea
-                  placeholder="Check out this link!"
+                  placeholder="Share a link to a website, video, podcast..."
                     required
                   onChange={handleChange}
                   maxLength={maxLength}
