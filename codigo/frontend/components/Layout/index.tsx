@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import { Inter } from 'next/font/google'
 import Header from '@/components/header'
+import Navbar from "../navbar";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,9 +23,7 @@ export const Layout = ({
 
             {children}
 
-            {navbar ? <footer>
-                <p>Footer</p>
-            </footer> : null}
+            {navbar ? <Navbar /> : null}
         </Container>
     )
 }
@@ -35,7 +34,7 @@ const Container = styled(Grid)`
   align-items: center;
   flex: 1;
   justify-content: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   height: 100%;
   padding: 0 2rem;
 `

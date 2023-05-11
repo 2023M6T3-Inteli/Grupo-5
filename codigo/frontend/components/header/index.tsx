@@ -77,67 +77,65 @@ const Header: React.FC<Props> = (props: Props) => {
 
   return (
     <div className={styles.header}>
-      <Grid>
-        <Row between='xs' className={styles.row}>
-          <Col>
-            <Image src={'/Logo.png'} alt='Logo image' width={100} height={33} />
-          </Col>
-          <Col className={styles.options} ref={wrapperRef}>
-            <Image src={'/options.png'} alt='More options' width={25} height={25} onClick={() => setOptionsOpened(!optionsOpened)} />
-            {
-              optionsOpened && (
-                <div className={styles.select}>
-                  {
-                    options.map((option: any, index: number) => {
-                      {
-                        return option.onClick ? (
-                          <div className={styles.optionContainer} key={index} onClick={() => option.onClick()}>
-                            {option.icon}
-                            <p>{option.text}</p>
-                          </div>
-                        ) : (
-                          <Link className={styles.optionContainer} href={option.url} key={index}>
-                            <Image src={option.icon} alt='' width={0} height={0} />
-                            <p>{option.text}</p>
-                          </Link>
-                        )
-                      }
-                    })
-                  }
-                </div>
-              )
-            }
-          </Col>
-        </Row>
-
-        {
-          props.matchs && (
-            <Row className={styles.row} middle='xs'>
-              <MatchCard matchs={props.matchs} />
-            </Row>
-          )
-        }
-
-        {
-          props.title && (
-            <Row center='xs'>
-              <h2 className={styles.title}>{props.title}</h2>
-            </Row>
-          )
-        }
-
-        <Row between='xs' center='xs' middle='xs'>
+      <Row between='xs' className={styles.row}>
+        <Col>
+          <Image src={'/Logo.png'} alt='Logo image' width={100} height={33} />
+        </Col>
+        <Col className={styles.options} ref={wrapperRef}>
+          <Image src={'/options.png'} alt='More options' width={25} height={25} onClick={() => setOptionsOpened(!optionsOpened)} />
           {
-            props.navigation.map((item: any, index: number) => {
-              return (
-                <Col key={index}>
-                  <NavigationItem icon={item.icon} text={item.text} url={item.url} active={props.active === index} />
-                </Col>
-              )
-            })
+            optionsOpened && (
+              <div className={styles.select}>
+                {
+                  options.map((option: any, index: number) => {
+                    {
+                      return option.onClick ? (
+                        <div className={styles.optionContainer} key={index} onClick={() => option.onClick()}>
+                          {option.icon}
+                          <p>{option.text}</p>
+                        </div>
+                      ) : (
+                        <Link className={styles.optionContainer} href={option.url} key={index}>
+                          <Image src={option.icon} alt='' width={0} height={0} />
+                          <p>{option.text}</p>
+                        </Link>
+                      )
+                    }
+                  })
+                }
+              </div>
+            )
           }
-        </Row>
-      </Grid>
+        </Col>
+      </Row>
+
+      {
+        props.matchs && (
+          <Row className={styles.row} middle='xs'>
+            <MatchCard matchs={props.matchs} />
+          </Row>
+        )
+      }
+
+      {
+        props.title && (
+          <Row center='xs' className={styles.titleRow}>
+            <h2 className={styles.title}>{props.title}</h2>
+          </Row>
+        )
+      }
+
+      <Row between='xs' center='xs' middle='xs'>
+        {
+          props.navigation.map((item: any, index: number) => {
+            return (
+              <Col key={index}>
+                <NavigationItem icon={item.icon} text={item.text} url={item.url} active={props.active === index} />
+              </Col>
+            )
+          })
+        }
+      </Row>
     </div>
   )
 }

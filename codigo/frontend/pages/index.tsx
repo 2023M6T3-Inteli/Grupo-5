@@ -24,7 +24,7 @@ export default function Index() {
   ]
 
   return (
-    <Layout header={navigation}>
+    <Layout header={navigation} navbar={true}>
       <Col xs={12} md={4}>
         <p>Home page</p>
         <Link href={"/start"}> Start </Link>
