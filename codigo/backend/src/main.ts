@@ -1,7 +1,4 @@
-/** nestjs */
-import { NestFactory } from "@nestjs/core";
-import { ValidationPipe } from "@nestjs/common";
-
+import { NestFactory } from '@nestjs/core';
 /** modules */
 import { AppModule } from "./app.module";
 
@@ -23,6 +20,6 @@ import * as cookieParser from "cookie-parser";
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
 
   /** start server listener */
-  await app.listen(3000);
+  await app.listen(5500);
   console.log(`Application is running on: ${await app.getUrl()}`);
 })();
