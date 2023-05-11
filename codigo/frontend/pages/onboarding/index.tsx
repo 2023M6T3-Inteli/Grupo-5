@@ -1,18 +1,23 @@
-import React from 'react'
-import { Col, Row } from 'react-styled-flexboxgrid'
-import styles from './styles.module.scss'
+<div class="w3-panel w3-border">
+  <p>My borders are normal.</p>
+</div>
 
-const Onboarding = () => {
-  return (
-    <Row className={styles.container}>
-      <Col xs={12} md={6} className={styles.item}>
-        Item 1
-      </Col>
-      <Col xs={12} md={6}>
-        Item 2
-      </Col>
-    </Row>
-  )
-}
+<div class="w3-panel w3-border w3-round-small">
+  <p>My borders are rounded (small).</p>
+</div>
 
-export default Onboarding
+<div class="w3-panel w3-border w3-round">
+  <p>My borders are rounded.</p>
+</div>
+
+<div class="w3-panel w3-border w3-round-large">
+  <p>I have large rounded borders.</p>
+</div>
+
+<div class="w3-panel w3-border w3-round-xlarge">
+  <p>I have xlarge rounded borders.</p>
+</div>
+
+<div class="w3-panel w3-border w3-round-xxlarge">
+  <p>I have xxlarge rounded borders.</p>
+</div>
