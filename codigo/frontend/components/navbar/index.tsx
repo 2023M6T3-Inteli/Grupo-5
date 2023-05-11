@@ -5,7 +5,7 @@ import { Col, Grid, Row } from 'react-styled-flexboxgrid'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Navigation: React.FC = () => {
+const Navbar: React.FC = () => {
   const ref = useRef(null)
 
   const [optionsCreateOpened, setOptionsCreateOpened] = useState(false)
@@ -75,7 +75,7 @@ const Navigation: React.FC = () => {
   useOutsideAlerter(wrapperRef);
 
   return (
-    <div className={styles.navigation}>
+    <div className={styles.navbar}>
       <Grid className={styles.grid}>
         <Row className={styles.row} around='xs' center='xs' middle='xs'>
           {
@@ -119,4 +119,4 @@ const Navigation: React.FC = () => {
   )
 }
 
-export default Navigation
+export default Navbar
