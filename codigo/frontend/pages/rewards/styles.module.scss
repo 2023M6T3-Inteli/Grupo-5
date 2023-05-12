@@ -63,5 +63,9 @@
         transition: width 0.5s ease-in-out;
       }
     }
+    .imageContainer {
+      display: flex;
+      align-items: center;
+    }
   }
 }
