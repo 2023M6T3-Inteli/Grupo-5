@@ -8,14 +8,18 @@ import Navbar from "../navbar";
 const inter = Inter({ subsets: ['latin'] })
 
 export const Layout = ({
+    active,
     title,
+    matchs,
     header = true,
     navigation,
     children,
     navbar = true,
 }: {
+    active?: number | any;
     title?: string;
-    header?: boolean;
+    matchs?: number;
+    header?: boolean | any;
     navigation?: {
         icon: string;
         text: string;
@@ -25,15 +29,10 @@ export const Layout = ({
     navbar?: boolean;
 }) => {
     return (
-        <Container fluid className={inter.className} header={header}>
+        <Container fluid className={inter.className}>
             <Col xs={12} md={4}>
-                {header ? <Header
-                    navigation={navigation}
-                    matchs={5}
-                    active={1}
-                    title={title}
-                /> : null}
-
+            {header ? <Header navigation={header} matchs={matchs} title={title} active={active} />
+                : null}
                 {children}
 
                 {navbar ? <Navbar /> : null}

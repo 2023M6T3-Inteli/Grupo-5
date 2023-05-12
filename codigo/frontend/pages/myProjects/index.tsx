@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Grid, Row } from 'react-styled-flexboxgrid'
 import { ProjectCard } from "@/components/projectCard";
 import Header from '@/components/header'
+import { Layout } from "@/components/Layout";
 
 
 const allProjects = () => {
@@ -24,15 +25,34 @@ const allProjects = () => {
         }
     ]
 
+    const projects = [
+        {
+            id: 1,
+            name: 'Project Name',
+            tags: ['1', '2', '3']
+        },
+        {
+            id: 2,
+            name: 'Project Name 2',
+            tags: ['1', '5', '7']
+        },
+        {
+            id: 3,
+            name: 'Project Name 3',
+            tags: ['1', '2', '3']
+        }
+    ]
+
     return (
-        <Grid fluid>
-            <Header navigation={navigation} active={1} title="Projects" />
+        <Layout header={navigation} navbar={true} title="Projects" active={1}>
             <Row between="xs" center="sm">
-                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
-                    <ProjectCard />
-                ))}
+                {
+                    projects.map((project: any, index: number) => {
+                        return <ProjectCard data={project} key={index} />
+                    })
+                }
             </Row>
-        </Grid>
+        </Layout>
     )
 }
 

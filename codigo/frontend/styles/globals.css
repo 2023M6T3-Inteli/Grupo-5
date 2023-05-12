@@ -22,9 +22,16 @@ body {
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version */
 }
 
 a {
@@ -34,9 +41,10 @@ a {
 
 html,
 body {
-    max-width: 100vw;
-    overflow-x: hidden;
-    background-color: var(--background);
-    font-family: var(--font);
-    /* margin-bottom: 40px; */
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--background);
+  font-family: var(--font);
+  margin-bottom: 40px;
 }

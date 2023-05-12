@@ -1,10 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-/** modules */
-import { AppModule } from "./app.module";
-
-/** dependencies */
-import helmet from "helmet";
-import * as cookieParser from "cookie-parser";
+import { AppModule } from './app.module'
+import helmet from 'helmet'
+import * as cookieParser from 'cookie-parser';
+import { ValidationPipe } from '@nestjs/common';
 ////////////////////////////////////////////////////////////////////////////////
 
 /** bootstrap project */
