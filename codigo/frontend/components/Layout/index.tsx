@@ -24,8 +24,8 @@ export const Layout = ({
 }) => {
     return (
         <Container fluid navbar={navbar} className={inter.className}>
-            {header ? <Header navigation={header} matchs={matchs} title={title} active={active} />
-                : null}
+                {header ? <Header navigation={header} matchs={matchs} title={title} active={active} />
+                    : null}
                 {children}
 
                 {navbar ? <Navbar /> : null}

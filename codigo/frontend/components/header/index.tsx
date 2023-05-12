@@ -76,7 +76,7 @@ const Header: React.FC<Props> = (props: Props) => {
   }, [darkMode])
 
   return (
-    <div className={styles.header}>
+    <Col xs={12} md={4} className={styles.header}>
       <Row between='xs' className={styles.row}>
         <Col>
           <Image src={'/Logo.png'} alt='Logo image' width={100} height={33} />
@@ -118,17 +118,15 @@ const Header: React.FC<Props> = (props: Props) => {
       )}
 
       <Row className={`${props.navigation.length < 3 && styles.small}`} between='xs' center='xs' middle='xs'>
-        {
-          props.navigation.map((item: any, index: number) => {
+        {props.navigation.map((item: any, index: number) => {
             return (
               <Col key={index}>
                 <NavigationItem icon={item.icon} text={item.text} url={item.url} active={props.active === index} />
               </Col>
             )
-          })
-        }
+        })}
       </Row>
-    </div>
+    </Col>
   )
 }
 

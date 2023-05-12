@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
   useOutsideAlerter(wrapperRef);
 
   return (
-    <div className={styles.navbar}>
+    <Col xs={12} className={styles.navbar}>
       <Grid className={styles.grid}>
         <Row className={styles.row} around='xs' center='xs' middle='xs'>
           {
@@ -115,7 +115,7 @@ const Navbar: React.FC = () => {
           }
         </Row>
       </Grid>
-    </div>
+    </Col>
   )
 }
 
