@@ -16,7 +16,7 @@ const Error = () => {
     const router = useRouter();
 
     return (
-        <Container className={inter.className}>
+        <Container fluid className={inter.className}>
             <Col xs={12}>
                 <Row center="xs">
                     <Image src={dell} alt="Dell" width={150} height={100} />
