@@ -20,7 +20,7 @@ const allProjects = () => {
         {
             icon: '/community.png',
             text: 'Apliccations',
-            url: '/application'
+            url: '/allProjects'
         }
     ]
 
