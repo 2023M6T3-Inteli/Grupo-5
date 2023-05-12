@@ -1,3 +1,4 @@
+import { Title } from '@/components/Title'
 import Link from 'next/link'
 import { Grid } from 'react-styled-flexboxgrid'
 import styled from "styled-components"
@@ -21,8 +22,17 @@ export const Heading = styled.div`
   margin-bottom: 4rem;
 `
 
+export const LogoTitle = styled.h1`
+  color: #fff;
+  font-size: 3.5rem;
+  position: relative;
+  margin-bottom: 0;
+  position: absolute;
+`
+
 export const Logo = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `

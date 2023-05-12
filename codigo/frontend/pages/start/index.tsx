@@ -4,8 +4,7 @@ import Image from "next/image"
 import { Inter } from 'next/font/google'
 
 import { Col, Row } from 'react-styled-flexboxgrid'
-import { Button, Container, Heading, Logo, Text } from "./styles"
-import { Title } from "@/components/Title"
+import { Button, Container, Heading, Logo, LogoTitle, Text } from "./styles"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,9 +14,9 @@ export default function Start() {
       <Col xs={12} md={4}>
         <Heading>
           <Logo>
-            <Image src={dell} alt="Vercel Logo" width={350} />
+            <Image src={dell} alt="DellHub Logo" width={350} />
 
-            <Title>DellHub</Title>
+            <LogoTitle>DellHub</LogoTitle>
           </Logo>
 
           <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</Text>
