@@ -12,14 +12,16 @@ type Props = {
   active?: boolean;
 }
 
-const NavigationItem: React.FC<Props> = (props: Props) => {
+const NavigationItem: React.FC<Props> = ({
+  icon, text, imageAlt, url, active
+}: Props) => {
   return (
-    <Link href={props.url}>
-      <div className={`${styles.navigationItem} ${props.active && styles.active}`}>
+    <Link href={url}>
+      <div className={`${styles.navigationItem} ${active && styles.active}`}>
         <div className={styles.iconContainer}>
-          <Image className={styles.icon} width={0} height={0} sizes='100%' src={props.icon} alt={props.imageAlt || 'Header icone'} />
+          <Image className={styles.icon} width={0} height={0} sizes='100%' src={icon} alt={imageAlt || 'Header icone'} />
         </div>
-        <p className={styles.text}>{props.text}</p>
+        <p className={styles.text}>{text}</p>
       </div>
     </Link>
   )
