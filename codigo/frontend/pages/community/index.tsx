@@ -33,9 +33,9 @@ export default function Index() {
   ]
 
   return (
-    <Layout navigation={navigation} navbar={false} title={"Community"}>
+    <Layout header={navigation} navbar={true} title={"Community"} active={2}>
       <Col xs={12} md={4}>
-        <Row center='xs'>
+        <Row style={{marginBottom: '8px'}} center='xs'>
           <Text color='#2e2e2e'>Based on your profile</Text>
         </Row>
 
