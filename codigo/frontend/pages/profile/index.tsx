@@ -10,24 +10,6 @@ import { Layout } from "@/components/Layout";
 
 
 const Profile = () => {
-  const navigation = [
-    {
-      icon: '/burguer.png',
-      text: 'All Posts',
-      url: '/allPosts'
-    },
-    {
-      icon: '/star.png',
-      text: 'Recommended',
-      url: '/recommended'
-    },
-    {
-      icon: '/community.png',
-      text: 'Community',
-      url: '/community'
-    }
-  ]
-
   return (
     <Layout header={false} navbar={true}>
     <div className={styles.container}>

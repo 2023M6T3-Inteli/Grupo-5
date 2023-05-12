@@ -44,7 +44,7 @@ const allProjects = () => {
     ]
 
     return (
-        <Layout header={navigation} navbar={true} title="Projects">
+        <Layout header={navigation} navbar={true} title="Projects" active={1}>
             <Row between="xs" center="sm">
                 {
                     projects.map((project: any, index: number) => {

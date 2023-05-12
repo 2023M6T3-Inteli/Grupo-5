@@ -7,23 +7,18 @@ const Rewards = () => {
   const navigation = [
     {
       icon: "/burguer.png",
-      text: "All Posts",
-      url: "/allPosts",
-    },
-    {
-      icon: "/star.png",
-      text: "Recommended",
-      url: "/recommended",
+      text: "Challenges",
+      url: "/rewards",
     },
     {
       icon: "/community.png",
-      text: "Community",
-      url: "/community",
+      text: "Ranking",
+      url: "/rewards",
     },
   ];
 
   return (
-    <Layout header={navigation} navbar={true}>
+    <Layout header={navigation} navbar={true} active={0}>
       <div className={styles.container}>
         <Row className={styles.titleRow} between="xs">
           <div className={styles.taskTitle}>Daily Tasks</div>

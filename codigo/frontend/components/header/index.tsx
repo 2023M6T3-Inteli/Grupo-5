@@ -125,7 +125,7 @@ const Header: React.FC<Props> = (props: Props) => {
         )
       }
 
-      <Row between='xs' center='xs' middle='xs'>
+      <Row className={`${props.navigation.length < 3 && styles.small}`} between='xs' center='xs' middle='xs'>
         {
           props.navigation.map((item: any, index: number) => {
             return (
