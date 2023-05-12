@@ -31,10 +31,7 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
         }).catch(err => {
             toast.error("Error")
             console.log(err)
-        }).finally(() => {
-            toast("Completed")
-            console.log("Completed")
-        })
+        });
     };
 
     return (
@@ -68,7 +65,10 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
                                             <InputText>Email</InputText>
                                         </Row>
                                         <Row>
-                                            <LoginInput {...register("email", { required: true })} placeholder='Email' type="email" />
+                                            <Col xs={12}>
+                                                <LoginInput {...register("email", { required: true })} placeholder='Email' type="email" />
+                                                {errors.email?.type === 'required' && <Text color={"#f19336"}>This field is required</Text>}
+                                            </Col>
                                         </Row>
                                     </Input>
 
@@ -77,7 +77,11 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
                                             <InputText>Password</InputText>
                                         </Row>
                                         <Row>
-                                            <LoginInput {...register("password", { required: true, minLength: 8 })} placeholder='Password' type="password" />
+                                            <Col xs={12}>
+                                                <LoginInput {...register("password", { required: true, minLength: 8 })} placeholder='Password' type="password" />
+                                                {errors.password?.type === 'required' && <Text color={"#f19336"}>This field is required</Text>}
+                                                {errors.password?.type === 'minLength' && <Text color={"#f19336"}>This field is minLength 8</Text>}
+                                            </Col>
                                         </Row>
                                     </Input>
                                 </Col>
