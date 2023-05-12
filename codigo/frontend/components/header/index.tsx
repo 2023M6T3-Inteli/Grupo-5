@@ -15,13 +15,17 @@ import { useRouter } from 'next/router'
 type Props = {
   title?: string;
   navigation: {
-    icon: string;
+    icon: string | any;
     text: string;
     url: string;
   }[];
   matchs?: number;
   active: number;
 }
+
+import info from '@/assets/icons/info.png'
+import settings from '@/assets/icons/settings.png'
+import logout from '@/assets/icons/logout.png'
 
 const Header: React.FC<Props> = (props: Props) => {
   const [optionsOpened, setOptionsOpened] = useState(false)
@@ -31,12 +35,12 @@ const Header: React.FC<Props> = (props: Props) => {
 
   const options = [
     {
-      icon: '/info.png',
+      icon: info,
       text: 'FAQ',
       url: '/FAQ'
     },
     {
-      icon: '/settings.png',
+      icon: settings,
       text: 'Settings',
       url: '/settings'
     },
@@ -46,7 +50,7 @@ const Header: React.FC<Props> = (props: Props) => {
       onClick: () => setDarkMode(!darkMode)
     },
     {
-      icon: '/logout.png',
+      icon: logout,
       text: 'Logout',
       url: '/logout'
     },
@@ -76,7 +80,7 @@ const Header: React.FC<Props> = (props: Props) => {
   }, [darkMode])
 
   return (
-    <Col xs={12} md={4} className={styles.header}>
+    <Col xs={12} md={6} lg={4} className={styles.header}>
       <Row between='xs' className={styles.row}>
         <Col>
           <Image src={'/Logo.png'} alt='Logo image' width={100} height={33} />
@@ -86,20 +90,20 @@ const Header: React.FC<Props> = (props: Props) => {
           {optionsOpened && (
             <div className={styles.select}>
               {options.map((option: any, index: number) => {
-                  {
-                    return option.onClick ? (
-                      <div className={styles.optionContainer} key={index} onClick={() => option.onClick()}>
-                        {option.icon}
-                        <p>{option.text}</p>
-                      </div>
-                    ) : (
-                      <Link className={styles.optionContainer} href={option.url} key={index}>
-                        <Image src={option.icon} alt='' width={0} height={0} />
-                        <p>{option.text}</p>
-                      </Link>
-                    )
-                  }
-                })}
+                {
+                  return option.onClick ? (
+                    <div className={styles.optionContainer} key={index} onClick={() => option.onClick()}>
+                      {option.icon}
+                      <p>{option.text}</p>
+                    </div>
+                  ) : (
+                    <Link className={styles.optionContainer} href={option.url} key={index}>
+                      <Image src={option.icon} alt='' width={0} height={0} />
+                      <p>{option.text}</p>
+                    </Link>
+                  )
+                }
+              })}
             </div>
           )}
         </Col>
@@ -119,11 +123,11 @@ const Header: React.FC<Props> = (props: Props) => {
 
       <Row className={`${props.navigation.length < 3 && styles.small}`} between='xs' center='xs' middle='xs'>
         {props.navigation.map((item: any, index: number) => {
-            return (
-              <Col key={index}>
-                <NavigationItem icon={item.icon} text={item.text} url={item.url} active={props.active === index} />
-              </Col>
-            )
+          return (
+            <Col key={index}>
+              <NavigationItem icon={item.icon} text={item.text} url={item.url} active={props.active === index} />
+            </Col>
+          )
         })}
       </Row>
     </Col>

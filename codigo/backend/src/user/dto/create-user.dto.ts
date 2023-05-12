@@ -1,5 +1,4 @@
 import { IsString, IsNumber } from 'class-validator';
-////////////////////////////////////////////////////////////////////////////////
 
 export class CreateUserDto {
   @IsString()
@@ -7,11 +6,11 @@ export class CreateUserDto {
   @IsNumber()
   points: number;
   @IsString()
-  description: String;
+  description: string;
   @IsString({ each: true })
-  interests: String[];
+  interests: string[];
   @IsString({ each: true })
-  projects: String[];
+  projects: string[];
   @IsString({ each: true })
-  publications: String[];
+  publications: string[];
 }

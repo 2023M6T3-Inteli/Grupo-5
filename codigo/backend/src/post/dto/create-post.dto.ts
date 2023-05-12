@@ -1,7 +1,4 @@
-import { IsString, IsNumber } from "class-validator";
-////////////////////////////////////////////////////////////////////////////////
-
-//Validações
+import { IsString } from 'class-validator';
 
 export class CreatePostDto {
   @IsString()
@@ -10,13 +7,13 @@ export class CreatePostDto {
   content: string;
   @IsString()
   role: string;
-  @IsString({each: true})
+  @IsString({ each: true })
   likes: string[];
-  @IsString({each: true})
+  @IsString({ each: true })
   comments: string[];
-  @IsString({each: true})
+  @IsString({ each: true })
   saves: string[];
   @IsString()
   imgURL: string;
-  tags: string[]
+  tags: string[];
 }

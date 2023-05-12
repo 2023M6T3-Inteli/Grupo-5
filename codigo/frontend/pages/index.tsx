@@ -13,6 +13,10 @@ import save from "@/assets/icons/heart.svg"
 import like from "@/assets/icons/like.svg"
 import comment from "@/assets/icons/comment.svg"
 
+import burguer from "@/assets/icons/burguer.png"
+import star from "@/assets/icons/star.png"
+import community from "@/assets/icons/community.png"
+
 import useSWR from 'swr';
 import axios from 'axios';
 
@@ -31,20 +35,29 @@ const fetchData = (url: string) => {
   };
 };
 
+interface PostProps {
+  user: string,
+  role: string,
+  imgURL: string,
+  likes: number[],
+  comments: string[],
+  saves: number[]
+}
+
 export default function Index() {
   const navigation = [
     {
-      icon: '/burguer.png',
+      icon: burguer,
       text: 'All Posts',
       url: '/'
     },
     {
-      icon: '/star.png',
+      icon: star,
       text: 'Recommended',
       url: '/recommended'
     },
     {
-      icon: '/community.png',
+      icon: community,
       text: 'Community',
       url: '/community'
     }
@@ -54,7 +67,7 @@ export default function Index() {
 
   return (
     <Layout header={navigation} navbar={true} title={"All posts"} active={0}>
-      <Col xs={12} md={4}>
+      <Col xs={12} md={6} lg={4}>
         <Row center='xs' middle='xs'>
           {isLoading && <Col xs={12}>
             <Text color='#2e2e2e'>
@@ -72,14 +85,7 @@ export default function Index() {
             "tags": ["tag 1", "tag 2", "tag 3"]
           } */}
 
-          {data && data.map((post: {
-            user: string,
-            role: string,
-            imgUrl: string,
-            likes: number[],
-            comments: string[],
-            saves: number[]
-          }, index: number) => (
+          {data && data.map((post: PostProps, index: number) => (
             <Post {...post} key={index} />
           ))}
 
@@ -95,15 +101,8 @@ export default function Index() {
 }
 
 const Post = ({
-  user, role, imgUrl, likes, comments, saves
-}: {
-  user: string,
-  role: string,
-  imgUrl: string,
-  likes: number[],
-  comments: string[],
-  saves: number[]
-}) => {
+  user, role, imgURL, likes, comments, saves
+}: PostProps) => {
   return (
     <Card xs={12}>
       <Row middle='xs' between='xs'>
@@ -122,8 +121,8 @@ const Post = ({
 
       <Row center='xs' style={{ margin: "1rem 0" }}>
         <Col xs={12}>
-          <Image src={imgUrl} loader={
-            () => imgUrl
+          <Image src={imgURL} loader={
+            () => imgURL
           } width={300} height={200} layout="responsive" alt='Post' />
         </Col>
       </Row>

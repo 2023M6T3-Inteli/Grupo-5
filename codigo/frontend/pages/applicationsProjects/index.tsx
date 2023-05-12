@@ -4,23 +4,28 @@ import { Col, Grid, Row } from 'react-styled-flexboxgrid';
 import { ProjectCard } from '@/components/projectCard';
 import Header from '@/components/header';
 
+import burguer from "@/assets/icons/burguer.png"
+import star from "@/assets/icons/star.png"
+import community from "@/assets/icons/community.png"
+
+
 const applicationprojects = () => {
 
     const navigation = [
         {
-            icon: '/burguer.png',
-            text: 'All Projects',
-            url: '/allProjects'
+            icon: burguer,
+            text: 'All Posts',
+            url: '/'
         },
         {
-            icon: '/star.png',
-            text: 'My Projects',
-            url: '/myProjects'
+            icon: star,
+            text: 'Recommended',
+            url: '/recommended'
         },
         {
-            icon: '/community.png',
-            text: 'Apliccations',
-            url: '/application'
+            icon: community,
+            text: 'Community',
+            url: '/community'
         }
     ]
 
@@ -29,7 +34,7 @@ const applicationprojects = () => {
             <Header navigation={navigation} active={1} title="Projects" />
             <Row between="xs" center="sm">
                 {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
-                    <ProjectCard />
+                    <ProjectCard data={{ id: 1, name: "", tags: [] }} />
                 ))}
             </Row>
         </Grid>

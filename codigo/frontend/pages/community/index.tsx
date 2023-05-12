@@ -14,20 +14,24 @@ import like from "@/assets/icons/like.svg"
 import comment from "@/assets/icons/comment.svg"
 import { Spacer } from '@/components/Spacer'
 
+import burguer from "@/assets/icons/burguer.png"
+import star from "@/assets/icons/star.png"
+import community from "@/assets/icons/community.png"
+
 export default function Index() {
   const navigation = [
     {
-      icon: '/burguer.png',
+      icon: burguer,
       text: 'All Posts',
       url: '/'
     },
     {
-      icon: '/star.png',
+      icon: star,
       text: 'Recommended',
       url: '/recommended'
     },
     {
-      icon: '/community.png',
+      icon: community,
       text: 'Community',
       url: '/community'
     }
@@ -36,7 +40,7 @@ export default function Index() {
   return (
     <Layout header={navigation} navbar={true} title={"Community"} active={2}>
       <Col xs={12} md={4}>
-        <Row style={{marginBottom: '8px'}} center='xs'>
+        <Row style={{ marginBottom: '8px' }} center='xs'>
           <Text color='#2e2e2e'>Based on your profile</Text>
         </Row>
 
