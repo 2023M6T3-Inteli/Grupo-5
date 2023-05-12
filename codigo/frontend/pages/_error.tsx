@@ -3,6 +3,7 @@ import { Title } from "@/components/Title";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/router"
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
+
 import styled from "styled-components";
 
 import dell from '@/assets/icons/dell.svg'
@@ -15,7 +16,7 @@ const Error = () => {
     const router = useRouter();
 
     return (
-        <Container className={inter.className} navbar={false}>
+        <Container className={inter.className}>
             <Col xs={12}>
                 <Row center="xs">
                     <Image src={dell} alt="Dell" width={150} height={100} />
