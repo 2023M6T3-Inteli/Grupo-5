@@ -2,8 +2,12 @@
 
 export class Post {
   id: number;
-  userId: number;
+  user: string;
   content: string;
-  image: string;
   tags: string[];
+  role: string;
+  likes: string[];
+  saves: string[];
+  comments: string[];
+  imgURL: string;
 }

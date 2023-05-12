@@ -24,7 +24,7 @@ export class PostController {
 
   @NestPost()
   create(@Body() createPostDto: CreatePostDto) {
-    this.posts.push({ ...createPostDto, id: this.posts.length + 1, userId: 1});
+    this.posts.push({ ...createPostDto, id: this.posts.length + 1});
     return this.posts[this.posts.length - 1];
   }
 

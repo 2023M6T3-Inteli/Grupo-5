@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Row } from 'react-styled-flexboxgrid'
 import { ProjectCard } from "@/components/projectCard";
 import { Layout } from "@/components/Layout";
-
+import { Text } from "@/components/Text";
+import ProjectService from "@/services/projectService";
 
 const allProjects = () => {
 
@@ -24,31 +25,28 @@ const allProjects = () => {
         }
     ]
 
-    const projects = [
-        {
-            id: 1,
-            name: 'Project Name',
-            tags: ['1', '2', '3']
-        },
-        {
-            id: 2,
-            name: 'Project Name 2',
-            tags: ['1', '5', '7']
-        },
-        {
-            id: 3,
-            name: 'Project Name 3',
-            tags: ['1', '2', '3']
-        }
-    ]
+    const [projects, setProjects] = useState<any>()
+
+    const getAllProjects = async () => {
+        let response = await ProjectService.findAll()
+        setProjects(response.data)
+    }
+
+    useEffect(() => {
+        getAllProjects()
+        
+    }, [])
 
     return (
         <Layout header={navigation} navbar={true} title="Projects" active={0}>
             <Row around="xs" center="sm">
                 {
-                    projects.map((project: any, index: number) => {
+                    projects && projects.map((project: any, index: number) => {
                         return <ProjectCard data={project} key={index} />
                     })
+                }
+                {
+                    !projects && <Text color="black">Sem projetos</Text>
                 }
             </Row>
         </Layout>
