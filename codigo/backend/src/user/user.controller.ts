@@ -9,7 +9,6 @@ import {
   Delete,
 } from "@nestjs/common";
 
-
 /** providers */
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
@@ -18,11 +17,11 @@ import { User } from "./entities/user.entity";
 
 @Controller("user")
 export class UserController {
-  public users: User[] = [];
+  private users: User[] = [];
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    this.users.push({ ...createUserDto, id: this.users.length + 1, score: 0 });
+    this.users.push({ ...createUserDto, id: this.users.length + 1 });
     return this.users[this.users.length - 1];
   }
 
