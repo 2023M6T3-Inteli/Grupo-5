@@ -1,4 +1,4 @@
-import { Grid } from "react-styled-flexboxgrid"
+import { Col, Grid } from "react-styled-flexboxgrid"
 import styled from "styled-components";
 
 import { Inter } from 'next/font/google'
@@ -8,27 +8,41 @@ import Navbar from "../navbar";
 const inter = Inter({ subsets: ['latin'] })
 
 export const Layout = ({
+    title,
     header = true,
+    navigation,
     children,
     navbar = true,
 }: {
-    header?: boolean | any;
+    title?: string;
+    header?: boolean;
+    navigation?: {
+        icon: string;
+        text: string;
+        url: string;
+    }[];
     children: React.ReactNode;
     navbar?: boolean;
 }) => {
     return (
-        <Container fluid className={inter.className}>
-            {header ? <Header navigation={header} matchs={5} title='Projects' active={1} />
-                : null}
+        <Container fluid className={inter.className} header={header}>
+            <Col xs={12} md={4}>
+                {header ? <Header
+                    navigation={navigation}
+                    matchs={5}
+                    active={1}
+                    title={title}
+                /> : null}
 
-            {children}
+                {children}
 
-            {navbar ? <Navbar /> : null}
+                {navbar ? <Navbar /> : null}
+            </Col>
         </Container>
     )
 }
 
-const Container = styled(Grid)`
+const Container = styled(Grid) <{ header: boolean; }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,4 +51,5 @@ const Container = styled(Grid)`
   /* min-height: 100vh; */
   height: 100%;
   padding: 0 2rem;
+  margin-bottom: ${({ header }) => header ? '0' : '2rem'};
 `
