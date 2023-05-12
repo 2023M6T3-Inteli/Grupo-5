@@ -1,7 +1,7 @@
 import React from "react";
-import { Col, Grid, Row } from 'react-styled-flexboxgrid'
+import { Row } from 'react-styled-flexboxgrid'
 import { ProjectCard } from "@/components/projectCard";
-import Header from '@/components/header'
+import { Layout } from "@/components/Layout";
 
 
 const allProjects = () => {
@@ -43,8 +43,7 @@ const allProjects = () => {
     ]
 
     return (
-        <Grid fluid>
-            <Header navigation={navigation} active={1} title="Projects" />
+        <Layout header={navigation} navbar={true}>
             <Row around="xs" center="sm">
                 {
                     projects.map((project: any, index: number) => {
@@ -52,7 +51,7 @@ const allProjects = () => {
                     })
                 }
             </Row>
-        </Grid>
+        </Layout>
     )
 }
 

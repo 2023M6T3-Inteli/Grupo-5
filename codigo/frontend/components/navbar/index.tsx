@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
     {
       icon: '/projects.png',
       text: 'Projects',
-      url: '/projects',
+      url: '/allProjects',
       alt: 'Projects icon',
       width: 18,
       height: 18
