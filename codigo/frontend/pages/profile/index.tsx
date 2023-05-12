@@ -4,14 +4,33 @@ import profileImage from "@/public/profileImage.svg";
 import mode_edit from "@/public/mode_edit.svg";
 import delete_forever from "@/public/delete_forever.svg";
 import Image from "next/image";
-import { Col, Grid, Row } from "react-styled-flexboxgrid";
+import { Col, Row } from "react-styled-flexboxgrid";
+import { Layout } from "@/components/Layout";
 
 
 
 const Profile = () => {
+  const navigation = [
+    {
+      icon: '/burguer.png',
+      text: 'All Posts',
+      url: '/allPosts'
+    },
+    {
+      icon: '/star.png',
+      text: 'Recommended',
+      url: '/recommended'
+    },
+    {
+      icon: '/community.png',
+      text: 'Community',
+      url: '/community'
+    }
+  ]
+
   return (
+    <Layout header={false} navbar={true}>
     <div className={styles.container}>
-      <Grid>
         <Row className={styles.row} center="xs">
           <h1>Profile</h1>
         </Row>
@@ -24,7 +43,7 @@ const Profile = () => {
               alt="Imagem do perfil"
             />
           </Col>
-          <Col align="center">
+          <Col>
             <h3>Carlos</h3>
             <h5>Back-end Developer</h5>
           </Col>
@@ -80,8 +99,8 @@ const Profile = () => {
             </Row>
           </div>
         </Row>
-      </Grid>
     </div>
+    </Layout>
   );
 };
 

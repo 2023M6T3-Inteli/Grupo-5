@@ -25,7 +25,7 @@ const Rewards = () => {
   return (
     <Layout header={navigation} navbar={true}>
       <div className={styles.container}>
-        <Row between="xs">
+        <Row className={styles.titleRow} between="xs">
           <div className={styles.taskTitle}>Daily Tasks</div>
           <div className={styles.taskTitle}>My Points: 450</div>
         </Row>

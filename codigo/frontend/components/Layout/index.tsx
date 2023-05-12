@@ -8,17 +8,19 @@ import Navbar from "../navbar";
 const inter = Inter({ subsets: ['latin'] })
 
 export const Layout = ({
+    title,
     header = true,
     children,
     navbar = true,
 }: {
+    title?: string;
     header?: boolean | any;
     children: React.ReactNode;
     navbar?: boolean;
 }) => {
     return (
         <Container fluid className={inter.className}>
-            {header ? <Header navigation={header} matchs={5} title='Projects' active={1} />
+            {header ? <Header navigation={header} matchs={5} title={title} active={1} />
                 : null}
 
             {children}
