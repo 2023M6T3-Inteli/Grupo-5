@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row } from "react-styled-flexboxgrid";
 import styles from './styles.module.scss'
 import Image from "next/image";
-import lamp from "@/public/lamp.svg"
+import lamp from "@/assets/icons/lamp.svg"
 import { Tags } from "@/components/tags";
 
 type Props = {

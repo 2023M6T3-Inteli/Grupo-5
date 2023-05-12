@@ -33,7 +33,7 @@ export default function Index() {
   ]
 
   return (
-    <Layout navigation={navigation} title={"All posts"}>
+    <Layout header={navigation} navbar={true} title={"All posts"} active={0}>
       <Col xs={12} md={4}>
         <Row center='xs'>
           {Array(10).fill(1).map((_, index) => (

@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import profileImage from "@/public/profileImage.svg";
-import mode_edit from "@/public/mode_edit.svg";
-import delete_forever from "@/public/delete_forever.svg";
+import profileImage from "@/assets/icons/profileImage.svg";
+import mode_edit from "@/assets/icons/mode_edit.svg";
+import delete_forever from "@/assets/icons/delete_forever.svg";
 import Image from "next/image";
 import { Col, Row } from "react-styled-flexboxgrid";
 import { Layout } from "@/components/Layout";
