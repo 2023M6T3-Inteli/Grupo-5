@@ -5,12 +5,14 @@ import { ConfigModule } from '@nestjs/config';
 /** modules */
 import { UserModule } from './user/user.module';
 import { PostModule } from './post/post.module';
+import { ProjectModule } from './project/project.module';
 import { ProfileModule } from './profile/profile.module';
 
 @Module({
   imports: [
     UserModule,
     PostModule,
+    ProjectModule,
     /** runtime environment variables (e.g. OS shell exports) take precedence */
     ConfigModule.forRoot({
       cache: true,

@@ -3,11 +3,9 @@ import { IsString } from "class-validator";
 
 //Validações
 
-export class CreatePostDto {
+export class CreateProjectDto {
   @IsString()
-  content: string;
-  @IsString()
-  image: string;
+  name: string;
   @IsString({each: true})
-  tags: string[]
+  tags: string[];
 }

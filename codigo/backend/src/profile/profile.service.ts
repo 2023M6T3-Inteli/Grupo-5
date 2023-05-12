@@ -18,10 +18,10 @@ export class ProfileService {
   }
 
   async findAll() {
-    // const user = [
-    //   { id: "ashfd", name: "Carlos", Pontuação: 10 },
-    //   { id: "bcg", name: "Carlinhos", Pontuação: 2 },
-    // ];
+    const user = [
+      { id: "ashfd", name: "Carlos", Pontuação: 10 },
+      { id: "bcg", name: "Carlinhos", Pontuação: 2 },
+    ];
 
     return 'oi';
   }
