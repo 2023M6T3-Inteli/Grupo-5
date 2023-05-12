@@ -50,7 +50,7 @@ export default function Index() {
     }
   ]
 
-  const { data, isLoading, isError } = fetchData("http://localhost:3000/post");
+  const { data, isLoading, isError } = fetchData("http://localhost:5500/post");
 
   return (
     <Layout header={navigation} navbar={true} title={"All posts"} active={0}>

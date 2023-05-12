@@ -7,15 +7,15 @@ import {
   Patch,
   Param,
   Delete,
-} from "@nestjs/common";
+} from '@nestjs/common';
 
 /** providers */
-import { CreateUserDto } from "./dto/create-user.dto";
-import { UpdateUserDto } from "./dto/update-user.dto";
-import { User } from "./entities/user.entity";
+import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
+import { User } from './entities/user.entity';
 ////////////////////////////////////////////////////////////////////////////////
 
-@Controller("user")
+@Controller('user')
 export class UserController {
   private users: User[] = [];
 
@@ -30,21 +30,21 @@ export class UserController {
     return this.users;
   }
 
-  @Get(":id")
-  findOne(@Param("id") id: string) {
+  @Get(':id')
+  findOne(@Param('id') id: string) {
     return this.users.find((user) => user.id === +id);
   }
 
-  @Patch(":id")
-  update(@Param("id") id: string, @Body() updateUserDto: UpdateUserDto) {
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     this.users = this.users.map((user) =>
-      user.id === +id ? { ...user, ...updateUserDto } : user
+      user.id === +id ? { ...user, ...updateUserDto } : user,
     );
     return this.users.find((user) => user.id === +id);
   }
 
-  @Delete(":id")
-  remove(@Param("id") id: string) {
+  @Delete(':id')
+  remove(@Param('id') id: string) {
     this.users = this.users.filter((user) => user.id !== +id);
   }
 }

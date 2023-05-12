@@ -14,7 +14,7 @@ import third from '@/assets/images/3.svg'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Intro() {
-    const [currentSlide, setCurrentSlide] = useState(3);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     const slides = [
         <SlideContainer key={1} xs={12} md={4}>

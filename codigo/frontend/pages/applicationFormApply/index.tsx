@@ -7,7 +7,7 @@ import { ApplyButton } from "@/components/applyButton";
 
 const applicationFormApply = () => {
 
-    const tags = ['python', 'javaScript', 'Ux', 'BackEnd', 'node.js', 'lllllllllllllllllllllllllllllllllllllllll    ']
+    const tags = ['python', 'javaScript', 'Ux', 'BackEnd', 'node.js',]
     const roles = ['BackEnd', 'FrontEnd', 'UxDesign', 'BackEnd', 'FrontEnd']
 
     return (

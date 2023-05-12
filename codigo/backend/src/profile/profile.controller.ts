@@ -1,23 +1,20 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ProfileService } from './profile.service';
+import { Profile } from './entities/profile.entity';
 
 @Controller('profile')
 export class ProfileController {
   constructor(private readonly profileService: ProfileService) {}
-
-  // @Post()
-  // create(@Body() createProfileDto: CreateProfileDto) {
-  //   return this.profileService.create(createProfileDto);
-  // }
+  private profile: Profile[] = [];
 
   @Get()
   findAll() {
-    return this.profileService.findAll();
+    return this.profile;
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.profileService.findOne(id)
+    return this.profile.find((profile) => profile.id === +id);
   }
 
   // @Patch(':id')
