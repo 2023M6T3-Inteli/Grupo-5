@@ -15,7 +15,7 @@ const Error = () => {
     const router = useRouter();
 
     return (
-        <Container className={inter.className} header={false} navbar={false}>
+        <Container className={inter.className} navbar={false}>
             <Col xs={12}>
                 <Row center="xs">
                     <Image src={dell} alt="Dell" width={150} height={100} />
@@ -32,7 +32,7 @@ const Error = () => {
 
                 <Row center="xs">
                     <Link href="/">
-                        Go back to home
+                        <Text>Go back to home</Text>
                     </Link>
                 </Row>
             </Col>

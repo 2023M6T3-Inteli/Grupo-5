@@ -9,6 +9,10 @@ import styled from 'styled-components'
 import { Text } from '@/components/Text'
 import { Icon } from '@mui/material'
 
+import save from "@/assets/icons/heart.svg"
+import like from "@/assets/icons/like.svg"
+import comment from "@/assets/icons/comment.svg"
+
 export default function Index() {
   const navigation = [
     {
@@ -29,59 +33,70 @@ export default function Index() {
   ]
 
   return (
-    <Layout navigation={navigation} navbar={false} title={"All posts"}>
+    <Layout navigation={navigation} navbar={false} title={"Community"}>
       <Col xs={12} md={4}>
         <Row center='xs'>
-          <Card xs={12}>
-            <Row middle='xs' between='xs'>
-              <Col xs={2}>
-                <ProfilePicture loader={
-                  () => 'https://placehold.co/64x64'
-                } src={'https://placehold.co/64x64'} alt='Post' width={64} height={64} />
-              </Col>
+          <Text color='#2e2e2e'>Based on your profile</Text>
+        </Row>
 
-              <Col xs={10}>
-                <Title variant='sm' color='#000'>Sergio</Title>
-
-                <Text color='#000'>Software Engineer</Text>
-              </Col>
-            </Row>
-
-            <Row>
-              <Col xs={12}>
-
-              </Col>
-            </Row>
-
-            <Row start={'xs'} middle={'xs'}>
-              <Col xs={2}>
-                <Icon />
-                <Text color={'#00000080'}>Like</Text>
-              </Col>
-              <Col xs={2}>
-                <Icon />
-                <Text color={'#00000080'}>Like</Text>
-              </Col>
-              <Col xs={2}>
-                <Icon />
-                <Text color={'#00000080'}>Like</Text>
-              </Col>
-            </Row>
-          </Card>
+        <Row center='xs'>
+          {Array(10).fill(1).map((_, index) => (
+            <Post key={index} />
+          ))}
         </Row>
       </Col>
     </Layout>
   )
 }
 
+const Post = () => {
+  return (
+    <Card xs={12}>
+      <Row middle='xs' between='xs'>
+        <Title color="#2e2e2e">Python Programming</Title>
+      </Row>
 
+      <Row start={'xs'} middle={'xs'}>
+        <div style={{
+          height: 32,
+          width: 32,
+          borderRadius: 50,
+          backgroundColor: '#3F3D56',
+        }}></div>
+        <div style={{
+          height: 32,
+          width: 32,
+          borderRadius: 50,
+          backgroundColor: '#585678',
+          position: 'relative',
+          left: -16,
+        }}></div>
+        <div style={{
+          height: 32,
+          width: 32,
+          borderRadius: 50,
+          backgroundColor: '#3D3878',
+          position: 'relative',
+          left: -32,
+        }}></div>
+        <div style={{
+          height: 32,
+          width: 32,
+          borderRadius: 50,
+          backgroundColor: '#534CA5',
+          position: 'relative',
+          left: -48,
+        }}></div>
 
-const ProfilePicture = styled(Image)`
-  border-radius: 50%;
-`
+        <Text style={{ position: 'relative', left: -32 }} color='#2e2e2e'>+40 participantes</Text>
+      </Row>
+    </Card>
+  )
+}
 
 const Card = styled(Col)`
   border-radius: 10px;
   background-color: #FFF;
   padding: 1.25rem 1rem;
+  margin-bottom: 1.5rem;
 `
