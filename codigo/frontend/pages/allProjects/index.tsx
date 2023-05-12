@@ -50,7 +50,7 @@ const allProjects = () => {
                     })
                 }
                 {
-                    !projects && <Text color="black">Sem projetos</Text>
+                    projects && projects.length === 0 && <Text color="black">Sem projetos</Text>
                 }
             </Row>
         </Layout>

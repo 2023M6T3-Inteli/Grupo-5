@@ -11,7 +11,7 @@ import {
 
 /** providers */
 import { CreateProjectDto } from "./dto/create-project.dto";
-import { UpdatePostDto } from "./dto/update-project.dto";
+import { UpdateProjectDto } from "./dto/update-project.dto";
 import { Project } from "./entities/project.entity";
 // import { UserController } from "../user/user.controller";
 
@@ -35,19 +35,19 @@ export class ProjectController {
 
   @Get(":id")
   findOne(@Param("id") id: string) {
-    return this.projects.find((post) => post.id === +id);
+    return this.projects.find((project) => project.id === +id);
   }
 
   @Patch(":id")
-  update(@Param("id") id: string, @Body() updatePostDto: UpdatePostDto) {
-    this.projects = this.projects.map((post) =>
-      post.id === +id ? { ...post, ...updatePostDto } : post
+  update(@Param("id") id: string, @Body() updateProjectDto: UpdateProjectDto) {
+    this.projects = this.projects.map((project) =>
+      project.id === +id ? { ...project, ...updateProjectDto } : project
     );
-    return this.projects.find((post) => post.id === +id);
+    return this.projects.find((project) => project.id === +id);
   }
 
   @Delete(":id")
   remove(@Param("id") id: string) {
-    this.projects = this.projects.filter((post) => post.id !== +id);
+    this.projects = this.projects.filter((project) => project.id !== +id);
   }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import profileImage from "@/assets/icons/profileImage.svg";
 import mode_edit from "@/assets/icons/mode_edit.svg";
@@ -6,35 +6,47 @@ import delete_forever from "@/assets/icons/delete_forever.svg";
 import Image from "next/image";
 import { Col, Row } from "react-styled-flexboxgrid";
 import { Layout } from "@/components/Layout";
-
-
+import UserService from "@/services/profileService";
 
 const Profile = () => {
+  const [profile, setProfile] = useState<any>()
+
+  const getProfile = async () => {
+      let response = await UserService.findByID("1")
+      setProfile(response.data)
+  }
+
+  useEffect(() => {
+      getProfile()
+  }, [])
+
   return (
     <Layout header={false} navbar={true}>
     <div className={styles.container}>
         <Row className={styles.row} center="xs">
           <h1>Profile</h1>
         </Row>
-        <Row className={styles.row}>
+        <Row className={styles.row} middle="xs">
           <Col>
             <Image
-              src={profileImage}
+              className={styles.profile}
+              loader={() => 'https://ca.slack-edge.com/T02DWH2MXQR-U02UAA1E2HK-7468bf815087-512'}
+              src={'https://ca.slack-edge.com/T02DWH2MXQR-U02UAA1E2HK-7468bf815087-512'}
               width={56}
               height={56}
               alt="Imagem do perfil"
             />
           </Col>
           <Col>
-            <h3>Carlos</h3>
-            <h5>Back-end Developer</h5>
+            {profile && <h3>{profile.name}</h3>}
+            {profile && <h5>{profile.description}</h5>}
           </Col>
         </Row>
         <Row>
           <h3>Pontuação</h3>
         </Row>
         <Row className={styles.row}>
-          <div>1234 pontos</div>
+          {profile && <div>{profile.points} pontos</div>}
         </Row>
         <Row>
             <h3>About me</h3>
