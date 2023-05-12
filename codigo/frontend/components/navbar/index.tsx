@@ -5,13 +5,19 @@ import { Col, Grid, Row } from 'react-styled-flexboxgrid'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import home from "@/assets/icons/home.png"
+import rewards from "@/assets/icons/rewards.png"
+import create from "@/assets/icons/create.png"
+import projects from "@/assets/icons/projects.png"
+import profile from "@/assets/icons/profile.png"
+
 const Navbar: React.FC = () => {
   const ref = useRef(null)
 
   const [optionsCreateOpened, setOptionsCreateOpened] = useState(false)
   const navItems = [
     {
-      icon: '/home.png',
+      icon: home,
       text: 'Contents',
       url: '/',
       alt: 'Home icon',
@@ -19,7 +25,7 @@ const Navbar: React.FC = () => {
       height: 18
     },
     {
-      icon: '/rewards.png',
+      icon: rewards,
       text: 'Rewards',
       url: '/rewards',
       alt: 'Rewards icon',
@@ -27,7 +33,7 @@ const Navbar: React.FC = () => {
       height: 20
     },
     {
-      icon: '/create.png',
+      icon: create,
       text: 'Create',
       onClick: () => setOptionsCreateOpened(true),
       alt: 'Create icon',
@@ -35,7 +41,7 @@ const Navbar: React.FC = () => {
       height: 20
     },
     {
-      icon: '/projects.png',
+      icon: projects,
       text: 'Projects',
       url: '/allProjects',
       alt: 'Projects icon',
@@ -43,7 +49,7 @@ const Navbar: React.FC = () => {
       height: 18
     },
     {
-      icon: '/profile.png',
+      icon: profile,
       text: 'Profile',
       url: '/profile',
       alt: 'Profile icon',

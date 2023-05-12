@@ -12,6 +12,7 @@ import { Icon } from '@mui/material'
 import save from "@/assets/icons/heart.svg"
 import like from "@/assets/icons/like.svg"
 import comment from "@/assets/icons/comment.svg"
+import { Spacer } from '@/components/Spacer'
 
 export default function Index() {
   const navigation = [
@@ -55,6 +56,8 @@ const Post = () => {
       <Row middle='xs' between='xs'>
         <Title color="#2e2e2e">Python Programming</Title>
       </Row>
+
+      <Spacer size="md" />
 
       <Row start={'xs'} middle={'xs'}>
         <div style={{

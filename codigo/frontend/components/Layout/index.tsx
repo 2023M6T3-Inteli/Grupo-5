@@ -24,11 +24,11 @@ export const Layout = ({
 }) => {
     return (
         <Container fluid navbar={navbar} className={inter.className}>
-                {header ? <Header navigation={header} matchs={matchs} title={title} active={active} />
-                    : null}
-                {children}
+            {header ? <Header navigation={header} matchs={matchs} title={title} active={active} />
+                : null}
+            {children}
 
-                {navbar ? <Navbar /> : null}
+            {navbar ? <Navbar /> : null}
         </Container>
     )
 }
@@ -38,8 +38,7 @@ const Container = styled(Grid) <{ navbar: boolean; }>`
   flex-direction: column;
   align-items: center;
   flex: 1;
-  justify-content: center;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   height: 100%;
   padding: 0 2rem;
   margin-bottom: ${({ navbar }) => navbar ? '80px' : '0'};

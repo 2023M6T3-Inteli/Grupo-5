@@ -15,7 +15,6 @@ import comment from "@/assets/icons/comment.svg"
 
 import useSWR from 'swr';
 import axios from 'axios';
-import { Key } from 'react'
 
 const fetchData = (url: string) => {
   const fetcher = async () => {
@@ -51,19 +50,44 @@ export default function Index() {
     }
   ]
 
-  const { data, isLoading, isError } = fetchData("https://api.dictionaryapi.dev/api/v2/entries/en/hello");
+  const { data, isLoading, isError } = fetchData("http://localhost:3000/post");
 
   return (
     <Layout header={navigation} navbar={true} title={"All posts"} active={0}>
       <Col xs={12} md={4}>
-        <Row center='xs'>
-          {isLoading && <div>Loading...</div>}
+        <Row center='xs' middle='xs'>
+          {isLoading && <Col xs={12}>
+            <Text color='#2e2e2e'>
+              Loading...
+            </Text>
+          </Col>}
 
-          {data && data.map((_: any, index: Key | null | undefined) => (
-            <Post user={"Francisco"} role={"Software Engineer"} imageUrl={"https://placehold.co/300x200"} key={index} />
+          {/* {
+            "user": "Paulo",
+            "role": "UX/Writter",
+            "likes": ["1", "2", "3"],
+            "comments": ["Show!", "Curti!", "Obrigado pela postagem"],
+            "content": "Postagem 3",
+            "imgURL": "/teste.png",
+            "tags": ["tag 1", "tag 2", "tag 3"]
+          } */}
+
+          {data && data.map((post: {
+            user: string,
+            role: string,
+            imgUrl: string,
+            likes: number[],
+            comments: string[],
+            saves: number[]
+          }, index: number) => (
+            <Post {...post} key={index} />
           ))}
 
-          {isError && <div>Error occurred while fetching data</div>}
+          {isError && <Col xs={12}>
+            <Text color='#2e2e2e'>
+              Error!
+            </Text>
+          </Col>}
         </Row>
       </Col>
     </Layout>
@@ -71,14 +95,17 @@ export default function Index() {
 }
 
 const Post = ({
-  user, role, imageUrl,
+  user, role, imgUrl, likes, comments, saves
 }: {
   user: string,
   role: string,
-  imageUrl: string
+  imgUrl: string,
+  likes: number[],
+  comments: string[],
+  saves: number[]
 }) => {
   return (
-    <Card>
+    <Card xs={12}>
       <Row middle='xs' between='xs'>
         <Col xs={2}>
           <ProfilePicture loader={
@@ -95,8 +122,8 @@ const Post = ({
 
       <Row center='xs' style={{ margin: "1rem 0" }}>
         <Col xs={12}>
-          <Image src={imageUrl} loader={
-            () => imageUrl
+          <Image src={imgUrl} loader={
+            () => imgUrl
           } width={300} height={200} layout="responsive" alt='Post' />
         </Col>
       </Row>
@@ -106,21 +133,21 @@ const Post = ({
           <Row center="xs">
             <Image src={like} alt="save" width={18} height={18} />
           </Row>
-          <Text center={true} color={'#00000080'}>Like</Text>
+          <Text center={true} color={'#00000080'}>Like ({likes.length | 0})</Text>
         </Col>
 
         <Col>
           <Row center="xs">
             <Image src={comment} alt="save" width={18} height={18} />
           </Row>
-          <Text center={true} color={'#00000080'}>Comment</Text>
+          <Text center={true} color={'#00000080'}>Comment ({comments.length | 0})</Text>
         </Col>
 
         <Col>
           <Row center="xs">
             <Image src={save} alt="save" width={18} height={18} />
           </Row>
-          <Text center={true} color={'#00000080'}>Save</Text>
+          <Text center={true} color={'#00000080'}>Save ({saves.length | 0})</Text>
         </Col>
       </Row>
     </Card>
