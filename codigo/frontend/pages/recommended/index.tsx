@@ -33,8 +33,12 @@ export default function Index() {
   ]
 
   return (
-    <Layout navigation={navigation} navbar={false} title={"All posts"}>
+    <Layout navigation={navigation} navbar={false} title={"Recommended topics"}>
       <Col xs={12} md={4}>
+        <Row center='xs'>
+          <Text color='#2e2e2e'>Based on your profile</Text>
+        </Row>
+
         <Row center='xs'>
           {Array(10).fill(1).map((_, index) => (
             <Post key={index} />
@@ -56,16 +60,16 @@ const Post = () => {
         </Col>
 
         <Col xs={10}>
-          <Title variant='sm' color='#000'>Sergio</Title>
+          <Title variant='sm' color='#000'>Cristina</Title>
 
-          <Text color='#000'>Software Engineer</Text>
+          <Text color='#000'>UX Designer</Text>
         </Col>
       </Row>
 
       <Row center='xs' style={{ margin: "1rem 0" }}>
-        <Image src={'https://placehold.co/375x300'} loader={
-          () => 'https://placehold.co/375x300'
-        } alt='Post' width={375} height={300} />
+        <Text color='#000'>
+          In today's digital age, UX design is more important than ever. It's not just about making things look pretty, it's about creating a meaningful...
+        </Text>
       </Row>
 
       <Row start={'xs'} middle={'xs'}>

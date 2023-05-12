@@ -1,9 +1,16 @@
 import { TitleStyled } from "./styles"
 
-export const Title = ({ children }: {
-    children: React.ReactNode
+export const Title = ({ children, color, center, variant = "lg" }: {
+    children: React.ReactNode;
+    center?: boolean;
+    color?: string;
+    variant?: string;
 }) => {
     return (
-        <TitleStyled>{children}</TitleStyled>
+        <TitleStyled
+            color={color}
+            center={center}
+            variant={variant}
+        >{children}</TitleStyled>
     )
 }

@@ -27,6 +27,7 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
         await axios.get('https://api.github.com/users/marcelofeitoza').then(res => {
             toast.success("Success")
             console.log(res.data)
+            router.push("/")
         }).catch(err => {
             toast.error("Error")
             console.log(err)
