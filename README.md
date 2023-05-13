@@ -3,6 +3,7 @@
 # _APP Dispositivo Móvel_
 
 Repositório dos arquivos dos alunos do Módulo 6, grupo 5, do curso de Engenharia de Software do Inteli no 2º trimestre de 2023.
+a
 
 #### Parceiro
 

@@ -10,21 +10,23 @@ import {
 } from "@nestjs/common";
 
 /** providers */
+import { Project } from "./entities/project.entity";
 import { CreateProjectDto } from "./dto/create-project.dto";
 import { UpdateProjectDto } from "./dto/update-project.dto";
-import { Project } from "./entities/project.entity";
-// import { UserController } from "../user/user.controller";
 
 ////////////////////////////////////////////////////////////////////////////////
 
 @Controller("project")
 export class ProjectController {
   private projects: Project[] = [];
-  // private userController: UserController;
 
   @NestPost()
   create(@Body() createProjectDto: CreateProjectDto) {
-    this.projects.push({ ...createProjectDto, id: this.projects.length + 1, userId: 1});
+    this.projects.push({
+      ...createProjectDto,
+      id: this.projects.length + 1,
+      userId: 1,
+    });
     return this.projects[this.projects.length - 1];
   }
 

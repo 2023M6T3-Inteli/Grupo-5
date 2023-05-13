@@ -1,5 +1,3 @@
-//Tabela
-
 export class Project {
   userId: number;
   id: number;

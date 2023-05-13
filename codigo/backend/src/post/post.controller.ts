@@ -20,11 +20,10 @@ import { Post } from "./entities/post.entity";
 @Controller("post")
 export class PostController {
   private posts: Post[] = [];
-  // private userController: UserController;
 
   @NestPost()
   create(@Body() createPostDto: CreatePostDto) {
-    this.posts.push({ ...createPostDto, id: this.posts.length + 1});
+    this.posts.push({ ...createPostDto, id: this.posts.length + 1 });
     return this.posts[this.posts.length - 1];
   }
 

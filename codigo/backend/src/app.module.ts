@@ -1,12 +1,11 @@
 /** nestjs */
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { Module } from "@nestjs/common";
+import { ConfigModule } from "@nestjs/config";
 
 /** modules */
-import { UserModule } from './user/user.module';
-import { PostModule } from './post/post.module';
-import { ProjectModule } from './project/project.module';
-import { ProfileModule } from './profile/profile.module';
+import { UserModule } from "./user/user.module";
+import { PostModule } from "./post/post.module";
+import { ProjectModule } from "./project/project.module";
 
 @Module({
   imports: [
@@ -17,9 +16,8 @@ import { ProfileModule } from './profile/profile.module';
     ConfigModule.forRoot({
       cache: true,
       isGlobal: true,
-      ignoreEnvFile: process.env.NODE_ENV === 'prod' ? true : false,
+      ignoreEnvFile: process.env.NODE_ENV === "prod" ? true : false,
     }),
-    ProfileModule,
   ],
 })
 export class AppModule {}
