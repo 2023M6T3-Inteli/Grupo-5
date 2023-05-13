@@ -66,7 +66,7 @@ export default function Index() {
   const { data, isLoading, isError } = fetchData("http://localhost:5500/post");
 
   return (
-    <Layout header={navigation} navbar={true} title={"All posts"} active={0}>
+    <Layout header={navigation} navbar={true} title={"All posts"} active={0} matchs={3}>
       <Col xs={12} md={6} lg={4}>
         <Row center='xs' middle='xs'>
           {isLoading && <Col xs={12}>
