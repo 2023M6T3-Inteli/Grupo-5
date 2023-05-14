@@ -119,8 +119,17 @@ Análise da indústria (Modelo de 5 Forças de Porter) em relação ao cenário 
 
 ### Análise do cenário e Matriz SWOT
 
-TODO SWOT (é necessário fazer?)
-Apresenta a Matriz SWOT com análise da empresa parceira.
+A Dell Technologies é uma empresa multinacional de tecnologia americana que oferece uma ampla variedade de produtos e serviços, incluindo computadores, servidores, armazenamento de dados, redes, software e soluções de segurança. A empresa foi fundada em 1984 por Michael Dell e é atualmente uma das maiores empresas de tecnologia do mundo.
+O mercado de tecnologia está em constante evolução e a concorrência é intensa. A Dell Technologies enfrenta concorrência de outras grandes empresas de tecnologia, como a HP Inc., Lenovo e Apple, bem como de empresas emergentes que oferecem produtos e serviços inovadores.
+
+A análise SWOT é uma ferramenta de planejamento estratégico que ajuda a identificar as forças, fraquezas, oportunidades e ameaças de uma empresa ou projeto. Essa análise permite que avaliamos a Dell e seu posicionamento no mercado e desenvolva estratégias para melhorar sua posição competitiva.
+<img src="./assets/analise-swot/análise swot.png"/>
+
+<center>
+<a href="https://docs.google.com/document/d/1yJOVA0Lo0rHtoKidqWhYDMFjBXXj1LARBgohlgZk9Ik/edit?usp=sharing">
+  Link da análise swot.
+</a>
+</center>
 
 <br>
 
