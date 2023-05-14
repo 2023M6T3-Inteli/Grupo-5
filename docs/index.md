@@ -396,7 +396,7 @@ Assim, uma primeira versão da solução proposta de interface mobile foi protot
 
 Telas e features pendentes: 
 - Editar projetos e conteúdos;
-- Descrição de projeto e conteúdo;
+- Descrição de projeto;
 - Denúncia de conteúdo;
 - Telas de confirmação e erros;
 - Filtros;
@@ -414,7 +414,7 @@ Telas e features pendentes:
 
 ## Guia de Estilos
 
-O link a seguir dará acesso ao guia de estilos desenvolvido nessa primeira versão do protótipo que segue, em partes, o DDS. Na próxima versão, serão usados mais padrões definidos no Dell Design System.
+O link a seguir dará acesso ao guia de estilos desenvolvido para o projeto e que segue, em sua maioria, os padrões do Dell Design System.
 
 <center>
 <img src="./assets/DesignSystem/design_system.png"/>
