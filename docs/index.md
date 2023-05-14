@@ -85,28 +85,22 @@ Solução de otimização de corte de bobinas de papel
 
 
 ## Parceiro de Negócios
-
-A Dell é uma empresa global de tecnologia com sede no Texas (EUA) e é considerada uma das maiores empresas de tecnologia do mundo e é líder no mercado brasileiro. Fundada em 1984 por Michael Dell, a empresa começou vendendo computadores pessoais diretamente aos consumidores e rapidamente se tornou uma das maiores fabricantes de computadores do mundo.
-
-A empresa tem uma presença global forte, com operações em todo o mundo e uma ampla base de clientes em setores como saúde, governo, educação e negócios. Além disso, é conhecida por seu compromisso com a inovação e a sustentabilidade, investindo em tecnologias verdes e soluções eficientes do ponto de vista energético.
-
-Atualmente, a Dell oferece uma ampla gama de produtos e soluções de tecnologia, incluindo computadores pessoais, periféricos, servidores, dispositivos de armazenamento, soluções de segurança e outros equipamentos de tecnologia. A empresa também oferece serviços de suporte e consultoria, incluindo soluções personalizadas para empresas - que representam a maior fatia de faturamento da Dell atualmente.
-
-Para mostrar a sua posição de liderança, o relatório IDC Quarterly Personal Computing Devide Tracker mostrou que a Dell foi a líder de vendas no ano de 2021, superando rivais consagradas como Samsung, Lenovo e Acer. Em relação às vendas em 2020, a Dell cresceu 23,8% no último trimestre de 2021.
+A Dell, uma empresa global de tecnologia com sede no Texas (EUA), é reconhecida como uma das maiores companhias de tecnologia do planeta e exerce uma posição dominante no mercado brasileiro. Fundada em 1984 por Michael Dell, a empresa inicialmente comercializava computadores pessoais diretamente aos consumidores e rapidamente se estabeleceu como um dos principais fabricantes mundiais de computadores.
+A empresa possui uma sólida presença global, operando em diversos países e atendendo a uma extensa base de clientes em setores como saúde, governo, educação e negócios. Além disso, a Dell é conhecida por seu compromisso com a inovação e a sustentabilidade, investindo em tecnologias verdes e soluções energeticamente eficientes.
+No momento atual, a Dell oferece uma ampla variedade de produtos e soluções tecnológicas, incluindo computadores pessoais, periféricos, servidores, dispositivos de armazenamento, soluções de segurança e outros equipamentos tecnológicos. Além disso, a empresa fornece serviços de suporte e consultoria, incluindo soluções personalizadas para empresas, que atualmente representam a maior parte de seu faturamento.
+A fim de demonstrar sua posição de liderança, o relatório IDC Quarterly Personal Computing Device Tracker revelou que a Dell foi a empresa líder em vendas durante o ano de 2021, superando concorrentes renomadas como Samsung, Lenovo e Acer. Em relação às vendas em 2020, a Dell registrou um crescimento de 23,8% no último trimestre de 2021.
 
 <br>
 
 ## Problema
-
-TODO DESCRIÇÃO DO PROBLEMA
-Descrever o problema ou a oportunidade de negócio.
+Nesta seção, serão apresentados os problemas identificados e as necessidades do usuário, bem como uma avaliação da situação atual e as possíveis soluções para cada questão. Além disso, serão identificados os obstáculos e limitações do projeto, a fim de assegurar que todas as preocupações sejam abordadas antes do início da implementação. A Análise do Problema é essencial para garantir que a solução do software seja eficaz e atenda às necessidades dos usuários. É importante que seja realizada uma pesquisa exaustiva e que todas as perspectivas sejam consideradas para garantir que a solução seja bem-sucedida.
 
 <br>
 
 ### Análise do Problema
-
-TODO ANÁLISE DO PROBLEMA
-Nesta seção, serão apresentados os problemas identificados e as necessidades do usuário, bem como uma avaliação da situação atual e as possíveis soluções para cada questão. Além disso, serão identificados os obstáculos e limitações do projeto, a fim de assegurar que todas as preocupações sejam abordadas antes do início da implementação. A Análise do Problema é essencial para garantir que a solução do software seja eficaz e atenda às necessidades dos usuários. É importante que seja realizada uma pesquisa exaustiva e que todas as perspectivas sejam consideradas para garantir que a solução seja bem-sucedida.
+Um dos problemas enfrentados pela Dell é o de reter talentos na empresa, visto que muitos profissionais sentem a necessidade de aprender novos assuntos e não encontram uma oportunidade de aprendizado na empresa, visto que os projetos internos não são amplamente divulgados e, por não haver um time formado, não são levados adiante. Com isso, surge o problema da falta de divulgação desses projetos em aberto para que pessoas da própria Dell tenham a oportunidade de participar e ter novas experiências. 
+Destaca-se, também, a dificuldade em encontrar assuntos relevantes em meio a tantas fontes de informação, o que dificulta que esse funcionário encontre conteúdos personalizados ao seu perfil de interesse. A partir dessa problemática, há ainda a desmotivação do funcionário ao utilizar plataformas de aprendizado, há a necessidade de ferramentas mais engajadoras e descontraídas. 
+A partir dessas problemáticas, surge a necessidade de desenvolver uma solução engajadora e amigável que permita o compartilhamento de projetos internos e de conteúdos relevantes, dando a oportunidade do usuário interagir com os conteúdos e receber recomendações de conteúdos e projetos de acordo com o seu perfil. 
 
 <br>
 
