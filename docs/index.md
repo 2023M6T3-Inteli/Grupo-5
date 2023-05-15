@@ -13,13 +13,17 @@
 </tr>
 </table>
 
-. Nome do Projeto: xxxx
-. Nome do Parceiro: xxxx
-. Nome do Grupo: xxxx
-. Integrantes do grupo…
-  aaaaaa
-  bbbbbb
-  cccccc
+. Nome do Projeto: Aplicativo desenvolvimento mobile <br>
+. Nome do Parceiro: Dell Tecnologies <br>
+. Nome do Grupo: xxxx <br>
+. Integrantes do grupo:
+ Emanuel De Oliveira Costa,
+  Felipe Saadi Siegert,
+  João Lucas Delistoianov Gonzalez,
+  Julia Rodrigues Togni,
+  Lívia Mattoso Bonotto Cabral,
+  Marcelo Gomes Feitoza,
+  Marcos Aurélio Florêncio da Silva.
 
 <font size="+12"><center>
 Template do Documento do Projeto
@@ -85,28 +89,22 @@ Solução de otimização de corte de bobinas de papel
 
 
 ## Parceiro de Negócios
-
-A Dell é uma empresa global de tecnologia com sede no Texas (EUA) e é considerada uma das maiores empresas de tecnologia do mundo e é líder no mercado brasileiro. Fundada em 1984 por Michael Dell, a empresa começou vendendo computadores pessoais diretamente aos consumidores e rapidamente se tornou uma das maiores fabricantes de computadores do mundo.
-
-A empresa tem uma presença global forte, com operações em todo o mundo e uma ampla base de clientes em setores como saúde, governo, educação e negócios. Além disso, é conhecida por seu compromisso com a inovação e a sustentabilidade, investindo em tecnologias verdes e soluções eficientes do ponto de vista energético.
-
-Atualmente, a Dell oferece uma ampla gama de produtos e soluções de tecnologia, incluindo computadores pessoais, periféricos, servidores, dispositivos de armazenamento, soluções de segurança e outros equipamentos de tecnologia. A empresa também oferece serviços de suporte e consultoria, incluindo soluções personalizadas para empresas - que representam a maior fatia de faturamento da Dell atualmente.
-
-Para mostrar a sua posição de liderança, o relatório IDC Quarterly Personal Computing Devide Tracker mostrou que a Dell foi a líder de vendas no ano de 2021, superando rivais consagradas como Samsung, Lenovo e Acer. Em relação às vendas em 2020, a Dell cresceu 23,8% no último trimestre de 2021.
+A Dell, uma empresa global de tecnologia com sede no Texas (EUA), é reconhecida como uma das maiores companhias de tecnologia do planeta e exerce uma posição dominante no mercado brasileiro. Fundada em 1984 por Michael Dell, a empresa inicialmente comercializava computadores pessoais diretamente aos consumidores e rapidamente se estabeleceu como um dos principais fabricantes mundiais de computadores.
+A empresa possui uma sólida presença global, operando em diversos países e atendendo a uma extensa base de clientes em setores como saúde, governo, educação e negócios. Além disso, a Dell é conhecida por seu compromisso com a inovação e a sustentabilidade, investindo em tecnologias verdes e soluções energeticamente eficientes.
+No momento atual, a Dell oferece uma ampla variedade de produtos e soluções tecnológicas, incluindo computadores pessoais, periféricos, servidores, dispositivos de armazenamento, soluções de segurança e outros equipamentos tecnológicos. Além disso, a empresa fornece serviços de suporte e consultoria, incluindo soluções personalizadas para empresas, que atualmente representam a maior parte de seu faturamento.
+A fim de demonstrar sua posição de liderança, o relatório IDC Quarterly Personal Computing Device Tracker revelou que a Dell foi a empresa líder em vendas durante o ano de 2021, superando concorrentes renomadas como Samsung, Lenovo e Acer. Em relação às vendas em 2020, a Dell registrou um crescimento de 23,8% no último trimestre de 2021.
 
 <br>
 
 ## Problema
-
-TODO DESCRIÇÃO DO PROBLEMA
-Descrever o problema ou a oportunidade de negócio.
+Nesta seção, serão apresentados os problemas identificados e as necessidades do usuário, bem como uma avaliação da situação atual e as possíveis soluções para cada questão. Além disso, serão identificados os obstáculos e limitações do projeto, a fim de assegurar que todas as preocupações sejam abordadas antes do início da implementação. A Análise do Problema é essencial para garantir que a solução do software seja eficaz e atenda às necessidades dos usuários. É importante que seja realizada uma pesquisa exaustiva e que todas as perspectivas sejam consideradas para garantir que a solução seja bem-sucedida.
 
 <br>
 
 ### Análise do Problema
-
-TODO ANÁLISE DO PROBLEMA
-Nesta seção, serão apresentados os problemas identificados e as necessidades do usuário, bem como uma avaliação da situação atual e as possíveis soluções para cada questão. Além disso, serão identificados os obstáculos e limitações do projeto, a fim de assegurar que todas as preocupações sejam abordadas antes do início da implementação. A Análise do Problema é essencial para garantir que a solução do software seja eficaz e atenda às necessidades dos usuários. É importante que seja realizada uma pesquisa exaustiva e que todas as perspectivas sejam consideradas para garantir que a solução seja bem-sucedida.
+Um dos problemas enfrentados pela Dell é o de reter talentos na empresa, visto que muitos profissionais sentem a necessidade de aprender novos assuntos e não encontram uma oportunidade de aprendizado na empresa, visto que os projetos internos não são amplamente divulgados e, por não haver um time formado, não são levados adiante. Com isso, surge o problema da falta de divulgação desses projetos em aberto para que pessoas da própria Dell tenham a oportunidade de participar e ter novas experiências. 
+Destaca-se, também, a dificuldade em encontrar assuntos relevantes em meio a tantas fontes de informação, o que dificulta que esse funcionário encontre conteúdos personalizados ao seu perfil de interesse. A partir dessa problemática, há ainda a desmotivação do funcionário ao utilizar plataformas de aprendizado, há a necessidade de ferramentas mais engajadoras e descontraídas. 
+A partir dessas problemáticas, surge a necessidade de desenvolver uma solução engajadora e amigável que permita o compartilhamento de projetos internos e de conteúdos relevantes, dando a oportunidade do usuário interagir com os conteúdos e receber recomendações de conteúdos e projetos de acordo com o seu perfil. 
 
 <br>
 
@@ -119,8 +117,17 @@ Análise da indústria (Modelo de 5 Forças de Porter) em relação ao cenário 
 
 ### Análise do cenário e Matriz SWOT
 
-TODO SWOT (é necessário fazer?)
-Apresenta a Matriz SWOT com análise da empresa parceira.
+A Dell Technologies é uma empresa multinacional de tecnologia americana que oferece uma ampla variedade de produtos e serviços, incluindo computadores, servidores, armazenamento de dados, redes, software e soluções de segurança. A empresa foi fundada em 1984 por Michael Dell e é atualmente uma das maiores empresas de tecnologia do mundo.
+O mercado de tecnologia está em constante evolução e a concorrência é intensa. A Dell Technologies enfrenta concorrência de outras grandes empresas de tecnologia, como a HP Inc., Lenovo e Apple, bem como de empresas emergentes que oferecem produtos e serviços inovadores.
+
+A análise SWOT é uma ferramenta de planejamento estratégico que ajuda a identificar as forças, fraquezas, oportunidades e ameaças de uma empresa ou projeto. Essa análise permite que avaliamos a Dell e seu posicionamento no mercado e desenvolva estratégias para melhorar sua posição competitiva.
+<img src="./assets/analise-swot/análise swot.png"/>
+
+<center>
+<a href="https://docs.google.com/document/d/1yJOVA0Lo0rHtoKidqWhYDMFjBXXj1LARBgohlgZk9Ik/edit?usp=sharing">
+  Link da análise swot.
+</a>
+</center>
 
 <br>
 
@@ -173,22 +180,46 @@ O objetivo da matriz de oceano azul é ajudar as empresas a identificar oportuni
 
 ## Descritivo da Solução
 
-Descrição da solução a ser desenvolvida (o que é, quais principais funcionalidades, como usar) . Caso ainda não esteja definida a solução na Sprint 1, o faça assim que possível.
+Solução proposta: Aplicativo de Compartilhamento e Acesso a Projetos para Funcionários Dell
+
+O aplicativo proposto tem como objetivo permitir que os funcionários da Dell compartilhem assuntos de seu interesse, bem como links e imagens, e tenham acesso a projetos em aberto na empresa. Além disso, o aplicativo utilizará inteligência artificial para recomendar projetos que sejam relevantes e adequados ao perfil de cada usuário.
+
+- Principais funcionalidades:
+
+Compartilhamento de assuntos: Os funcionários poderão criar postagens para compartilhar tópicos que acham interessantes. Isso pode incluir artigos, notícias, links ou qualquer outro conteúdo relevante para a empresa e sua área de atuação.
+
+Acesso a projetos abertos: Os funcionários poderão explorar e acessar projetos que estão abertos na empresa. Esses projetos podem ser de diferentes áreas e departamentos, e os usuários poderão acompanhar seu progresso, envolver-se em discussões e colaborar, se desejado.
+
+Recomendação de projetos: O aplicativo utilizará inteligência artificial para analisar o perfil de cada usuário, considerando suas habilidades, experiências anteriores, interesses e preferências. Com base nessa análise, o sistema recomendará projetos que sejam mais relevantes e adequados a cada funcionário, ajudando-os a descobrir novas oportunidades e contribuir para projetos alinhados aos seus interesses e habilidades.
+
+- Como usar o aplicativo:
+
+Registro e criação de perfil: Os funcionários farão o registro no aplicativo usando suas credenciais da Dell. Eles serão solicitados a criar um perfil, fornecendo informações sobre suas áreas de interesse logo no primeiro contato com o aplicativo.
+
+Explorar assuntos e compartilhar: Os usuários poderão explorar as postagens compartilhadas pelos colegas atrvés de um feed, lá poderam filtrar por categorias, palavras-chave ou tópicos de interesse. Eles também poderão criar suas próprias postagens, compartilhando conteúdo relevante com a comunidade.
+
+Acessar e colaborar em projetos: Os funcionários poderão navegar pela lista de projetos abertos, visualizar detalhes sobre cada projeto, como descrição e vagas disponíveis. Eles poderão se candidatar às vagas e assim, colaborar em projetos de seu interesse.
+
+Recomendações personalizadas: O aplicativo fornecerá uma seção de recomendações, onde os usuários poderão encontrar projetos recomendados com base em seu perfil e preferências, nesses terão um selo de 'match' para ajudar o usuário a identificá-los. Eles poderão explorar essas recomendações e decidir se desejam participar ou obter mais informações sobre os projetos sugeridos.
 
 <br>
 
 ### Objetivos
-TODO OBJETIVOS
-
-Descrever os objetivos do projeto, objetivos gerais e objetivos específicos. 
-
 
 #### Objetivos gerais
-
+- Desenvolver uma plataforma digital para os funcionários da Dell compartilharem assuntos de interesse e terem acesso a projetos abertos na empresa.
+- Incentivar o crescimento e a retenção dos funcionários, proporcionando um ambiente de colaboração e aprendizado.
+- Melhorar a comunicação interna e o compartilhamento de conhecimento entre os funcionários.
 
 
 #### Objetivos específicos
-
+- Permitir que os funcionários compartilhem conteúdo relevante, como artigos, links e imagens, em uma plataforma centralizada.
+- Facilitar o acesso dos funcionários a projetos temporários abertos na empresa, proporcionando uma visão clara dos projetos, seus objetivos e vagas disponíveis.
+- Utilizar inteligência artificial para recomendar projetos que sejam adequados ao perfil e interesses do funcionário.
+- Estimular a participação ativa dos funcionários por meio de recursos de interação, como comentários, curtidas e compartilhamento de ideias.
+- Promover a colaboração entre os funcionários, permitindo que eles se envolvam em discussões, comunidades e contribuam com suas habilidades e conhecimentos.
+- Criar um ambiente de aprendizado contínuo, onde os funcionários possam aprender com o compartilhamento de experiências e participação em projetos desafiadores.
+- Monitorar o engajamento dos funcionários na plataforma, pelos perfis de mediador, e coletar feedback para melhorar continuamente a experiência do usuário e as funcionalidades oferecidas.
 
 
 ### Justificativa
@@ -396,7 +427,7 @@ Assim, uma primeira versão da solução proposta de interface mobile foi protot
 
 Telas e features pendentes: 
 - Editar projetos e conteúdos;
-- Descrição de projeto e conteúdo;
+- Descrição de projeto;
 - Denúncia de conteúdo;
 - Telas de confirmação e erros;
 - Filtros;
@@ -414,7 +445,7 @@ Telas e features pendentes:
 
 ## Guia de Estilos
 
-O link a seguir dará acesso ao guia de estilos desenvolvido nessa primeira versão do protótipo que segue, em partes, o DDS. Na próxima versão, serão usados mais padrões definidos no Dell Design System.
+O link a seguir dará acesso ao guia de estilos desenvolvido para o projeto e que segue, em sua maioria, os padrões do Dell Design System.
 
 <center>
 <img src="./assets/DesignSystem/design_system.png"/>
@@ -462,12 +493,26 @@ entidades e tipos de entidades
 atributos e tipos de atributos
 relacionamentos e tipos de relacionamentos
 
+<img src="./assets/modelo-conceitual/Diagrama conceitual.jpg"/>
+
+<center>
+<a href="https://drive.google.com/file/d/1v1IXMW7uAAsw0M5IhTLJCCsU0Sp2ZY00/view?usp=sharing">
+  Link para o modelo conceitual.
+</a>
+</center>
+
 
 ## Modelo Lógico 
 
 O modelo lógico de banco de dados é uma representação abstrata e simplificada dos dados armazenados no sistema. É utilizado para entender como os dados são relacionados e para garantir a integridade e consistência dos dados armazenados. Incluir  uma descrição detalhada das tabelas, campos e relações presentes no modelo lógico de banco de dados. Também serão apresentadas as regras de negócio e as restrições aplicadas aos dados para garantir a integridade e a consistência dos dados armazenados.
 
+<img src="./assets/modelo-logico/Modelo lógico.jpg"/>
 
+<center>
+<a href="https://drive.google.com/file/d/1jpMAOMcKiCyIXAFKJP1DIk1QhWYUIm52/view?usp=share_link">
+  Link para o modelo lógico.
+</a>
+</center>
 
 # Testes de Software
 
