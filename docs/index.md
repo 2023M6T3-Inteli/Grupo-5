@@ -17,9 +17,6 @@
 . Nome do Parceiro: xxxx
 . Nome do Grupo: xxxx
 . Integrantes do grupo…
-  aaaaaa
-  bbbbbb
-  cccccc
 
 <font size="+12"><center>
 Template do Documento do Projeto
@@ -367,6 +364,13 @@ A seção de perfil de usuário da documentação de software é responsável po
 ## Arquitetura do sistema V1:
 <center>
 <img src="./assets/arquitetura/infraestrutura-arquitetura-cloud.png"/>
+</center>
+
+<br>
+
+## Arquitetura do sistema V2:
+<center>
+<img src="./assets/arquitetura/infraestrutura-arquitetura-cloud2.png"/>
 </center>
 
 <br>
