@@ -10,11 +10,11 @@
     "start": " set NODE_ENV=prod  && nest start",
     "start:dev": "set NODE_ENV=dev && nest start --watch",
     "start:debug": "set NODE_ENV=debug && nest start --debug --watch",
-    "start:prod": "set NODE_ENV=prod && node dist/main",
+    "start:prod": "node dist/apps/backend/main",
     "test": "set NODE_ENV=testb&& jest",
     "test:watch": "set NODE_ENV=test && jest --watch",
     "test:cov": "set NODE_ENV=test && jest --coverage",
-    "test:e2e": "set NODE_ENV=test && jest --config ./test/jest-e2e.json"
+    "test:e2e": "set NODE_ENV=apps/backend/test && jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
     "@nestjs/common": "^9.0.0",
@@ -26,6 +26,7 @@
     "class-validator": "^0.14.0",
     "cookie-parser": "^1.4.6",
     "helmet": "^7.0.0",
+    "kafkajs": "^2.2.4",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"
   },
@@ -58,7 +59,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": ".",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
@@ -66,7 +67,10 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "coverageDirectory": "./coverage",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/apps/"
+    ]
   }
 }
