@@ -402,6 +402,13 @@ A seção de perfil de usuário da documentação de software é responsável po
 
 <br>
 
+## Arquitetura do sistema V2:
+<center>
+<img src="./assets/arquitetura/infraestrutura-arquitetura-cloudV2.png"/>
+</center>
+
+<br>
+
 ## Diagrama do fluxo de dados V1:
 <center>
 <img src="./assets/arquitetura/diagrama-de-fluxo-de-dados.png"/>
@@ -412,7 +419,6 @@ A seção de perfil de usuário da documentação de software é responsável po
 </center>
 
 <br>
-
 
 
 # UX e UI Design
