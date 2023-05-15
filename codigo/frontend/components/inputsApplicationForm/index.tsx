@@ -8,7 +8,8 @@ type InputProps = {
     type: any;
     size?: 'small' | 'medium' | 'large';
     value?: any;
-    onChange?: Function;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    rows?: number;
 }
 
 export const InputsApplicationForm = (props: InputProps) => {
@@ -27,12 +28,22 @@ export const InputsApplicationForm = (props: InputProps) => {
 
     return (
         <div className={styles.inputsApplicationForm}>
-            <input
+            {props.rows ? <textarea
                 type={props.type}
                 placeholder={'' + props.placeholder}
                 className={''}
                 value={value}
-            />
+                onChange={props.onChange}
+                rows={6}
+            /> :
+                <input
+                    type={props.type}
+                    placeholder={'' + props.placeholder}
+                    className={''}
+                    value={value}
+                    onChange={props.onChange}
+                />}
+
         </div>
 
     )

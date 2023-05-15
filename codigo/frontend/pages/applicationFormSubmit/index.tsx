@@ -12,17 +12,36 @@ import { InputsApplicationForm } from "@/components/inputsApplicationForm"
 
 const applicationFormSubmit = () => {
 
-    const rolesInterestOptions = ['python', 'usDesign', 'W3']
-    const [whyThisVacancy, setWhyThisVacancy] = useState('')
+    const rolesInterestOptions = [
+        {
+            label: 'python',
+            value: 'python'
+        },
+        {
+            label: 'uxDesign',
+            value: 'uxDesign'
+        },
+        {
+            label: 'W3',
+            value: 'W3'
+        }
+    ]
 
-    const handleInputWhyThisVacancy = (event) => {
+    const [selectRole, setSelectRole] = useState('')
+    const [whyThisVacancy, setWhyThisVacancy] = useState('')
+    const [skillDevelop, setSkillDevelop] = useState('')
+
+    const handleInputWhyThisVacancy = (event: any) => {
+        setSelectRole(event.target.value);
         setWhyThisVacancy(event.target.value);
+        setSkillDevelop(event.target.value);
     }
 
     const alertInput = () => { // integração aqui
+        alert(selectRole)
         alert(whyThisVacancy)
+        alert(skillDevelop)
     }
-
 
     return (
         <Col className={styles.applicationFormSubmit}>
@@ -33,33 +52,42 @@ const applicationFormSubmit = () => {
                     </div>
                     <Col className={styles.formApplicationFormSubmit}>
                         <Col className={styles.selectRoleInterest}>
-                            <Col className={styles.selectRoleInterest}>
-                                <SelectRoleInterest options={rolesInterestOptions} />
+                            <Col>
+                                <SelectRoleInterest
+                                    default="Select a role"
+                                    type={''}
+                                    options={rolesInterestOptions}
+                                    className={styles.RoleInterest}
+                                    onChange={(value: any) => setSelectRole(value)}
+                                />
                             </Col>
 
                         </Col>
                         <Col className={styles.inputWhyThisVacancy}>
                             <InputsApplicationForm
-                                // type={''}
-                                // size='large'
+                                type={''}
                                 placeholder={''}
                                 className={styles.whyThisVacancy}
                                 value={whyThisVacancy}
-                                onChange={handleInputWhyThisVacancy}
+                                onChange={(event: any) => setWhyThisVacancy(event.target.value)}
+                                rows={6}
                             />
-                            {/* <input type="text" value={whyThisVacancy} onChange={handleInputWhyThisVacancy} /> */}
-
                         </Col>
                         <Col className={styles.inputSkillDevelop}>
-
+                            <InputsApplicationForm
+                                type={''}
+                                placeholder={''}
+                                className={styles.skillDevelop}
+                                value={skillDevelop}
+                                onChange={(event: any) => setSkillDevelop(event.target.value)}
+                            />
                         </Col>
-                    </Col>
-                    <Col>
-                        {/* <button onClick={alertinput}>Submit</button> */}
-                        <SubmitButton
-                            text='Submit'
-                            onClick={() => alertInput()}
-                        />
+                        <Col className={styles.submitButton}>
+                            <SubmitButton
+                                text='Submit'
+                                onClick={() => alertInput()}
+                            />
+                        </Col>
                     </Col>
                 </Col>
             </Col>
