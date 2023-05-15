@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Col, Grid, Row } from 'react-styled-flexboxgrid'
+import { Row } from 'react-styled-flexboxgrid'
 import { ProjectCard } from "@/components/projectCard";
 import { Layout } from "@/components/Layout";
 import { Text } from "@/components/Text";
+import ProjectService from "@/services/projectService";
+
 import burguer from "@/assets/icons/burguer.png"
 import star from "@/assets/icons/star.png"
 import community from "@/assets/icons/community.png"
-import ProjectService from "@/services/projectService";
 
-const allProjects = () => {
+const myProjects = () => {
 
     const navigation = [
         {
@@ -37,11 +38,12 @@ const allProjects = () => {
 
     useEffect(() => {
         getAllProjects()
+
     }, [])
 
     return (
-        <Layout header={navigation} navbar={true} title="Projects" active={1}>
-            <Row between="xs" center="sm">
+        <Layout header={navigation} navbar={true} title="Projects" active={0}>
+            <Row around="xs" center="sm">
                 {
                     projects && projects.map((project: any, index: number) => {
                         return <ProjectCard data={project} key={index} />
@@ -55,4 +57,4 @@ const allProjects = () => {
     )
 }
 
-export default allProjects
+export default myProjects;

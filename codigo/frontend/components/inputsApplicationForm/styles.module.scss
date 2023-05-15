@@ -1,15 +1,18 @@
 .inputsApplicationForm {
+    width: 100%;
     display: flex;
+    justify-content: center;
+    padding: 8px 16px;
 
-    input {
+    input,
+    textarea {
+        width: 100%;
         background: #F1F0F0;
-        width: auto;
         height: auto;
         border: 2px;
         border-radius: 10px;
         align-items: center;
-        margin: 5px;
-        padding: 18px 100px;
+        padding: 15px 15px;
         display: flex;
     }
 }
