@@ -13,13 +13,17 @@
 </tr>
 </table>
 
-. Nome do Projeto: xxxx
-. Nome do Parceiro: xxxx
-. Nome do Grupo: xxxx
-. Integrantes do grupo…
-  aaaaaa
-  bbbbbb
-  cccccc
+. Nome do Projeto: Aplicativo desenvolvimento mobile <br>
+. Nome do Parceiro: Dell Tecnologies <br>
+. Nome do Grupo: xxxx <br>
+. Integrantes do grupo:
+ Emanuel De Oliveira Costa,
+  Felipe Saadi Siegert,
+  João Lucas Delistoianov Gonzalez,
+  Julia Rodrigues Togni,
+  Lívia Mattoso Bonotto Cabral,
+  Marcelo Gomes Feitoza,
+  Marcos Aurélio Florêncio da Silva.
 
 <font size="+12"><center>
 Template do Documento do Projeto
@@ -173,22 +177,46 @@ O objetivo da matriz de oceano azul é ajudar as empresas a identificar oportuni
 
 ## Descritivo da Solução
 
-Descrição da solução a ser desenvolvida (o que é, quais principais funcionalidades, como usar) . Caso ainda não esteja definida a solução na Sprint 1, o faça assim que possível.
+Solução proposta: Aplicativo de Compartilhamento e Acesso a Projetos para Funcionários Dell
+
+O aplicativo proposto tem como objetivo permitir que os funcionários da Dell compartilhem assuntos de seu interesse, bem como links e imagens, e tenham acesso a projetos em aberto na empresa. Além disso, o aplicativo utilizará inteligência artificial para recomendar projetos que sejam relevantes e adequados ao perfil de cada usuário.
+
+- Principais funcionalidades:
+
+Compartilhamento de assuntos: Os funcionários poderão criar postagens para compartilhar tópicos que acham interessantes. Isso pode incluir artigos, notícias, links ou qualquer outro conteúdo relevante para a empresa e sua área de atuação.
+
+Acesso a projetos abertos: Os funcionários poderão explorar e acessar projetos que estão abertos na empresa. Esses projetos podem ser de diferentes áreas e departamentos, e os usuários poderão acompanhar seu progresso, envolver-se em discussões e colaborar, se desejado.
+
+Recomendação de projetos: O aplicativo utilizará inteligência artificial para analisar o perfil de cada usuário, considerando suas habilidades, experiências anteriores, interesses e preferências. Com base nessa análise, o sistema recomendará projetos que sejam mais relevantes e adequados a cada funcionário, ajudando-os a descobrir novas oportunidades e contribuir para projetos alinhados aos seus interesses e habilidades.
+
+- Como usar o aplicativo:
+
+Registro e criação de perfil: Os funcionários farão o registro no aplicativo usando suas credenciais da Dell. Eles serão solicitados a criar um perfil, fornecendo informações sobre suas áreas de interesse logo no primeiro contato com o aplicativo.
+
+Explorar assuntos e compartilhar: Os usuários poderão explorar as postagens compartilhadas pelos colegas atrvés de um feed, lá poderam filtrar por categorias, palavras-chave ou tópicos de interesse. Eles também poderão criar suas próprias postagens, compartilhando conteúdo relevante com a comunidade.
+
+Acessar e colaborar em projetos: Os funcionários poderão navegar pela lista de projetos abertos, visualizar detalhes sobre cada projeto, como descrição e vagas disponíveis. Eles poderão se candidatar às vagas e assim, colaborar em projetos de seu interesse.
+
+Recomendações personalizadas: O aplicativo fornecerá uma seção de recomendações, onde os usuários poderão encontrar projetos recomendados com base em seu perfil e preferências, nesses terão um selo de 'match' para ajudar o usuário a identificá-los. Eles poderão explorar essas recomendações e decidir se desejam participar ou obter mais informações sobre os projetos sugeridos.
 
 <br>
 
 ### Objetivos
-TODO OBJETIVOS
-
-Descrever os objetivos do projeto, objetivos gerais e objetivos específicos. 
-
 
 #### Objetivos gerais
-
+- Desenvolver uma plataforma digital para os funcionários da Dell compartilharem assuntos de interesse e terem acesso a projetos abertos na empresa.
+- Incentivar o crescimento e a retenção dos funcionários, proporcionando um ambiente de colaboração e aprendizado.
+- Melhorar a comunicação interna e o compartilhamento de conhecimento entre os funcionários.
 
 
 #### Objetivos específicos
-
+- Permitir que os funcionários compartilhem conteúdo relevante, como artigos, links e imagens, em uma plataforma centralizada.
+- Facilitar o acesso dos funcionários a projetos temporários abertos na empresa, proporcionando uma visão clara dos projetos, seus objetivos e vagas disponíveis.
+- Utilizar inteligência artificial para recomendar projetos que sejam adequados ao perfil e interesses do funcionário.
+- Estimular a participação ativa dos funcionários por meio de recursos de interação, como comentários, curtidas e compartilhamento de ideias.
+- Promover a colaboração entre os funcionários, permitindo que eles se envolvam em discussões, comunidades e contribuam com suas habilidades e conhecimentos.
+- Criar um ambiente de aprendizado contínuo, onde os funcionários possam aprender com o compartilhamento de experiências e participação em projetos desafiadores.
+- Monitorar o engajamento dos funcionários na plataforma, pelos perfis de mediador, e coletar feedback para melhorar continuamente a experiência do usuário e as funcionalidades oferecidas.
 
 
 ### Justificativa
