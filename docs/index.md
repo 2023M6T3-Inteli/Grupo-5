@@ -509,8 +509,90 @@ Link ou imagem da tabela com dados organizados dos testes realizados
 
 # Documentação da API
 
-Apresentar a documentação no formato Swagger ou aplicação equivalente com todas as requisições dos endpoints desenvolvidos e funcionando.
+Documentação dos Endpoints com o uso de Postman para testes
 
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/endpoint-create-post.png" />
+<center>
+<legend><strong>Create post</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/endpoint-getAll-posts.png" />
+<center>
+<legend><strong>Get all posts</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/endpoint-getOne-post.png" />
+<center>
+<legend><strong>Get a post</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/endpoint-create-project.png" />
+<center>
+<legend><strong>Create project</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/endpoint-getAll-projects.png" />
+<center>
+<legend><strong>Get all projects</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/endpoint-getOne-project.png" />
+<center>
+<legend><strong>Get a project</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/endpoint-create-user.png" />
+<center>
+<legend><strong>Create user</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/endpoint-getAll-users.png" />
+<center>
+<legend><strong>Get all users</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/endpoint-getOne-user.png" />
+<center>
+<legend><strong>Get a user</strong></legend>
+</center>
+</picture>
+
+<br>
 
 # Manual do Usuário
 
