@@ -10,6 +10,8 @@ import rewards from "@/assets/icons/rewards.png"
 import create from "@/assets/icons/create.png"
 import projects from "@/assets/icons/projects.png"
 import profile from "@/assets/icons/profile.png"
+import project from "@/assets/icons/project.png"
+import edit from "@/assets/icons/edit.png"
 
 const Navbar: React.FC = () => {
   const ref = useRef(null)
@@ -21,40 +23,40 @@ const Navbar: React.FC = () => {
       text: 'Contents',
       url: '/',
       alt: 'Home icon',
-      width: 18,
-      height: 18
+      width: 20,
+      height: 20
     },
     {
       icon: rewards,
       text: 'Rewards',
       url: '/rewards',
       alt: 'Rewards icon',
-      width: 20,
-      height: 20
+      width: 22,
+      height: 22
     },
     {
       icon: create,
       text: 'Create',
       onClick: () => setOptionsCreateOpened(true),
       alt: 'Create icon',
-      width: 20,
-      height: 20
+      width: 22,
+      height: 22
     },
     {
       icon: projects,
       text: 'Projects',
-      url: '/allProjects',
+      url: '/projects',
       alt: 'Projects icon',
-      width: 18,
-      height: 18
+      width: 20,
+      height: 20
     },
     {
       icon: profile,
       text: 'Profile',
       url: '/profile',
       alt: 'Profile icon',
-      width: 16,
-      height: 18
+      width: 18,
+      height: 20
     },
   ]
 
@@ -83,32 +85,31 @@ const Navbar: React.FC = () => {
   return (
     <Col xs={12} className={styles.navbar}>
       <Grid className={styles.grid}>
-        <Row className={styles.row} around='xs' center='xs' middle='xs'>
+        <Row className={styles.row} around='xs' >
           {
             navItems.map((item: any, index: number) => {
               return item.onClick ? (
-                <Col key={`${item.text}-${index}`} >
+                <Col xs={2} key={`${item.text}-${index}`} >
                   <div className={styles.item} onClick={() => item.onClick()}>
                     <Image src={item.icon} alt={item.alt} width={item.width} height={item.height} />
                     <p className={styles.text}>{item.text}</p>
-                    {
-                      optionsCreateOpened && (
-                        <div ref={wrapperRef} className={styles.select} onClick={() => item.onClick()}>
-                          <div className={styles.optionContainer} onClick={() => alert("Abre criação de projeto")}>
-                            <Image src={'/project.png'} alt='Imagem de projeto' width={0} height={0} />
-                            <p>Creat project</p>
-                          </div>
-                          <div className={styles.optionContainer} onClick={() => alert("Abre criação de post")}>
-                            <Image src={'/edit.png'} alt='Imagem de post' width={0} height={0} />
-                            <p>Creat a post</p>
-                          </div>
+
+                    {optionsCreateOpened && (
+                      <div ref={wrapperRef} className={styles.select} onClick={() => item.onClick()}>
+                        <div className={styles.optionContainer} onClick={() => alert("Abre criação de projeto")}>
+                          <Image src={project} alt='Imagem de projeto' width={0} height={0} />
+                          <p>Creat project</p>
                         </div>
-                      )
-                    }
+                        <div className={styles.optionContainer} onClick={() => alert("Abre criação de post")}>
+                          <Image src={edit} alt='Imagem de post' width={0} height={0} />
+                          <p>Creat a post</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </Col>
               ) : (
-                <Col key={`${item.text}-${index}`}>
+                <Col xs={2} key={`${item.text}-${index}`}>
                   <Link href={item.url ? item.url : ''}>
                     <div className={styles.item} key={index}>
                       <Image src={item.icon} alt={item.alt} width={item.width} height={item.height} />

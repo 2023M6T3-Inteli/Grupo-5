@@ -1,9 +1,9 @@
 import React from "react";
 import { Col, Row } from "react-styled-flexboxgrid";
 import styles from './styles.module.scss'
-import { Tags } from "@/components/tags";
-import { ApplyButton } from "@/components/applyButton";
-import { SubmitButton } from "@/components/submitButton"
+import { Tags } from "@/components/Tags";
+import { ApplyButton } from "@/components/ApplyButton";
+import { SubmitButton } from "@/components/SubmitButton"
 
 
 const backoffice = () => {

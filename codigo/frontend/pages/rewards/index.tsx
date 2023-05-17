@@ -13,24 +13,26 @@ const Rewards = () => {
     {
       icon: "/community.png",
       text: "Ranking",
-      url: "/rewards",
+      url: "/ranking",
     },
   ];
 
   return (
     <Layout header={navigation} navbar={true} active={0}>
-      <div className={styles.container}>
+      <Col xs={12} md={6} lg={4} className={styles.container}>
         <Row className={styles.titleRow} between="xs">
           <div className={styles.taskTitle}>Daily Tasks</div>
           <div className={styles.taskTitle}>My Points: 450</div>
         </Row>
 
         <Row className={styles.row} middle="xs" around="xs">
-          <Col>
+          <Col xs={2} className={styles.iconContainer}>
             <img src="post.svg" />
           </Col>
-          <Col>Create a new publication</Col>
-          <Col>
+
+          <Col xs={8}>Create a new publication</Col>
+
+          <Col xs={2}>
             <div className={styles.imageContainer}>
               <img src="estrela.svg" />
               <p>10</p>
@@ -39,46 +41,48 @@ const Rewards = () => {
         </Row>
 
         <Row className={styles.row} middle="xs" around="xs">
-          <Col>
+          <Col xs={2} className={styles.iconContainer}>
             <img src="celular.svg" />
           </Col>
-          <Col>Like at least 5 posts</Col>
-          <Col>
+          <Col xs={8}>Like at least 5 posts</Col>
+          <Col xs={2}>
             <div className={styles.imageContainer}>
               <img src="estrela.svg" />
               <p>10</p>
             </div>
           </Col>
         </Row>
+
         <Row className={styles.row} middle="xs" around="xs">
-          <Col>
+          <Col xs={2} className={styles.iconContainer}>
             <div className={styles.imageContainer}>
               <img src="pasta.svg" />
             </div>
           </Col>
-          <Col>Submit a new project</Col>
-          <Col>
+          <Col xs={8}>Submit a new project</Col>
+          <Col xs={2}>
             <div className={styles.imageContainer}>
               <img src="estrela.svg" />
               <p>10</p>
             </div>
           </Col>
         </Row>
+
         <Row className={styles.row} middle="xs" around="xs">
-          <Col>
+          <Col xs={2} className={styles.iconContainer}>
             <img src="maosdadas.svg" />
           </Col>
-          <Col>
+          <Col xs={8}>
             <p>Apply to a project</p>
           </Col>
-          <Col>
+          <Col xs={2}>
             <div className={styles.imageContainer}>
               <img src="estrela.svg" />
               <p>10</p>
             </div>
           </Col>
         </Row>
-      </div>
+      </Col>
     </Layout>
   );
 };

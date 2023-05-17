@@ -4,10 +4,10 @@ import { Col, Row } from "react-styled-flexboxgrid";
 import { useState } from "react";
 import { test } from "node:test";
 import { text } from "node:stream/consumers";
-import { SubmitButton } from "@/components/submitButton";
+import { SubmitButton } from "@/components/SubmitButton";
 import { string } from "prop-types";
-import { SelectRoleInterest } from "@/components/selectRoleInterest"
-import { InputsApplicationForm } from "@/components/inputsApplicationForm"
+import { SelectRoleInterest } from "@/components/SelectRoleInterest"
+import { InputsApplicationForm } from "@/components/InputsApplicationForm"
 
 
 const applicationFormSubmit = () => {

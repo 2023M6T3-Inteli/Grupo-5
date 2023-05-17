@@ -39,7 +39,7 @@ export default function Index() {
 
   return (
     <Layout header={navigation} navbar={true} title={"Community"} active={2}>
-      <Col xs={12} md={4}>
+      <Col xs={12} md={6} lg={4}>
         <Row style={{ marginBottom: '8px' }} center='xs'>
           <Text color='#2e2e2e'>Based on your profile</Text>
         </Row>
@@ -61,7 +61,7 @@ const Post = () => {
         <Title color="#2e2e2e">Python Programming</Title>
       </Row>
 
-      <Spacer size="md" />
+      <Spacer size="sm" />
 
       <Row start={'xs'} middle={'xs'}>
         <div style={{
@@ -104,6 +104,6 @@ const Post = () => {
 const Card = styled(Col)`
   border-radius: 10px;
   background-color: #FFF;
-  padding: 1.25rem 1rem;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
 `

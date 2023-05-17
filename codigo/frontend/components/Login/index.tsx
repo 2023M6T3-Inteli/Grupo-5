@@ -10,7 +10,8 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import axios from "@/axios";
+import { useEffect } from "react";
 
 export const Login = ({ slides, currentSlide, setCurrentSlide }: {
     slides: React.ReactNode[];
@@ -22,17 +23,29 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = async (data: any) => {
-        console.log(data)
+        const { email, password } = data;
 
-        await axios.get('https://api.github.com/users/marcelofeitoza').then(res => {
-            toast.success("Success")
-            console.log(res.data)
-            router.push("/")
-        }).catch(err => {
-            toast.error("Error")
-            console.log(err)
-        });
+        const res = await axios.post('/user/login', {
+            email, password
+        }).then(res => res)
+            .catch(err => err.response)
+
+        if (res.status === 200) {
+            localStorage.setItem('accessToken', res.data.accessToken)
+
+            toast("Redirecting...")
+            setTimeout(() => {
+                router.push('/')
+            }, 3000);
+        } else {
+            toast.error(res.data.message)
+        }
     };
+
+    useEffect(() => {
+        localStorage.clear();
+    }, [])
+
 
     return (
         <Container fluid>
@@ -78,7 +91,7 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
                                         </Row>
                                         <Row>
                                             <Col xs={12}>
-                                                <LoginInput {...register("password", { required: true, minLength: 8 })} placeholder='Password' type="password" />
+                                                <LoginInput {...register("password", { required: true, minLength: 6 })} placeholder='Password' type="password" />
                                                 {errors.password?.type === 'required' && <Text color={"#f19336"}>This field is required</Text>}
                                                 {errors.password?.type === 'minLength' && <Text color={"#f19336"}>This field is minLength 8</Text>}
                                             </Col>

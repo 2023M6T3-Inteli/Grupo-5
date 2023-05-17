@@ -2,8 +2,11 @@ import { Col, Grid } from "react-styled-flexboxgrid"
 import styled from "styled-components";
 
 import { Inter } from 'next/font/google'
-import Header from '@/components/header'
-import Navbar from "../navbar";
+import Header from '@/components/Header'
+import Navbar from "../Navbar";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,14 +25,29 @@ export const Layout = ({
     children: React.ReactNode;
     navbar?: boolean;
 }) => {
+    const router = useRouter();
+
+    const [route, setRoute] = useState<string>("")
+
+    useEffect(() => {
+        setRoute(router.asPath.toString().split("/")[1].charAt(0).toUpperCase() + router.asPath.toString().split("/")[1].slice(1))
+    }, [])
+
     return (
-        <Container fluid navbar={navbar} className={inter.className}>
-            {header ? <Header navigation={header} matchs={matchs} title={title} active={active} /> : null}
+        <>
+            <Head>
+                <title>{
+                    route ? `${route} - DellHub` : "DellHub"
+                }</title>
+            </Head>
+            <Container fluid navbar={navbar} className={inter.className}>
+                {header ? <Header navigation={header} matchs={matchs} title={title} active={active} /> : null}
 
-            {children}
+                {children}
 
-            {navbar ? <Navbar /> : null}
-        </Container>
+                {navbar ? <Navbar /> : null}
+            </Container>
+        </>
     )
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Row } from 'react-styled-flexboxgrid'
-import { ProjectCard } from "@/components/projectCard";
+import { ProjectCard } from "@/components/ProjectCard";
 import { Layout } from "@/components/Layout";
 import { Text } from "@/components/Text";
 import ProjectService from "@/services/projectService";
@@ -9,23 +9,23 @@ import burguer from "@/assets/icons/burguer.png"
 import star from "@/assets/icons/star.png"
 import community from "@/assets/icons/community.png"
 
-const allProjects = () => {
 
+const applicationProjects = () => {
     const navigation = [
         {
             icon: burguer,
             text: 'All Projects',
-            url: '/allProjects'
+            url: '/projects'
         },
         {
             icon: star,
             text: 'My Projects',
-            url: '/myProjects'
+            url: '/projects/userId'
         },
         {
             icon: community,
             text: 'Apliccations',
-            url: '/allProjects'
+            url: '/projects/application'
         }
     ]
 
@@ -42,7 +42,7 @@ const allProjects = () => {
     }, [])
 
     return (
-        <Layout header={navigation} navbar={true} title="Projects" active={0}>
+        <Layout header={navigation} navbar={true} title="Projects" active={2}>
             <Row around="xs" center="sm">
                 {
                     projects && projects.map((project: any, index: number) => {
@@ -57,4 +57,4 @@ const allProjects = () => {
     )
 }
 
-export default allProjects
+export default applicationProjects;

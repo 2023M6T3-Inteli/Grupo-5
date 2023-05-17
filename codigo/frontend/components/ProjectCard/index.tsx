@@ -3,7 +3,7 @@ import { Col, Row } from "react-styled-flexboxgrid";
 import styles from './styles.module.scss'
 import Image from "next/image";
 import lamp from "@/assets/icons/lamp.svg"
-import { Tags } from "@/components/tags";
+import { Tags } from "@/components/Tags";
 
 type Props = {
     data: {

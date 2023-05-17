@@ -9,11 +9,17 @@ import styled from "styled-components";
 import dell from '@/assets/icons/dell.svg'
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ['latin'] })
 
 const Error = () => {
     const router = useRouter();
+    const [page, setPage] = useState("")
+
+    useEffect(() => {
+        setPage(router.asPath.toString())
+    }, [router])
 
     return (
         <Container fluid className={inter.className}>
@@ -26,7 +32,7 @@ const Error = () => {
                     <Title center={true} color="#2d2d2d" variant="xl">404</Title>
                 </Row>
                 <Row center="xs">
-                    <Text color="#424242">This page {router.asPath} does not exist!</Text>
+                    <Text color="#424242">This page {page} could not be found.</Text>
                 </Row>
 
                 <Spacer />

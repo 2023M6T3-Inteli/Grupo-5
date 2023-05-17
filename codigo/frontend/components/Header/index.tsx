@@ -27,6 +27,9 @@ import info from '@/assets/icons/info.png'
 import settings from '@/assets/icons/settings.png'
 import logout from '@/assets/icons/logout.png'
 
+import logo from '@/assets/icons/dell.svg'
+import optionIcon from '@/assets/icons/options.png'
+
 const Header: React.FC<Props> = (props: Props) => {
   const [optionsOpened, setOptionsOpened] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
@@ -83,10 +86,12 @@ const Header: React.FC<Props> = (props: Props) => {
     <Col xs={12} md={6} lg={4} className={styles.header}>
       <Row between='xs' className={styles.row}>
         <Col>
-          <Image src={'/Logo.png'} alt='Logo image' width={100} height={33} />
+          <Link href={"/"}>
+            <Image src={logo} alt='Logo image' width={100} height={33} />
+          </Link>
         </Col>
         <Col className={styles.options} ref={wrapperRef}>
-          <Image src={'/options.png'} alt='More options' width={25} height={25} onClick={() => setOptionsOpened(!optionsOpened)} />
+          <Image alt='More options' width={25} height={25} onClick={() => setOptionsOpened(!optionsOpened)} src={optionIcon} />
           {optionsOpened && (
             <div className={styles.select}>
               {options.map((option: any, index: number) => {

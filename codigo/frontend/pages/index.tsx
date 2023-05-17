@@ -68,33 +68,27 @@ export default function Index() {
   return (
     <Layout header={navigation} navbar={true} title={"All posts"} active={0} matchs={3}>
       <Col xs={12} md={6} lg={4}>
-        <Row center='xs' middle='xs'>
+        <Row>
           {isLoading && <Col xs={12}>
             <Text color='#2e2e2e'>
               Loading...
             </Text>
           </Col>}
+        </Row>
 
-          {/* {
-            "user": "Paulo",
-            "role": "UX/Writter",
-            "likes": ["1", "2", "3"],
-            "comments": ["Show!", "Curti!", "Obrigado pela postagem"],
-            "content": "Postagem 3",
-            "imgURL": "/teste.png",
-            "tags": ["tag 1", "tag 2", "tag 3"]
-          } */}
+        <Post user={"marcelofeitoza"} role={"Mobile developer"} imgURL={"https://placehold.co/600x400/EEE/31343C"} likes={[1, 2, 3, 4, 5, 6]} comments={["123", "321", "456"]} saves={[1, 2, 3, 4, 5, 6, 7]} />
 
-          {data && data.map((post: PostProps, index: number) => (
-            <Post {...post} key={index} />
-          ))}
+        {data && data.map((post: PostProps, index: number) => (
+          <Post {...post} key={index} />
+        ))}
 
-          {isError && <Col xs={12}>
+        {isError && (
+          <Col xs={12}>
             <Text color='#2e2e2e'>
               Error!
             </Text>
-          </Col>}
-        </Row>
+          </Col>
+        )}
       </Col>
     </Layout>
   )
@@ -130,21 +124,21 @@ const Post = ({
       <Row start={'xs'} middle={'xs'}>
         <Col>
           <Row center="xs">
-            <Image src={like} alt="save" width={18} height={18} />
+            <Image src={like} alt="save" width={16} height={16} />
           </Row>
           <Text center={true} color={'#00000080'}>Like ({likes.length | 0})</Text>
         </Col>
 
         <Col>
           <Row center="xs">
-            <Image src={comment} alt="save" width={18} height={18} />
+            <Image src={comment} alt="save" width={16} height={16} />
           </Row>
           <Text center={true} color={'#00000080'}>Comment ({comments.length | 0})</Text>
         </Col>
 
         <Col>
           <Row center="xs">
-            <Image src={save} alt="save" width={18} height={18} />
+            <Image src={save} alt="save" width={16} height={16} />
           </Row>
           <Text center={true} color={'#00000080'}>Save ({saves.length | 0})</Text>
         </Col>
@@ -158,6 +152,9 @@ const ProfilePicture = styled(Image)`
 `
 
 const Card = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   border-radius: 10px;
   background-color: #FFF;
   padding: 1.25rem 1rem;
