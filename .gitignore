@@ -6,6 +6,9 @@ codigo/frontend/yarn.lock
 # compiled output
 */*/dist
 */*/node_modules
+*/*/.env
+*/*/dev.db
+*/*/dev.db-journal
 
 # Logs
 logs
