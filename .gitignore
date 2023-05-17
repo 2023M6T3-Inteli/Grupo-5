@@ -6,6 +6,9 @@ codigo/frontend/yarn.lock
 # compiled output
 */*/dist
 */*/node_modules
+*/*/.env
+*/*/dev.db
+*/*/dev.db-journal
 
 # Logs
 logs
@@ -18,6 +21,7 @@ lerna-debug.log*
 
 # OS
 .DS_Store
+codigo/backend/*.sqlite
 
 # Tests
 /coverage
