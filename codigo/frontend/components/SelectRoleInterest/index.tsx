@@ -1,8 +1,5 @@
 import React from "react";
 import styles from './styles.module.scss'
-import { type } from "os";
-import { useState, useEffect } from "react";
-
 
 type Options = {
     value: string;

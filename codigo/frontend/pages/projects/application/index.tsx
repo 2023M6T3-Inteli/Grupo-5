@@ -3,7 +3,7 @@ import { Row } from 'react-styled-flexboxgrid'
 import { ProjectCard } from "@/components/ProjectCard";
 import { Layout } from "@/components/Layout";
 import { Text } from "@/components/Text";
-import ProjectService from "@/services/projectService";
+import ProjectService from "@/services/project";
 
 import burguer from "@/assets/icons/burguer.png"
 import star from "@/assets/icons/star.png"
@@ -32,7 +32,7 @@ const applicationProjects = () => {
     const [projects, setProjects] = useState<any>()
 
     const getAllProjects = async () => {
-        let response = await ProjectService.findAll()
+        const response = await ProjectService.findAll()
         setProjects(response.data)
     }
 

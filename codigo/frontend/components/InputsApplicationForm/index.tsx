@@ -5,10 +5,10 @@ import styles from './styles.module.scss';
 type InputProps = {
     className?: string;
     placeholder: string;
-    type: any;
-    size?: 'small' | 'medium' | 'large';
+    type: string;
+    size?: 'sm' | 'md' | 'lg';
     value?: any;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
     rows?: number;
 }
 
@@ -29,7 +29,7 @@ export const InputsApplicationForm = (props: InputProps) => {
     return (
         <div className={styles.inputsApplicationForm}>
             {props.rows ? <textarea
-                type={props.type}
+                // type={props.type}
                 placeholder={'' + props.placeholder}
                 className={''}
                 value={value}

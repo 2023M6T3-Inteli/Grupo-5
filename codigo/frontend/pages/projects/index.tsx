@@ -3,7 +3,7 @@ import { Col, Row } from 'react-styled-flexboxgrid'
 import { ProjectCard } from "@/components/ProjectCard";
 import { Layout } from "@/components/Layout";
 import { Text } from "@/components/Text";
-import ProjectService from "@/services/projectService";
+import ProjectService from "@/services/project";
 import styled from "styled-components";
 
 import burguer from "@/assets/icons/burguer.png"
@@ -11,6 +11,7 @@ import star from "@/assets/icons/star.png"
 import community from "@/assets/icons/community.png"
 import search from "@/assets/icons/search.svg"
 import Image from "next/image";
+import { StyledInput } from "./styles";
 
 const Projects = () => {
     const navigation = [
@@ -34,7 +35,7 @@ const Projects = () => {
     const [projects, setProjects] = useState<any>()
 
     const getAllProjects = async () => {
-        let response = await ProjectService.findAll()
+        const response = await ProjectService.findAll()
         setProjects(response.data)
     }
 
@@ -79,23 +80,5 @@ export const Input = ({ placeholder }: { placeholder: string }) => {
     )
 }
 
-export const StyledInput = styled(Row)`
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #F2F2F2;
-    border: 1px solid #E0E0E0;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    
-    input {
-        border: none;
-        width: 100%;
-        font-size: 1rem;
-        padding: 0.5rem;
-        background-color: transparent;
-    }
-`
 
 export default Projects;

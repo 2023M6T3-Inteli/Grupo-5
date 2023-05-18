@@ -22,8 +22,10 @@ export const TitleStyled = styled.h1<{
     color?: string;
     center?: boolean;
     variant?: string;
+    bold?: boolean;
 }>`
     font-size: ${props => switchProp(props.variant || "md")};
     color: ${props => props.color || "#fff"};
     text-align: ${props => props.center ? "center" : "left"};
+    font-weight: ${props => props.bold ? "bold" : "normal"};
 `;

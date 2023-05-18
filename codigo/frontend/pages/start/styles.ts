@@ -1,4 +1,3 @@
-import { Title } from '@/components/Title'
 import Link from 'next/link'
 import { Grid } from 'react-styled-flexboxgrid'
 import styled from "styled-components"

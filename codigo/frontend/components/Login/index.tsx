@@ -1,6 +1,6 @@
 import { Col, Row } from "react-styled-flexboxgrid";
 
-import { Ball, Container, Input, InputContainer, InputText, LoginButton, LoginInput } from "./styles";
+import { Ball, Container, Input, InputText, LoginButton, LoginInput } from "./styles";
 import { Text } from '@/components/Text'
 import { Title } from '@/components/Title'
 import Image from "next/image";
@@ -10,8 +10,7 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
 import { useForm } from "react-hook-form";
-import axios from "@/axios";
-import { useEffect } from "react";
+import AuthService from "@/services/auth";
 
 export const Login = ({ slides, currentSlide, setCurrentSlide }: {
     slides: React.ReactNode[];
@@ -19,33 +18,31 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
     setCurrentSlide: (index: number) => void;
 }) => {
     const router = useRouter();
+    let token;
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = async (data: any) => {
         const { email, password } = data;
 
-        const res = await axios.post('/user/login', {
-            email, password
-        }).then(res => res)
-            .catch(err => err.response)
+        await AuthService.signIn(email, password).then(
+            (token: string) => {
+                toast("Redirecting...")
 
-        if (res.status === 200) {
-            localStorage.setItem('accessToken', res.data.accessToken)
+                if (token) {
+                    localStorage.setItem('accessToken', token)
+                }
 
-            toast("Redirecting...")
-            setTimeout(() => {
-                router.push('/')
-            }, 3000);
-        } else {
-            toast.error(res.data.message)
-        }
+                setTimeout(() => {
+                    router.push('/')
+                }, 1500);
+            }
+        ).catch((err) => {
+            toast.error(err.response.data.message)
+        }).finally(() => {
+            console.log('Done')
+        });
     };
-
-    useEffect(() => {
-        localStorage.clear();
-    }, [])
-
 
     return (
         <Container fluid>

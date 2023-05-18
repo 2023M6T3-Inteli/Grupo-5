@@ -1,13 +1,10 @@
-import Link from 'next/link'
 
 import { Col, Row } from 'react-styled-flexboxgrid'
-import { Container } from "./styles"
 import { Layout } from '@/components/Layout'
 import { Title } from '@/components/Title'
 import Image from 'next/legacy/image'
 import styled from 'styled-components'
 import { Text } from '@/components/Text'
-import { Icon } from '@mui/material'
 
 import save from "@/assets/icons/heart.svg"
 import like from "@/assets/icons/like.svg"

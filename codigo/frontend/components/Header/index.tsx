@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import styles from './styles.module.scss'
-import { Col, Grid, Row } from 'react-styled-flexboxgrid'
+import { Col, Row } from 'react-styled-flexboxgrid'
 
 import Image from 'next/image'
 import MatchCard from './components/matchCard'

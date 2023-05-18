@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './styles.module.scss'
-import { Col, Grid, Row } from 'react-styled-flexboxgrid'
+import { Col, Row } from 'react-styled-flexboxgrid'
 import Image from 'next/image'
 import Link from 'next/link'
 

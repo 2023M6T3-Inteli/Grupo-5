@@ -32,7 +32,7 @@ const backoffice = () => {
                         <div>
                             <p>Tags:</p>
                         </div>
-                        <Row xs={8} className={styles.tagBackoffice}>
+                        <Row className={styles.tagBackoffice}>
                             {tags.map((tag, index) => (
                                 <Tags key={index} text={tag} />
                             ))}

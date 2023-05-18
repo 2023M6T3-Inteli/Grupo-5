@@ -1,23 +1,19 @@
-import axios from "axios"
-
-const PORT = 5500;
-const HOST = 'localhost';
-// const API_URL = ``
-const API_URL = `http://${HOST}:${PORT}`
+import axios from "@/utils/axios"
 
 const ProjectService = {
   findByID: async (id: String) => {
     try {
-      const response = await axios.get(`${API_URL}/project/${id}`)
+      const response = await axios.get(`/project/${id}`)
       return response
     }
     catch (error: any) {
       return error
     }
   },
+
   findAll: async () => {
     try {
-      const response = await axios.get(`${API_URL}/project`)
+      const response = await axios.get(`/project`)
       return response
     }
     catch (error: any) {

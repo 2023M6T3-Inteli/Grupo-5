@@ -1,14 +1,9 @@
-import axios from "axios"
-
-const PORT = 5500;
-const HOST = 'localhost';
-// const API_URL = ``
-const API_URL = `http://${HOST}:${PORT}`
+import axios from "@/utils/axios"
 
 const UserService = {
   findByID: async (id: String) => {
     try {
-      const response = await axios.get(`${API_URL}/user/${id}`)
+      const response = await axios.get(`/user/${id}`)
       return response
     }
     catch (error: any) {
@@ -17,7 +12,7 @@ const UserService = {
   },
   findAll: async () => {
     try {
-      const response = await axios.get(`${API_URL}/user`)
+      const response = await axios.get(`/user`)
       return response
     }
     catch (error: any) {
