@@ -1,14 +1,15 @@
 #frontend
-codigo/frontend/pnpm-lock.yaml
-codigo/frontend/package-lock.json
-codigo/frontend/yarn.lock
+**/pnpm-lock.yaml
+**/package-lock.json
+**yarn.lock
 
 # compiled output
-*/*/dist
-*/*/node_modules
-*/*/.env
-*/*/dev.db
-*/*/dev.db-journal
+**/dist
+**/node_modules
+**/.env
+**/dev.db
+**/*.sqlite
+**/dev.db-journal
 
 # Logs
 logs
@@ -20,8 +21,7 @@ yarn-error.log*
 lerna-debug.log*
 
 # OS
-.DS_Store
-codigo/backend/*.sqlite
+**/.DS_Store
 
 # Tests
 /coverage
@@ -39,13 +39,8 @@ codigo/backend/*.sqlite
 .prettierrc
 
 # IDE - VSCode
-.vscode/*
+**/.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-#other
-*/*/package-lock.json
-*/*/pnpm-lock.yaml
-*/*/yarn.lock
