@@ -41,6 +41,6 @@ export class UserService {
   }
 
   async findOne(userIdLegacy: string): Promise<User> {
-    return this.repository.findOne({ where: { userIdLegacy } });
+    return await this.repository.findOne({ where: { userIdLegacy } });
   }
 }
