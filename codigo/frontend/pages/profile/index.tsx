@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import profileImage from "@/assets/icons/profileImage.svg";
 import mode_edit from "@/assets/icons/mode_edit.svg";
 import delete_forever from "@/assets/icons/delete_forever.svg";
 import Image from "next/image";
 import { Col, Row } from "react-styled-flexboxgrid";
 import { Layout } from "@/components/Layout";
-import UserService from "@/services/profileService";
+import UserService from "@/services/user";
 
 const Profile = () => {
   const [profile, setProfile] = useState<any>()
 
   const getProfile = async () => {
-      let response = await UserService.findByID("1")
+      const response = await UserService.findByID("1")
       setProfile(response.data)
   }
 

@@ -1,13 +1,10 @@
-import Link from 'next/link'
 
 import { Col, Row } from 'react-styled-flexboxgrid'
-import { Container } from "./styles"
 import { Layout } from '@/components/Layout'
 import { Title } from '@/components/Title'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { Text } from '@/components/Text'
-import { Icon } from '@mui/material'
 
 import save from "@/assets/icons/heart.svg"
 import like from "@/assets/icons/like.svg"
@@ -38,7 +35,7 @@ export default function Index() {
 
   return (
     <Layout header={navigation} navbar={true} title={"Recommended topics"} active={1}>
-      <Col xs={12} md={4}>
+      <Col xs={12} md={6} lg={4}>
         <Row style={{ marginBottom: '8px' }} center='xs'>
           <Text color='#2e2e2e'>Based on your profile</Text>
         </Row>
@@ -56,14 +53,14 @@ export default function Index() {
 const Post = () => {
   return (
     <Card xs={12}>
-      <Row middle='xs' between='xs'>
-        <Col xs={2}>
+      <Row middle='xs'>
+        <Col>
           <ProfilePicture loader={
             () => 'https://placehold.co/64x64'
-          } src={'https://placehold.co/64x64'} alt='Post' width={64} height={64} />
+          } src={'https://placehold.co/64x64'} alt='Post' width={48} height={48} />
         </Col>
 
-        <Col xs={10}>
+        <Col>
           <Title variant='sm' color='#000'>Cristina</Title>
 
           <Text color='#000'>UX Designer</Text>
