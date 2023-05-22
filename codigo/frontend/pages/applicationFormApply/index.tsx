@@ -31,7 +31,7 @@ const applicationFormApply = () => {
                         <div>
                             <p>Tags:</p>
                         </div>
-                        <Row xs={8} className={styles.tag}>
+                        <Row className={styles.tag}>
                             {tags.map((tag, index) => (
                                 <Tags key={index} text={tag} />
                             ))}
