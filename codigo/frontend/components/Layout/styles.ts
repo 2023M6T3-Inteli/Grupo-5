@@ -7,7 +7,7 @@ export const Container = styled(Grid) <{ navbar: boolean; }>`
   align-items: center;
   flex: 1;
   /* justify-content: center; */
-  min-height: 100vh;
+  /* min-height: 100vh; */
   height: 100%;
   padding: 0 2rem;
   margin-bottom: ${({ navbar }) => navbar ? '80px' : '0'};

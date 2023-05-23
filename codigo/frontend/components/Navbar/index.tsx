@@ -12,11 +12,15 @@ import projects from "@/assets/icons/projects.png"
 import profile from "@/assets/icons/profile.png"
 import project from "@/assets/icons/project.png"
 import edit from "@/assets/icons/edit.png"
+import Modal from '../Modal'
+import CreatePost from '../CreatePost'
 
 const Navbar: React.FC = () => {
   const ref = useRef(null)
 
   const [optionsCreateOpened, setOptionsCreateOpened] = useState(false)
+  const [createPostOpened, setCreatePostOpened] = useState(false)
+
   const navItems = [
     {
       icon: home,
@@ -100,7 +104,7 @@ const Navbar: React.FC = () => {
                           <Image src={project} alt='Imagem de projeto' width={0} height={0} />
                           <p>Creat project</p>
                         </div>
-                        <div className={styles.optionContainer} onClick={() => alert("Abre criação de post")}>
+                        <div className={styles.optionContainer} onClick={() => setCreatePostOpened(true)}>
                           <Image src={edit} alt='Imagem de post' width={0} height={0} />
                           <p>Creat a post</p>
                         </div>
@@ -119,6 +123,19 @@ const Navbar: React.FC = () => {
                 </Col>
               )
             })
+          }
+
+          {
+            createPostOpened &&
+            (
+              <Modal
+                closeArrow
+                closeModal={() => setCreatePostOpened(false)}
+                content={
+                  <CreatePost submit={() => setCreatePostOpened(false)}/>
+                }
+              />
+            )
           }
         </Row>
       </Grid>

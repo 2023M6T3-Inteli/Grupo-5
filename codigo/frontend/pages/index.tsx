@@ -16,6 +16,7 @@ import community from "@/assets/icons/community.png"
 
 import useSWR from 'swr';
 import axios from 'axios';
+import Modal from '@/components/Modal'
 
 const fetchData = (url: string) => {
   const fetcher = async () => {

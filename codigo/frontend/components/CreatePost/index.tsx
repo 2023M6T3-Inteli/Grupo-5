@@ -3,23 +3,32 @@ import { useState } from "react";
 import styles from "./styles.module.scss";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";
 
+type Props = {
+  submit: Function;
+}
 
+const CreatePost: React.FC<Props> = ({ submit }: Props) => {
 
-const CreatePost: React.FC = () => {
+  //Text lenght limiter
+  const [text, setText] = useState("");
+  const maxLength = 500;
 
-    //Text lenght limiter
-    const [text, setText] = useState("");
-    const maxLength = 500;
-
-    const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(event.target.value);
-    };
+  };
 
-    const charactersUsed = text.length;
-    
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
+
+    alert("Post criado")
+    submit()
+  }
+
+  const charactersUsed = text.length;
+
   return (
     <div className={styles.createPost}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Grid>
           <Row className={styles.row} center="xs">
             <h2>New Post</h2>
@@ -31,12 +40,12 @@ const CreatePost: React.FC = () => {
             <Col xs={12}>
               <div className={styles.inputGroup}>
                 <div className={styles.postTitleCounter}>
-                    <label>Post Content</label>
-                    <h5>{charactersUsed}/{maxLength}</h5>
+                  <label>Post Content</label>
+                  <h5>{charactersUsed}/{maxLength}</h5>
                 </div>
                 <textarea
                   placeholder="Share a link to a website, video, podcast..."
-                    required
+                  required
                   onChange={handleChange}
                   maxLength={maxLength}
                 />
