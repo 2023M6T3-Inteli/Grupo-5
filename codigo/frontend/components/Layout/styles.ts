@@ -1,7 +1,10 @@
 import { Grid } from "react-styled-flexboxgrid";
 import styled from "styled-components";
 
-export const Container = styled(Grid) <{ navbar: boolean; }>`
+export const Container = styled(Grid) <{
+  backgroundColor?: string;
+  navbar?: boolean;
+}>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,4 +14,5 @@ export const Container = styled(Grid) <{ navbar: boolean; }>`
   height: 100%;
   padding: 0 2rem;
   margin-bottom: ${({ navbar }) => navbar ? '80px' : '0'};
+  background-color: ${({ backgroundColor }) => backgroundColor};
 `
