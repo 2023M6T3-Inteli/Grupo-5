@@ -12,6 +12,8 @@ import community from "@/assets/icons/community.png"
 import search from "@/assets/icons/search.svg"
 import Image from "next/image";
 import { StyledInput } from "./styles";
+import Modal from "@/components/Modal";
+import EditProject from "@/components/EditProject";
 
 const Projects = () => {
     const navigation = [
@@ -33,6 +35,7 @@ const Projects = () => {
     ]
 
     const [projects, setProjects] = useState<any>()
+    const [editProjectOpened, setEditProjectOpened] = useState(true)
 
     const getAllProjects = async () => {
         const response = await ProjectService.findAll()
@@ -59,6 +62,20 @@ const Projects = () => {
 
                 {
                     projects && projects.length === 0 && <Text color="black">Sem projetos</Text>
+                }
+
+                {
+                    editProjectOpened &&
+                    (
+                        <Modal
+                            title='Edit Project'
+                            closeArrow
+                            closeModal={() => setEditProjectOpened(false)}
+                            content={
+                                <EditProject submit={() => setEditProjectOpened(false)} />
+                            }
+                        />
+                    )
                 }
 
                 {/* </Col> */}
