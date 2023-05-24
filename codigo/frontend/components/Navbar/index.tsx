@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
 
   const [optionsCreateOpened, setOptionsCreateOpened] = useState(false)
   const [createPostOpened, setCreatePostOpened] = useState(false)
-  const [createProjectOpened, setCreateProjectOpened] = useState(true)
+  const [createProjectOpened, setCreateProjectOpened] = useState(false)
 
   const navItems = [
     {
