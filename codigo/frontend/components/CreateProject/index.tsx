@@ -2,12 +2,14 @@ import React from 'react'
 import styles from './styles.module.scss'
 
 type Props = {
-  close: Function;
+  submit: Function;
 }
 
 const CreateProject: React.FC<Props> = (props: Props) => {
   return (
-    <div className={styles.container}></div>
+    <div className={styles.container}>
+      
+    </div>
   )
 }
 
