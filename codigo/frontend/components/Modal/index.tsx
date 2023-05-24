@@ -21,12 +21,12 @@ const Modal: React.FC<Props> = (props: Props) => {
         }
         {
           props.closeArrow &&
-          <div className={styles.backIcon} onClick={() => props.closeModal()}>
+          <div className={styles.closeIcon} onClick={() => props.closeModal()}>
             <CloseIcon />
           </div>
         }
 
-        <div className={styles.content}>
+        <div className={`${styles.content} ${props.closeArrow && styles.contentWithClose} `}>
           {
             props.content
           }
