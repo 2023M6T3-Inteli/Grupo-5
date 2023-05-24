@@ -53,7 +53,7 @@ Formato do arquivo: CSV
  
  🔢 ID do item: um identificador exclusivo para cada item.
  
- 🔢 Classificação: feedback do usuário sobre o item. Expresso como um número ou um valor ordinal. O conjunto de dados é balanceado. Ou seja, contém classificações de usuários e uma distribuição uniforme e representativa dos itens. Para demonstrar isso, realizamos uma análise estatística das classificações e confirmamos que não havia vieses ou desequilíbrios significativos nas classificações atribuídas aos itens.
+ 🔢 Ranking: feedback do usuário sobre o item. Expresso como um número ou um valor ordinal. O conjunto de dados é balanceado. Ou seja, contém classificações de usuários e uma distribuição uniforme e representativa dos itens. Para demonstrar isso, realizamos uma análise estatística das classificações e confirmamos que não havia vieses ou desequilíbrios significativos nas classificações atribuídas aos itens.
 
 
 O número de registros no conjunto de dados é [insira o número de registros aqui] e o número total de colunas é 3, incluindo os campos User ID, Article ID e Ranking.
