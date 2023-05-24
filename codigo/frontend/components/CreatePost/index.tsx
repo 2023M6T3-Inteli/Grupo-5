@@ -31,7 +31,6 @@ const CreatePost: React.FC<Props> = ({ submit }: Props) => {
       <form onSubmit={handleSubmit}>
         <Grid>
           <Row className={styles.row} center="xs">
-            <h2>New Post</h2>
             <p className={styles.subtitle}>
               Share your recommendations with the community!
             </p>
