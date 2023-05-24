@@ -129,6 +129,7 @@ const Navbar: React.FC = () => {
             createPostOpened &&
             (
               <Modal
+                title='New Post'
                 closeArrow
                 closeModal={() => setCreatePostOpened(false)}
                 content={
