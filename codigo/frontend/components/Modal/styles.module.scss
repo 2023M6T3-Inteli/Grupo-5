@@ -28,15 +28,15 @@
     }
 
     .closeIcon {
-      position: absolute;
+      // position: absolute;
       top: 14px;
-      right: 14px;
+      right: 64px;
       align-self: flex-start;
       cursor: pointer;
       color: black;
   
       svg {
-        right: 32px;
+        right: 6%;
         position: fixed;
         width: 32px;
         height: 32px;
