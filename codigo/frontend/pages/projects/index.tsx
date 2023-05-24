@@ -14,6 +14,7 @@ import Image from "next/image";
 import { StyledInput } from "./styles";
 import Modal from "@/components/Modal";
 import EditProject from "@/components/EditProject";
+import DeleteConfirm from "@/components/DeleteConfirm";
 
 const Projects = () => {
     const navigation = [
@@ -35,16 +36,21 @@ const Projects = () => {
     ]
 
     const [projects, setProjects] = useState<any>()
-    const [editProjectOpened, setEditProjectOpened] = useState(true)
+    const [editProjectOpened, setEditProjectOpened] = useState(false)
+    const [deleteProjectOpened, setDeleteProjectOpened] = useState(true)
 
     const getAllProjects = async () => {
         const response = await ProjectService.findAll()
         setProjects(response.data)
     }
 
+    const deleteProject = async () => {
+        const id = '1'
+        alert("Delete project "+id)
+    }
+
     useEffect(() => {
         getAllProjects()
-
     }, [])
 
     return (
@@ -73,6 +79,19 @@ const Projects = () => {
                             closeModal={() => setEditProjectOpened(false)}
                             content={
                                 <EditProject submit={() => setEditProjectOpened(false)} />
+                            }
+                        />
+                    )
+                }
+
+                {
+                    deleteProjectOpened &&
+                    (
+                        <Modal
+                            size="small"
+                            closeModal={() => setEditProjectOpened(false)}
+                            content={
+                                <DeleteConfirm text="this Project" cancel={() => setDeleteProjectOpened(false)} submit={() => deleteProject()} />
                             }
                         />
                     )
