@@ -27,21 +27,23 @@ const theme = {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <ThemeProvider theme={theme}>
-    <Component {...pageProps} />
-    <ToastContainer
-      position="top-right"
-      autoClose={3000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-    />
+  return <>
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+    </ThemeProvider>
 
     <Analytics />
-  </ThemeProvider>
+  </>
 }
