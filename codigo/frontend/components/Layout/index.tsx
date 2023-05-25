@@ -14,6 +14,7 @@ export const Layout = ({
     matchs,
     header = [],
     children,
+    backgroundColor,
     navbar = true,
 }: {
     active?: number | any;
@@ -21,6 +22,7 @@ export const Layout = ({
     matchs?: number;
     header?: boolean | any;
     children: React.ReactNode;
+    backgroundColor?: string;
     navbar?: boolean;
 }) => {
     const router = useRouter();
@@ -47,7 +49,8 @@ export const Layout = ({
                     route ? `${route} - DellHub` : "DellHub"
                 }</title>
             </Head>
-            <Container fluid navbar={navbar} className={inter.className}>
+
+            <Container fluid navbar={navbar} className={inter.className} backgroundColor={backgroundColor}>
                 {header ? <Header navigation={header} matchs={matchs} title={title} active={active} /> : null}
 
                 {children}

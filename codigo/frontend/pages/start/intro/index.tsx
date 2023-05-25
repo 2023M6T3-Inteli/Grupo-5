@@ -10,6 +10,7 @@ import second from '@/assets/images/2.svg'
 import third from '@/assets/images/3.svg'
 import AuthService from '@/services/auth'
 import { useRouter } from 'next/router'
+import { Spacer } from '@/components/Spacer'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -40,12 +41,15 @@ export default function Intro() {
     const slides = [
         <SlideContainer key={1} xs={12} md={4}>
             <Text>Connect and collaborate with colleagues all over the world.</Text>
+            <Spacer size="md" />
         </SlideContainer>,
         <SlideContainer key={2} xs={12} md={4}>
             <Text>Connect with teams, share knowledge and bring your ideas to life!</Text>
+            <Spacer size="md" />
         </SlideContainer>,
         <SlideContainer key={3} xs={12} md={4}>
             <Text>Connect and collaborate with colleagues all over the world.</Text>
+            <Spacer size="md" />
         </SlideContainer>,
         ""
     ];
