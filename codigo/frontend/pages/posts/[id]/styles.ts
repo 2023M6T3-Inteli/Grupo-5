@@ -8,7 +8,7 @@ export const Container = styled(Col)`
 
 export const TopBar = styled(Row)`
     background-color: #fff;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
@@ -22,7 +22,7 @@ export const TopBar = styled(Row)`
 
 export const BottomBar = styled(Row)`
     background-color: #fff;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     display: flex;
