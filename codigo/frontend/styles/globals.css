@@ -1,24 +1,25 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
-    /* Style Guide  */
-    --primary: #0672cb;
-    --secundary: #0c32a4;
-    --terceary: #daedff;
-    --background: #e6eaee;
-    --background-secundary: #eff5fb;
-    --disabled: #9a9a9a;
-    --error: #bb2a33;
-    --success: #4f7d00;
+  /* Style Guide  */
+  --primary: #0672cb;
+  --secundary: #0c32a4;
+  --terceary: #daedff;
+  --background: #e6eaee;
+  --background-secundary: #eff5fb;
+  --backgorund-terceary: #f1f0f0;
+  --disabled: #9a9a9a;
+  --warning: #bb2a33;
+  --success: #4f7d00;
 
-    --max-width: 1100px;
-    --border-radius: 12px;
-    --font: "Roboto";
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font: "Roboto";
 }
 
 * {
@@ -27,16 +28,16 @@ body {
   margin: 0;
 
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version */
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 html,
