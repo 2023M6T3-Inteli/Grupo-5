@@ -101,7 +101,7 @@ const Profile = () => {
           deleteModalOpened &&
           (
             <Modal
-              closeModal={() => setDeleteModalOpened(false)} size="small"
+              size="small"
               content={
                 <DeleteConfirm
                   text="this project visualization"

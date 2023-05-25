@@ -37,7 +37,7 @@ const Projects = () => {
 
     const [projects, setProjects] = useState<any>()
     const [editProjectOpened, setEditProjectOpened] = useState(false)
-    const [deleteProjectOpened, setDeleteProjectOpened] = useState(true)
+    const [deleteProjectOpened, setDeleteProjectOpened] = useState(false)
 
     const getAllProjects = async () => {
         const response = await ProjectService.findAll()
@@ -75,7 +75,6 @@ const Projects = () => {
                     (
                         <Modal
                             title='Edit Project'
-                            closeArrow
                             closeModal={() => setEditProjectOpened(false)}
                             content={
                                 <EditProject submit={() => setEditProjectOpened(false)} />

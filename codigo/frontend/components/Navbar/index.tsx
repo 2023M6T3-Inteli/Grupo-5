@@ -132,7 +132,6 @@ const Navbar: React.FC = () => {
             (
               <Modal
                 title='New Project'
-                closeArrow
                 closeModal={() => setCreateProjectOpened(false)}
                 content={
                   <CreateProject submit={() => setCreateProjectOpened(false)} />
@@ -146,7 +145,6 @@ const Navbar: React.FC = () => {
             (
               <Modal
                 title='New Post'
-                closeArrow
                 closeModal={() => setCreatePostOpened(false)}
                 content={
                   <CreatePost submit={() => setCreatePostOpened(false)} />
