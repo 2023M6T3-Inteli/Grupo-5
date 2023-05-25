@@ -50,7 +50,7 @@ export default function Index() {
     const [postDetails, setPostDetails] = useState<PostProps>({
         comments: [],
         content: "",
-        postId: id || "",
+        postId: "",
         imgURL: "",
         likes: [],
         role: "",
