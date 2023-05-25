@@ -12,11 +12,17 @@ import projects from "@/assets/icons/projects.png"
 import profile from "@/assets/icons/profile.png"
 import project from "@/assets/icons/project.png"
 import edit from "@/assets/icons/edit.png"
+import Modal from '../Modal'
+import CreatePost from '../CreatePost'
+import CreateProject from '../CreateProject'
 
 const Navbar: React.FC = () => {
   const ref = useRef(null)
 
   const [optionsCreateOpened, setOptionsCreateOpened] = useState(false)
+  const [createPostOpened, setCreatePostOpened] = useState(false)
+  const [createProjectOpened, setCreateProjectOpened] = useState(false)
+
   const navItems = [
     {
       icon: home,
@@ -96,11 +102,11 @@ const Navbar: React.FC = () => {
 
                     {optionsCreateOpened && (
                       <div ref={wrapperRef} className={styles.select} onClick={() => item.onClick()}>
-                        <div className={styles.optionContainer} onClick={() => alert("Abre criação de projeto")}>
+                        <div className={styles.optionContainer} onClick={() => setCreateProjectOpened(true)}>
                           <Image src={project} alt='Imagem de projeto' width={0} height={0} />
                           <p>Creat project</p>
                         </div>
-                        <div className={styles.optionContainer} onClick={() => alert("Abre criação de post")}>
+                        <div className={styles.optionContainer} onClick={() => setCreatePostOpened(true)}>
                           <Image src={edit} alt='Imagem de post' width={0} height={0} />
                           <p>Creat a post</p>
                         </div>
@@ -119,6 +125,34 @@ const Navbar: React.FC = () => {
                 </Col>
               )
             })
+          }
+
+          {
+            createProjectOpened &&
+            (
+              <Modal
+                title='New Project'
+                closeArrow
+                closeModal={() => setCreateProjectOpened(false)}
+                content={
+                  <CreateProject submit={() => setCreateProjectOpened(false)} />
+                }
+              />
+            )
+          }
+
+          {
+            createPostOpened &&
+            (
+              <Modal
+                title='New Post'
+                closeArrow
+                closeModal={() => setCreatePostOpened(false)}
+                content={
+                  <CreatePost submit={() => setCreatePostOpened(false)} />
+                }
+              />
+            )
           }
         </Row>
       </Grid>
