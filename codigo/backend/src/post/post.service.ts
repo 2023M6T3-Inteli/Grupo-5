@@ -40,7 +40,10 @@ export class PostService {
   }
 
   async findAll(): Promise<Post[]> {
-    return await this.repository.createQueryBuilder("post").getMany();
+    const queryBuilder = this.repository
+      .createQueryBuilder("post")
+      .leftJoinAndSelect("post.user", "user");
+    return await queryBuilder.getMany();
   }
 
   async findOne(id: number): Promise<Post | null> {
@@ -50,6 +53,9 @@ export class PostService {
       .where("post.id = :id", { id })
       .leftJoinAndSelect("post.user", "user");
     // execute queryBuilder and return results
+    let user = (await queryBuilder.getOne()).user
+    // return queryBuilder.getOne();
+    console.log(user)
     return queryBuilder.getOne();
   }
 

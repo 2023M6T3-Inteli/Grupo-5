@@ -25,7 +25,7 @@ type Props = {
 
 import info from '@/assets/icons/info.png'
 import settings from '@/assets/icons/settings.png'
-import logout from '@/assets/icons/logout.png'
+import logoutIcon from '@/assets/icons/logout.png'
 
 import logo from '@/assets/icons/dell.svg'
 import optionIcon from '@/assets/icons/options.png'
@@ -53,11 +53,16 @@ const Header: React.FC<Props> = (props: Props) => {
       onClick: () => setDarkMode(!darkMode)
     },
     {
-      icon: logout,
+      icon: logoutIcon,
       text: 'Logout',
-      url: '/logout'
+      onClick: () => logout()
     },
   ]
+
+  const logout = () => {
+    localStorage.clear()
+    router.push('/start/intro')
+  }
 
   const useOutsideAlerter = (ref: any) => {
     useEffect(() => {
@@ -98,7 +103,11 @@ const Header: React.FC<Props> = (props: Props) => {
                 {
                   return option.onClick ? (
                     <div className={styles.optionContainer} key={index} onClick={() => option.onClick()}>
-                      {option.icon}
+                      {
+                        option.text != 'Logout' ? option.icon
+                          :
+                          <Image src={option.icon} alt='' width={0} height={0} />
+                      }
                       <p>{option.text}</p>
                     </div>
                   ) : (

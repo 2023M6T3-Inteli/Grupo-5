@@ -46,6 +46,10 @@ const applicationProjects = () => {
             <Row around="xs" center="sm">
                 {
                     projects && projects.map((project: any, index: number) => {
+                        try{
+                            project.tags = JSON.parse(project.tags)
+                        }
+                        catch {}
                         return <ProjectCard data={project} key={index} />
                     })
                 }

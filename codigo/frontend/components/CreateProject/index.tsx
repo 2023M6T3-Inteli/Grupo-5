@@ -218,6 +218,17 @@ const CreateProject: React.FC<Props> = (props: Props) => {
 
   const submit = async () => {
     setLoading(true)
+    console.log({
+      name: data.name,
+      description: data.description,
+      tags: JSON.stringify(data.tags),
+      roles: JSON.stringify(data.roles),
+      start: new Date(data.start),
+      end: new Date(data.end),
+      badge: "",
+      endSubscription: new Date(data.endSubscription),
+      coleaderId: data.coleaderId,
+    })
 
     let response = await ProjectService.create({
       name: data.name,

@@ -37,7 +37,7 @@ const Projects = () => {
 
     const [projects, setProjects] = useState<any>()
     const [editProjectOpened, setEditProjectOpened] = useState(false)
-    const [deleteProjectOpened, setDeleteProjectOpened] = useState(true)
+    const [deleteProjectOpened, setDeleteProjectOpened] = useState(false)
 
     const getAllProjects = async () => {
         const response = await ProjectService.findAll()
@@ -62,6 +62,10 @@ const Projects = () => {
 
                 {
                     projects && projects.map((project: any, index: number) => {
+                        try{
+                            project.tags = JSON.parse(project.tags)
+                        }
+                        catch {}
                         return <ProjectCard data={project} key={index} />
                     })
                 }

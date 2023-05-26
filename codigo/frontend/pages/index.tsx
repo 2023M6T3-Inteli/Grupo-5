@@ -18,29 +18,32 @@ import useSWR from 'swr';
 import axios from 'axios';
 import Link from 'next/link'
 import Modal from '@/components/Modal'
+import { useEffect, useState } from 'react'
+import PostService from '@/services/post'
 
-const fetchData = (url: string) => {
-  const fetcher = async () => {
-    const response = await axios.get(url);
-    return response.data;
-  };
+// const fetchData = (url: string) => {
+//   const fetcher = async () => {
+//     const response = await axios.get(url);
+//     return response.data;
+//   };
 
-  const { data, error } = useSWR(url, fetcher);
+//   const { data, error } = useSWR(url, fetcher);
 
-  return {
-    data,
-    isLoading: !error && !data,
-    isError: error,
-  };
-};
+//   return {
+//     data,
+//     isLoading: !error && !data,
+//     isError: error,
+//   };
+// };
 
 interface PostProps {
-  user: string,
+  user: any,
   role: string,
   imgURL: string,
-  likes: number[],
-  comments: string[],
-  saves: number[],
+  likes: number,
+  content: string,
+  comments: string[] | null,
+  saves: number,
   id: number;
 }
 
@@ -63,7 +66,19 @@ export default function Index() {
     }
   ]
 
-  const { data, isLoading, isError } = fetchData("http://localhost:5500/post");
+  const [posts, setPosts] = useState<any>()
+  const [isLoading, setIsLoading] = useState(true)
+
+  const getAllPosts = async () => {
+    const response = await PostService.findAll()
+    setPosts(response.data)
+    setIsLoading(false)
+    console.log(posts)
+  }
+
+  useEffect(() => {
+    getAllPosts()
+  }, [])
 
   return (
     <Layout header={navigation} navbar={true} title={"All posts"} active={0} matchs={3}>
@@ -78,73 +93,81 @@ export default function Index() {
 
         {/* <Post user={"marcelofeitoza"} role={"Mobile developer"} imgURL={"https://placehold.co/600x400/EEE/31343C"} likes={[1, 2, 3, 4, 5, 6]} comments={["123", "321", "456"]} saves={[1, 2, 3, 4, 5, 6, 7]} /> */}
 
-        {data && data.map((post: PostProps, index: number) => (
-          <Post {...post} key={index} />
+        {posts && posts.map((post: PostProps, index: number) => (
+          <Post {...post} user={post["__user__"]} key={index} />
         ))}
 
-        {isError && (
+        {/* {isError && (
           <Col xs={12}>
             <Text color='#2e2e2e'>
               Error!
             </Text>
           </Col>
-        )}
+        )} */}
       </Col>
     </Layout>
   )
 }
 
 const Post = ({
-  user, role, imgURL, likes, comments, saves, id
+  user, role, imgURL, likes, content, comments, saves, id
 }: PostProps) => {
   return (
     <Card xs={12}>
-      <Link href={"/posts/" + id}>
-        <Row middle='xs' between='xs'>
-          <Col xs={2}>
-            <ProfilePicture loader={
-              () => 'https://placehold.co/64x64'
-            } src={'https://placehold.co/64x64'} alt='Post' width={64} height={64} />
-          </Col>
+      <Row middle='xs'>
+        <Col>
+          <ProfilePicture loader={
+            () => 'https://placehold.co/64x64'
+          } src={'https://placehold.co/64x64'} alt='Post' width={48} height={48} />
+        </Col>
 
-          <Col xs={10}>
-            <Title variant='sm' color='#000'>{user}</Title>
+        <Col>
+          <Title variant='sm' color='#000'>{user.name}</Title>
 
-            <Text color='#000'>{role}</Text>
-          </Col>
-        </Row>
+          <Text color='#000'>DevOps</Text>
+        </Col>
+      </Row>
 
-        <Row center='xs' style={{ margin: "1rem 0" }}>
-          <Col xs={12}>
-            <Image src={imgURL} loader={
-              () => imgURL
-            } width={300} height={200} layout="responsive" alt='Post' />
-          </Col>
-        </Row>
+      <Row center='xs' style={{ margin: "1rem 0" }}>
+        <Col xs={12}>
+          {
+            imgURL && (
+              <Image src={imgURL} loader={
+                () => imgURL
+              } width={300} height={200} layout="responsive" alt='Post' />
+            )
+          }
+        </Col>
+        <Col xs={12}>
+          <Text color='#000'>
 
-        <Row start={'xs'} middle={'xs'}>
-          <Col>
-            <Row center="xs">
-              <Image src={like} alt="save" width={16} height={16} />
-            </Row>
-            <Text center={true} color={'#00000080'}>Like ({likes.length | 0})</Text>
-          </Col>
+            {content}
+          </Text>
+        </Col>
+      </Row>
 
-          <Col>
-            <Row center="xs">
-              <Image src={comment} alt="save" width={16} height={16} />
-            </Row>
-            <Text center={true} color={'#00000080'}>Comment ({comments.length | 0})</Text>
-          </Col>
+      <Row start={'xs'} middle={'xs'}>
+        <Col>
+          <Row center="xs">
+            <Image src={like} alt="save" width={16} height={16} />
+          </Row>
+          <Text center={true} color={'#00000080'}>Like ({likes | 0})</Text>
+        </Col>
 
-          <Col>
-            <Row center="xs">
-              <Image src={save} alt="save" width={16} height={16} />
-            </Row>
-            <Text center={true} color={'#00000080'}>Save ({saves.length | 0})</Text>
-          </Col>
-        </Row>
-      </Link>
+        <Col>
+          <Row center="xs">
+            <Image src={comment} alt="save" width={16} height={16} />
+          </Row>
+          <Text center={true} color={'#00000080'}>Comment ({comments ? comments.length : 0})</Text>
+        </Col>
+
+        <Col>
+          <Row center="xs">
+            <Image src={save} alt="save" width={16} height={16} />
+          </Row>
+          <Text center={true} color={'#00000080'}>Save ({saves | 0})</Text>
+        </Col>
+      </Row>
     </Card>
   )
 }
@@ -157,6 +180,7 @@ const Card = styled(Col)`
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-width: 80vw;
   border-radius: 10px;
   background-color: #FFF;
   padding: 1.25rem 1rem;

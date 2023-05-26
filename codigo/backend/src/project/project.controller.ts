@@ -13,15 +13,25 @@ import {
 import { Project } from "./entities/project.entity";
 import { CreateProjectDto } from "./dto/create-project.dto";
 import { UpdateProjectDto } from "./dto/update-project.dto";
+import { HttpService } from "@nestjs/axios";
+import { firstValueFrom } from "rxjs";
 
 ////////////////////////////////////////////////////////////////////////////////
 
 @Controller("project")
 export class ProjectController {
   private projects: Project[] = [];
+  
+  constructor(private readonly httpService: HttpService) {
+    
+  }
 
   @NestPost()
-  create(@Body() createProjectDto: CreateProjectDto) {
+  async create(@Body() createProjectDto: CreateProjectDto, config: any) {
+    // const { data } = await firstValueFrom(
+    //   this.httpService.post("http://localhost:3001/Project/Create", createProjectDto, config)
+    // );
+    // return data;
     this.projects.push({
       ...createProjectDto,
       id: this.projects.length + 1,
