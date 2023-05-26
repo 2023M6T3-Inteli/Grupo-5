@@ -12,16 +12,13 @@ export class Post {
   @Column("simple-array")
   tags: string[];
 
-  @Column()
-  role: string;
-
   @Column({ default: 0 })
   likes: number;
 
   @Column({ default: 0 })
   saves: number;
 
-  @Column("simple-array")
+  @Column("simple-array", { nullable: true })
   comments: string[];
 
   @Column({ nullable: true })

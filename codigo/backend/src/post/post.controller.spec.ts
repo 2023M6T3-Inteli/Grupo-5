@@ -107,10 +107,6 @@ describe("PostController", () => {
     it("should return a post", async () => {
       const mockCreatePostDto: CreatePostDto = {
         content: "test",
-        role: "test",
-        likes: 0,
-        comments: ["test"],
-        saves: 0,
         imgURL: "test",
         tags: ["test"],
       };
