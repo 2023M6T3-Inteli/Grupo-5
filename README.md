@@ -53,10 +53,11 @@ Formato do arquivo: CSV
  
  🔢 ID do item: um identificador exclusivo para cada item.
  
- 🔢 Ranking: feedback do usuário sobre o item. Expresso como um número ou um valor ordinal. O conjunto de dados é balanceado. Ou seja, contém classificações de usuários e uma distribuição uniforme e representativa dos itens. Para demonstrar isso, realizamos uma análise estatística das classificações e confirmamos que não havia vieses ou desequilíbrios significativos nas classificações atribuídas aos itens.
+ 🔢 Ranking: O ranking é utilizado para classificar as obras audiovisuais com base em sua probabilidade de agradar ao usuário, de acordo com os dados coletados e as correlações estabelecidas.
 
+Após o cálculo das correlações entre as preferências dos usuários, o sistema de recomendação pode gerar uma lista ordenada de filmes e documentários com base nesses resultados. O ranking coloca as obras em uma ordem que reflete sua proximidade com os interesses do usuário.
 
-O número de registros no conjunto de dados é [insira o número de registros aqui] e o número total de colunas é 3, incluindo os campos User ID, Article ID e Ranking.
+O número de registros no conjunto de dados  e o número total de colunas é 3, incluindo os campos User ID, Article ID e Ranking.
 
 
 Este conjunto de dados pode ser usado para várias aplicações, como:
@@ -67,8 +68,14 @@ Este conjunto de dados pode ser usado para várias aplicações, como:
  Análise de preferências do usuário: A análise de classificação permite identificar as preferências do usuário para determinados tipos de artigos, o que ajuda na estratégia de marketing e desenvolvimento de produtos.
  
 O arquivo CSV está disponíveis aqui:<center>
-<a href="https://docs.google.com/spreadsheets/d/18aq83JEON5RjWSXYUWdG8yShGpLozvvgqwrvVnh2bMo/edit?usp=sharing">
-  Acesse
+<a href="https://drive.google.com/file/d/1YV9u_PUXt-h4qktCDVcy1PPwReQpHPpp/view?usp=share_link">
+  Acesse os arquivos csv
+</a>
+</center>
+
+O link para o google colab:<center>
+<a href="https://drive.google.com/file/d/1GHSx6t2voZdiooZHliRu2iUvtLQu2D4H/view?usp=sharing">
+  Acesse o google colab
 </a>
 </center>
 
