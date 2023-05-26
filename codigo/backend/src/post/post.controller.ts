@@ -18,8 +18,8 @@ import { PostService } from "./post.service";
 import { CreatePostDto } from "./dto/create-post.dto";
 import { Post } from "./entities/post.entity";
 import { User } from "../user/entities/user.entity";
-import { AuthGuard } from "src/user/guards/auth.guard";
-import { UserService } from "src/user/user.service";
+import { AuthGuard } from "../user/guards/auth.guard";
+import { UserService } from "../user/user.service";
 ////////////////////////////////////////////////////////////////////////////////
 
 export interface PassportRequest extends Request {

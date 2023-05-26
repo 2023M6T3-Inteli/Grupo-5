@@ -10,8 +10,8 @@ import { PostService } from "./post.service";
 
 /** dependencies */
 import { Post } from "./entities/post.entity";
-import { UserModule } from "src/user/user.module";
-import { QueryRunnerFactory } from "src/commom/queryRunner/query-runner.factory";
+import { UserModule } from "../user/user.module";
+import { QueryRunnerFactory } from "../commom/queryRunner/query-runner.factory";
 ////////////////////////////////////////////////////////////////////////////////
 
 @Module({

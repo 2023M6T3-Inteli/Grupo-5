@@ -2,11 +2,11 @@ import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Post } from "./entities/post.entity";
 import { Repository } from "typeorm";
-import { QueryRunnerFactory } from "src/commom/queryRunner/query-runner.factory";
+import { QueryRunnerFactory } from "../commom/queryRunner/query-runner.factory";
 import { CreatePostDto } from "./dto/create-post.dto";
 import { UpdatePostDto } from "./dto/update-post.dto";
 import { User } from "../user/entities/user.entity";
-import { UserService } from "src/user/user.service";
+import { UserService } from "../user/user.service";
 
 @Injectable()
 export class PostService {
