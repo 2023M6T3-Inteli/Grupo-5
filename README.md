@@ -69,7 +69,7 @@ Este conjunto de dados pode ser usado para várias aplicações, como:
  
 O arquivo CSV está disponíveis aqui:<center>
 <a href="https://drive.google.com/file/d/1YV9u_PUXt-h4qktCDVcy1PPwReQpHPpp/view?usp=share_link">
-  Acesse os arquivos csv
+  Acesse o arquivo csv
 </a>
 </center>
 
