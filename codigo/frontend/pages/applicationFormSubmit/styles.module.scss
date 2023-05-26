@@ -29,17 +29,23 @@
             }
 
             .formApplicationFormSubmit {
-                .selectRoleInterest {
-                    // margin: 50px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                justify-content: center;
 
-                    .whyThisVacancy {}
-                }
+                .selectRoleInterest {}
 
                 .inputWhyThisVacancy {}
 
                 .inputSkillDevelop {}
+            }
 
-
+            .submitButton {
+                margin-top: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
             }
         }
     }

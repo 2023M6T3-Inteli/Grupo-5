@@ -6,6 +6,7 @@ import { ConfigModule } from "@nestjs/config";
 import { UserModule } from "./user/user.module";
 import { PostModule } from "./post/post.module";
 import { ProjectModule } from "./project/project.module";
+import { TypeOrmModule } from "@nestjs/typeorm";
 
 @Module({
   imports: [
@@ -17,6 +18,12 @@ import { ProjectModule } from "./project/project.module";
       cache: true,
       isGlobal: true,
       ignoreEnvFile: process.env.NODE_ENV === "prod" ? true : false,
+    }),
+    TypeOrmModule.forRoot({
+      type: "sqlite",
+      database: "database.sqlite",
+      autoLoadEntities: true,
+      synchronize: true,
     }),
   ],
 })

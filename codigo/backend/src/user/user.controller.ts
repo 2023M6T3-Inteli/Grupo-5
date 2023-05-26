@@ -1,50 +1,39 @@
 /** nestjs */
 import {
-  Controller,
-  Get,
   Post,
+  Get,
+  Req,
   Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+  HttpCode,
+  UseGuards,
+  Controller,
+} from "@nestjs/common";
 
 /** providers */
-import { CreateUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './entities/user.entity';
+import { UserService } from "./user.service";
+
+/** dependencies */
+import { LoginDto } from "./dto/login.dto";
+import { AuthGuard } from "./guards/auth.guard";
 ////////////////////////////////////////////////////////////////////////////////
 
-@Controller('user')
+export interface LoginResponse {
+  accessToken: string;
+}
+
+@Controller("user")
 export class UserController {
-  private users: User[] = [];
+  constructor(private readonly userService: UserService) {}
 
-  @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    this.users.push({ ...createUserDto, id: this.users.length + 1 });
-    return this.users[this.users.length - 1];
+  @HttpCode(200)
+  @Post("login")
+  login(@Body() loginDto: LoginDto): Promise<LoginResponse> {
+    return this.userService.login(loginDto);
   }
 
-  @Get()
-  findAll() {
-    return this.users;
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.users.find((user) => user.id === +id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    this.users = this.users.map((user) =>
-      user.id === +id ? { ...user, ...updateUserDto } : user,
-    );
-    return this.users.find((user) => user.id === +id);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    this.users = this.users.filter((user) => user.id !== +id);
+  @UseGuards(AuthGuard)
+  @Get("test")
+  testJwt(@Req() req: Request) {
+    return req["user"];
   }
 }

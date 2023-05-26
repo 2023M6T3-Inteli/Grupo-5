@@ -1,8 +1,8 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module'
-import helmet from 'helmet'
-import * as cookieParser from 'cookie-parser';
-import { ValidationPipe } from '@nestjs/common';
+import { NestFactory } from "@nestjs/core";
+import { AppModule } from "./app.module";
+import helmet from "helmet";
+import * as cookieParser from "cookie-parser";
+import { ValidationPipe } from "@nestjs/common";
 ////////////////////////////////////////////////////////////////////////////////
 
 /** bootstrap project */
@@ -15,7 +15,7 @@ import { ValidationPipe } from '@nestjs/common';
   app.use(cookieParser());
 
   /** empty global validation pipe; configured at handler level */
-  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
+  app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
 
   /** start server listener */
   await app.listen(5500);

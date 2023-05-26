@@ -1,7 +1,8 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ToastContainer } from 'react-toastify'
+import { Analytics } from '@vercel/analytics/react';
 
+import { ToastContainer } from 'react-toastify'
 import { ThemeProvider } from 'styled-components'
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -26,19 +27,23 @@ const theme = {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <ThemeProvider theme={theme}>
-    <Component {...pageProps} />
-    <ToastContainer
-      position="top-right"
-      autoClose={3000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-    />
-  </ThemeProvider>
+  return <>
+    <ThemeProvider theme={theme}>
+      <Component {...pageProps} />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+    </ThemeProvider>
+
+    <Analytics />
+  </>
 }
