@@ -7,46 +7,49 @@ import {
   Patch,
   Param,
   Delete,
+  Req,
+  UseGuards,
 } from "@nestjs/common";
 
-/** providers */
-import { CreatePostDto } from "./dto/create-post.dto";
-import { UpdatePostDto } from "./dto/update-post.dto";
-import { Post } from "./entities/post.entity";
-// import { UserController } from "../user/user.controller";
+/** service */
+import { PostService } from "./post.service";
 
+/** dependencies */
+import { CreatePostDto } from "./dto/create-post.dto";
+import { Post } from "./entities/post.entity";
+import { User } from "../user/entities/user.entity";
+import { AuthGuard } from "src/user/guards/auth.guard";
+import { UserService } from "src/user/user.service";
 ////////////////////////////////////////////////////////////////////////////////
+
+export interface PassportRequest extends Request {
+  user?: User;
+}
 
 @Controller("post")
 export class PostController {
-  private posts: Post[] = [];
+  constructor(
+    private readonly postService: PostService,
+    private readonly userService: UserService
+  ) {}
 
+  @UseGuards(AuthGuard)
   @NestPost()
-  create(@Body() createPostDto: CreatePostDto) {
-    this.posts.push({ ...createPostDto, id: this.posts.length + 1 });
-    return this.posts[this.posts.length - 1];
+  async create(
+    @Req() req: PassportRequest,
+    @Body() createPostDto: CreatePostDto
+  ): Promise<Post> {
+    const user = await this.userService.findByEmail(req.user.email);
+    return await this.postService.create(createPostDto, user.userIdLegacy);
   }
 
   @Get()
-  findAll() {
-    return this.posts;
+  findAll(): Promise<Post[]> {
+    return this.postService.findAll();
   }
 
   @Get(":id")
-  findOne(@Param("id") id: string) {
-    return this.posts.find((post) => post.id === +id);
-  }
-
-  @Patch(":id")
-  update(@Param("id") id: string, @Body() updatePostDto: UpdatePostDto) {
-    this.posts = this.posts.map((post) =>
-      post.id === +id ? { ...post, ...updatePostDto } : post
-    );
-    return this.posts.find((post) => post.id === +id);
-  }
-
-  @Delete(":id")
-  remove(@Param("id") id: string) {
-    this.posts = this.posts.filter((post) => post.id !== +id);
+  findOne(@Param("id") id: number) {
+    return this.postService.findOne(id);
   }
 }

@@ -1,19 +1,27 @@
-import { IsString } from 'class-validator';
+import { IsNumber, IsOptional, IsString } from "class-validator";
 
 export class CreatePostDto {
   @IsString()
-  user: string;
-  @IsString()
   content: string;
+
   @IsString()
   role: string;
-  @IsString({ each: true })
-  likes: string[];
+
+  @IsOptional()
+  @IsNumber()
+  likes: number;
+
   @IsString({ each: true })
   comments: string[];
-  @IsString({ each: true })
-  saves: string[];
+
+  @IsOptional()
+  @IsNumber()
+  saves: number;
+
+  @IsOptional()
   @IsString()
   imgURL: string;
+
+  @IsString({ each: true })
   tags: string[];
 }

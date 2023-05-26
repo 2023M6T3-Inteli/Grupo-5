@@ -43,4 +43,8 @@ export class UserService {
   async findOne(userIdLegacy: string): Promise<User> {
     return await this.repository.findOne({ where: { userIdLegacy } });
   }
+
+  async findByEmail(email: string): Promise<User> {
+    return await this.repository.findOne({ where: { email } });
+  }
 }

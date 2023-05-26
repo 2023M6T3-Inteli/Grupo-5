@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
+import { Post } from "src/post/entities/post.entity";
 
 @Entity()
 export class User {
@@ -13,4 +14,7 @@ export class User {
 
   @Column()
   name: string;
+
+  @OneToMany(() => Post, (post) => post.user)
+  posts: Promise<Post[]>;
 }

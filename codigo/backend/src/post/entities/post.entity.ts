@@ -1,13 +1,33 @@
-//Tabela
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
+import { User } from "src/user/entities/user.entity";
 
+@Entity()
 export class Post {
+  @PrimaryGeneratedColumn()
   id: number;
-  user: string;
+
+  @Column()
   content: string;
+
+  @Column("simple-array")
   tags: string[];
+
+  @Column()
   role: string;
-  likes: string[];
-  saves: string[];
+
+  @Column({ default: 0 })
+  likes: number;
+
+  @Column({ default: 0 })
+  saves: number;
+
+  @Column("simple-array")
   comments: string[];
+
+  @Column({ nullable: true })
   imgURL: string;
+
+  /** relations */
+  @ManyToOne(() => User, (user) => user.posts)
+  user: Promise<User>;
 }
