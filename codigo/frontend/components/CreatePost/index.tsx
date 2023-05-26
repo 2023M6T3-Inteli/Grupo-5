@@ -8,6 +8,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import Button from "../Button";
 import PostService from "@/services/post";
 import { useRouter } from "next/router";
+import { toast } from "react-toastify";
 
 type Props = {
   submit: Function;
@@ -20,6 +21,7 @@ type Data = {
 
 const CreatePost: React.FC<Props> = ({ submit }: Props) => {
   const router = useRouter()
+  const [loading, setLoading] = useState(true)
   const [data, setData] = useState<Data>({
     content: "",
     tags: []
@@ -59,17 +61,6 @@ const CreatePost: React.FC<Props> = ({ submit }: Props) => {
     }
   }
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault()
-
-    const response = await PostService.create(data)
-
-    if(response) {
-      router.reload()
-      submit()
-    }
-  }
-
   const charactersUsed = data.content.length;
 
   const validateFields = () => {
@@ -82,6 +73,23 @@ const CreatePost: React.FC<Props> = ({ submit }: Props) => {
     }
     else {
       setDisableCreate(true)
+    }
+  }
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault()
+
+    const response = await PostService.create(data)
+
+    if (response) {
+      setLoading(false)
+      toast.success('Post created successfully!')
+      setTimeout(() => {
+        router.reload()
+      }, 2000)
+    }
+    else {
+      toast.error("Error to create the post")
     }
   }
 
