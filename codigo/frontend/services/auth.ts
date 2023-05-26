@@ -18,14 +18,17 @@ const AuthService = {
     signIn: async (email: string, password: string) => {
         try {
             const response = await axios.post("/user/login", { email, password });
-
             const accessToken = response.data.accessToken;
 
             return accessToken;
         } catch (err) {
             return err;
         }
-    }
+    },
+
+    signUp: async () => { },
+
+    signInWithSSO: async () => { },
 }
 
 export default AuthService;

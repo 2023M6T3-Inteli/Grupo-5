@@ -12,7 +12,7 @@
     "start:debug": "set NODE_ENV=debug && nest start --debug --watch",
     "start:prod": "set NODE_ENV=prod && node dist/main",
     "test": "set NODE_ENV=testb&& jest",
-    "test:watch": "set NODE_ENV=test && jest --watch",
+    "test:watch": "set NODE_ENV=test && jest --watch --maxWorkers=1 --verbose",
     "test:cov": "set NODE_ENV=test && jest --coverage",
     "test:e2e": "set NODE_ENV=test && jest --config ./test/jest-e2e.json"
   },

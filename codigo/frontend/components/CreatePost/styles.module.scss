@@ -1,9 +1,8 @@
-// @import "../../styles/globals.css";
-//como criar outras classes className={`${styles.inputGroup} ${styles.outro}`}
-
 .createPost {
   .row {
-    margin-top: 30px;
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
 
     .subtitle {
       margin-top: 10px;
