@@ -407,6 +407,11 @@ A seção de perfil de usuário da documentação de software é responsável po
 <img src="./assets/arquitetura/infraestrutura-arquitetura-cloudV2.png"/>
 </center>
 
+## Arquitetura do sistema V3:
+<center>
+<img src="./assets/arquitetura/infraestrutura-arquitetura-cloudV3.png"/>
+</center>
+
 <br>
 
 ## Diagrama do fluxo de dados V1:
@@ -433,13 +438,9 @@ O desenvolvimento da aplicação tem como prioridade a interatividade e usabilid
 Assim, uma primeira versão da solução proposta de interface mobile foi prototipada na plataforma Figma e pode ser acessada através do seguinte endereço: <a href="https://www.figma.com/file/cLznFm8xajrbxyqVEKE8da/DellHub?node-id=0-1&t=MvWd3RhCig4XBaMV-0"> Protótipo Interface Mobile </a>. É recomendado o acesso ao Figma para uma visualização melhor qualidade e detalhamento dos objetivos de cada tela. Para visualizar com interação com os botões, basta fazer o atalho do teclado “Ctrl + Alt + Enter” ou basta <a href="https://www.figma.com/proto/cLznFm8xajrbxyqVEKE8da/DellHub?node-id=1-10&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A10&show-proto-sidebar=1"> clicar aqui. </a>
 
 Telas e features pendentes: 
-- Editar projetos e conteúdos;
-- Descrição de projeto;
-- Denúncia de conteúdo;
 - Telas de confirmação e erros;
 - Filtros;
 - Dashboard para Managers e Moderadores;
-- Aprimorar gamificação;
 - Modo escuro;
 - Tela de notificação;
 - Criação de perfil;
