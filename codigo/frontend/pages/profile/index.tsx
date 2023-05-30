@@ -32,8 +32,12 @@ const Profile = () => {
           <Col>
             <Image
               className={styles.profile}
-              loader={() => 'https://ca.slack-edge.com/T02DWH2MXQR-U02UAA1E2HK-7468bf815087-512'}
-              src={'https://ca.slack-edge.com/T02DWH2MXQR-U02UAA1E2HK-7468bf815087-512'}
+              loader={() =>
+                "https://ca.slack-edge.com/T02DWH2MXQR-U02UAA1E2HK-7468bf815087-512"
+              }
+              src={
+                "https://ca.slack-edge.com/T02DWH2MXQR-U02UAA1E2HK-7468bf815087-512"
+              }
               width={56}
               height={56}
               alt="Imagem do perfil"
@@ -97,21 +101,14 @@ const Profile = () => {
           </div>
         </Row>
 
-        {
-          deleteModalOpened &&
-          (
-            <Modal
-              size="small"
-              content={
-                <DeleteConfirm
-                  text="this project visualization"
-                  submit={() => alert('deleted')}
-                  cancel={() => setDeleteModalOpened(false)}
-                />
-              }
-            />
-          )
-        }
+        {deleteModalOpened && (
+          <DeleteConfirm
+            text="Delete this project from your profile."
+            submitText="Delete project"
+            submit={() => alert("Project successfuly deleted from your profile.")}
+            cancel={() => setDeleteModalOpened(false)}
+          />
+        )}
       </div>
     </Layout>
   );

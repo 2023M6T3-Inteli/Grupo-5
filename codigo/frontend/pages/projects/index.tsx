@@ -17,89 +17,98 @@ import EditProject from "@/components/EditProject";
 import DeleteConfirm from "@/components/DeleteConfirm";
 
 const Projects = () => {
-    const navigation = [
-        {
-            icon: burguer,
-            text: 'All Projects',
-            url: '/projects'
-        },
-        {
-            icon: star,
-            text: 'My Projects',
-            url: '/projects/userId'
-        },
-        {
-            icon: community,
-            text: 'Apliccations',
-            url: '/projects/application'
-        }
-    ]
+  const navigation = [
+    {
+      icon: burguer,
+      text: "All Projects",
+      url: "/projects",
+    },
+    {
+      icon: star,
+      text: "My Projects",
+      url: "/projects/userId",
+    },
+    {
+      icon: community,
+      text: "Apliccations",
+      url: "/projects/application",
+    },
+  ];
 
-    const [projects, setProjects] = useState<any>()
-    const [editProjectOpened, setEditProjectOpened] = useState(false)
-    const [deleteProjectOpened, setDeleteProjectOpened] = useState(false)
+  const [projects, setProjects] = useState<any>();
+  const [editProjectOpened, setEditProjectOpened] = useState(false);
+  const [deleteProjectOpened, setDeleteProjectOpened] = useState(true); //trocar para false depois
+  const [removeApplyOpened, setRemoveApplyOpened] = useState(false);
 
-    const getAllProjects = async () => {
-        const response = await ProjectService.findAll()
-        setProjects(response.data)
-    }
+  const getAllProjects = async () => {
+    const response = await ProjectService.findAll();
+    setProjects(response.data);
+  };
 
-    const deleteProject = async () => {
-        const id = '1'
-        alert("Delete project "+id)
-    }
+  const deleteProject = async () => {
+    const id = "1";
+    alert("Project " + id + " was successfully deleted.");
+  };
 
-    useEffect(() => {
-        getAllProjects()
-    }, [])
+  const removeApply = async () => {
+    const id = "1";
+    alert(
+      "Your application to project " +
+        id +
+        " was canceled, you can send new application at any time."
+    );
+  };
 
-    return (
-        <Layout header={navigation} navbar={true} title="Projects" active={0}>
-            <Row around="xs" center="sm">
-                {/* <Col xs={12} md={6} lg={4}> */}
+  useEffect(() => {
+    getAllProjects();
+  }, []);
 
-                <Input placeholder="Search for a title, tag, ..." />
+  return (
+    <Layout header={navigation} navbar={true} title="Projects" active={0}>
+      <Row around="xs" center="sm">
+        {/* <Col xs={12} md={6} lg={4}> */}
 
-                {
-                    projects && projects.map((project: any, index: number) => {
-                        return <ProjectCard data={project} key={index} />
-                    })
-                }
+        <Input placeholder="Search for a title, tag, ..." />
 
-                {
-                    projects && projects.length === 0 && <Text color="black">Sem projetos</Text>
-                }
+        {projects &&
+          projects.map((project: any, index: number) => {
+            return <ProjectCard data={project} key={index} />;
+          })}
 
-                {
-                    editProjectOpened &&
-                    (
-                        <Modal
-                            title='Edit Project'
-                            closeModal={() => setEditProjectOpened(false)}
-                            content={
-                                <EditProject submit={() => setEditProjectOpened(false)} />
-                            }
-                        />
-                    )
-                }
+        {projects && projects.length === 0 && (
+          <Text color="black">Sem projetos</Text>
+        )}
 
-                {
-                    deleteProjectOpened &&
-                    (
-                        <Modal
-                            size="small"
-                            closeModal={() => setEditProjectOpened(false)}
-                            content={
-                                <DeleteConfirm text="this Project" cancel={() => setDeleteProjectOpened(false)} submit={() => deleteProject()} />
-                            }
-                        />
-                    )
-                }
+        {editProjectOpened && (
+          <Modal
+            title="Edit Project"
+            closeModal={() => setEditProjectOpened(false)}
+            content={<EditProject submit={() => setEditProjectOpened(false)} />}
+          />
+        )}
 
-                {/* </Col> */}
-            </Row>
-        </Layout>
-    )
+        {deleteProjectOpened && (
+          <DeleteConfirm
+            text='Delete your project "Project1"' //pegar o nome do projeto
+            submitText="Delete project"
+            cancel={() => setDeleteProjectOpened(false)}
+            submit={() => deleteProject()}
+          />
+        )}
+
+        {removeApplyOpened && (
+          <DeleteConfirm
+            text='Remove your application to "Project1"' //pegar o nome do projeto
+            submitText="Remove Apply"
+            cancel={() => setRemoveApplyOpened(false)}
+            submit={() => removeApply()}
+          />
+        )}
+
+        {/* </Col> */}
+      </Row>
+    </Layout>
+  );
 }
 
 export const Input = ({ placeholder }: { placeholder: string }) => {
