@@ -15,7 +15,7 @@
 
 . Nome do Projeto: Aplicativo desenvolvimento mobile <br>
 . Nome do Parceiro: Dell Tecnologies <br>
-. Nome do Grupo: xxxx <br>
+. Nome do Grupo: DellHub <br>
 . Integrantes do grupo:
  Emanuel De Oliveira Costa,
   Felipe Saadi Siegert,
@@ -707,8 +707,6 @@ Documentação dos Endpoints com o uso de Postman para testes
 Fornecer instruções detalhadas sobre como usar o software corretamente. É uma ferramenta valiosa para ajudar os usuários a compreender as funções do software, instalar o software, configurar as preferências do usuário, entre outras tarefas. O manual do usuário geralmente inclui screenshots, animações e outros recursos visuais para tornar a experiência do usuário mais clara e intuitiva. Além disso, ele também pode incluir informações sobre solução de problemas, dicas e truques, bem como informações de contato para suporte técnico. É importante que a seção de manual do usuário seja atualizada frequentemente para garantir que os usuários tenham acesso à informação mais recente e precisa sobre o software.
 
  
-
-
 
 
 # Referências
