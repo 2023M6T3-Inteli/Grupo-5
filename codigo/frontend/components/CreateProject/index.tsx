@@ -10,12 +10,14 @@ import Input from '../Input';
 import CloseIcon from '@mui/icons-material/Close'
 import Select from '../Select';
 import Button from '../Button';
+import { useRouter } from 'next/router';
 
 type Props = {
   submit: Function;
 }
 
 const CreateProject: React.FC<Props> = (props: Props) => {
+  const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [disableCreate, setDisableCreate] = useState(true)
   const [tag, setTag] = useState('')
@@ -218,6 +220,17 @@ const CreateProject: React.FC<Props> = (props: Props) => {
 
   const submit = async () => {
     setLoading(true)
+    console.log({
+      name: data.name,
+      description: data.description,
+      tags: JSON.stringify(data.tags),
+      roles: JSON.stringify(data.roles),
+      start: new Date(data.start),
+      end: new Date(data.end),
+      badge: "",
+      endSubscription: new Date(data.endSubscription),
+      coleaderId: data.coleaderId,
+    })
 
     let response = await ProjectService.create({
       name: data.name,
@@ -236,7 +249,7 @@ const CreateProject: React.FC<Props> = (props: Props) => {
       setLoading(false)
       toast.success('Project created successfully! Please check your email for more details.')
       setTimeout(() => {
-        alert("Navega para a home")
+        router.reload()
       }, 2000)
     }
     else {

@@ -1,11 +1,11 @@
 import axios from "@/utils/axios"
 
-const API_URL = "localhost:3001/project"
+const API_URL = "http://localhost:5500"
 
 const ProjectService = {
   findByID: async (id: String) => {
     try {
-      const response = await axios.get(`${API_URL}/Project/${id}`)
+      const response = await axios.get(`${API_URL}/project/${id}`)
       return response
     }
     catch (error: any) {
@@ -15,7 +15,7 @@ const ProjectService = {
 
   findAll: async () => {
     try {
-      const response = await axios.get(`${API_URL}/Project`)
+      const response = await axios.get(`${API_URL}/project`)
       return response
     }
     catch (error: any) {
@@ -24,13 +24,14 @@ const ProjectService = {
   },
   create: async (data: any) => {
     const config = {
-      // headers: {
-      //   "Authorization": `Bearer ${cookie.load("token")}`
-      // }
+      headers: {
+        "Authorization": `Bearer ${localStorage.getItem('accessToken')
+      }`
+      }
     }
 
     try {
-      const response = await axios.post(`${API_URL}/Project/create`, data, config)
+      const response = await axios.post(`${API_URL}/project`, data, config)
       return response
     }
     catch (error: any) {

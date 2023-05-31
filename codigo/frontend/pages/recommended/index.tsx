@@ -2,7 +2,7 @@
 import { Col, Row } from 'react-styled-flexboxgrid'
 import { Layout } from '@/components/Layout'
 import { Title } from '@/components/Title'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import styled from 'styled-components'
 import { Text } from '@/components/Text'
 
@@ -13,6 +13,39 @@ import comment from "@/assets/icons/comment.svg"
 import burguer from "@/assets/icons/burguer.png"
 import star from "@/assets/icons/star.png"
 import community from "@/assets/icons/community.png"
+
+import useSWR from 'swr';
+import axios from 'axios';
+import Link from 'next/link'
+import Modal from '@/components/Modal'
+import { useEffect, useState } from 'react'
+import PostService from '@/services/post'
+
+// const fetchData = (url: string) => {
+//   const fetcher = async () => {
+//     const response = await axios.get(url);
+//     return response.data;
+//   };
+
+//   const { data, error } = useSWR(url, fetcher);
+
+//   return {
+//     data,
+//     isLoading: !error && !data,
+//     isError: error,
+//   };
+// };
+
+interface PostProps {
+  user: any,
+  role: string,
+  imgURL: string,
+  likes: number,
+  content: string,
+  comments: string[] | null,
+  saves: number,
+  id: number;
+}
 
 export default function Index() {
   const navigation = [
@@ -33,24 +66,55 @@ export default function Index() {
     }
   ]
 
+  const [posts, setPosts] = useState<any>()
+  const [isLoading, setIsLoading] = useState(true)
+
+  const getAllPosts = async () => {
+    const response = await PostService.findAll()
+    setPosts(response.data)
+    setIsLoading(false)
+    console.log(posts)
+  }
+
+  useEffect(() => {
+    getAllPosts()
+  }, [])
+
   return (
-    <Layout header={navigation} navbar={true} title={"Recommended topics"} active={1}>
+    <Layout header={navigation} navbar={true} title={"All posts"} active={0} matchs={3}>
       <Col xs={12} md={6} lg={4}>
-        <Row style={{ marginBottom: '8px' }} center='xs'>
+      <Row style={{ marginBottom: '8px' }} center='xs'>
           <Text color='#2e2e2e'>Based on your profile</Text>
         </Row>
-
-        <Row center='xs'>
-          {Array(10).fill(1).map((_, index) => (
-            <Post key={index} />
-          ))}
+        <Row>
+          {isLoading && <Col xs={12}>
+            <Text color='#2e2e2e'>
+              Loading...
+            </Text>
+          </Col>}
         </Row>
+
+        {/* <Post user={"marcelofeitoza"} role={"Mobile developer"} imgURL={"https://placehold.co/600x400/EEE/31343C"} likes={[1, 2, 3, 4, 5, 6]} comments={["123", "321", "456"]} saves={[1, 2, 3, 4, 5, 6, 7]} /> */}
+
+        {posts && posts.map((post: PostProps, index: number) => (
+          <Post {...post} user={post["__user__"]} key={index} />
+        ))}
+
+        {/* {isError && (
+          <Col xs={12}>
+            <Text color='#2e2e2e'>
+              Error!
+            </Text>
+          </Col>
+        )} */}
       </Col>
     </Layout>
   )
 }
 
-const Post = () => {
+const Post = ({
+  user, role, imgURL, likes, content, comments, saves, id
+}: PostProps) => {
   return (
     <Card xs={12}>
       <Row middle='xs'>
@@ -61,38 +125,50 @@ const Post = () => {
         </Col>
 
         <Col>
-          <Title variant='sm' color='#000'>Cristina</Title>
+          <Title variant='sm' color='#000'>{user.name}</Title>
 
-          <Text color='#000'>UX Designer</Text>
+          <Text color='#000'>DevOps</Text>
         </Col>
       </Row>
 
       <Row center='xs' style={{ margin: "1rem 0" }}>
-        <Text color='#000'>
-          In today's digital age, UX design is more important than ever. It's not just about making things look pretty, it's about creating a meaningful...
-        </Text>
+        <Col xs={12}>
+          {
+            imgURL && (
+              <Image src={imgURL} loader={
+                () => imgURL
+              } width={300} height={200} layout="responsive" alt='Post' />
+            )
+          }
+        </Col>
+        <Col xs={12}>
+          <Text color='#000'>
+
+            {content}
+          </Text>
+        </Col>
       </Row>
 
       <Row start={'xs'} middle={'xs'}>
         <Col>
           <Row center="xs">
-            <Image src={like} alt="save" width={18} height={18} />
+            <Image src={like} alt="save" width={16} height={16} />
           </Row>
-          <Text center={true} color={'#00000080'}>Like</Text>
+          <Text center={true} color={'#00000080'}>Like ({likes | 0})</Text>
         </Col>
 
         <Col>
           <Row center="xs">
-            <Image src={comment} alt="save" width={18} height={18} />
+            <Image src={comment} alt="save" width={16} height={16} />
           </Row>
-          <Text center={true} color={'#00000080'}>Comment</Text>
+          <Text center={true} color={'#00000080'}>Comment ({comments ? comments.length : 0})</Text>
         </Col>
 
         <Col>
           <Row center="xs">
-            <Image src={save} alt="save" width={18} height={18} />
+            <Image src={save} alt="save" width={16} height={16} />
           </Row>
-          <Text center={true} color={'#00000080'}>Save</Text>
+          <Text center={true} color={'#00000080'}>Save ({saves | 0})</Text>
         </Col>
       </Row>
     </Card>

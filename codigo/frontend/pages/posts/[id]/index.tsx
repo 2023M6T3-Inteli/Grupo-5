@@ -37,9 +37,9 @@ interface PostProps {
     role: string,
     imgURL: string,
     content: string,
-    likes: string[],
+    likes: number,
     comments: string[],
-    saves: string[],
+    saves: number,
     postId: string;
 }
 
@@ -52,9 +52,9 @@ export default function Index() {
         content: "",
         postId: "",
         imgURL: "",
-        likes: [],
+        likes: 0,
         role: "",
-        saves: [],
+        saves: 0,
         user: ""
     })
 
@@ -75,7 +75,6 @@ export default function Index() {
     useEffect(() => {
         setPostDetails({ ...postDetails, ...data })
     }, [data])
-
 
     return (
         <Layout navbar={false} header={false} backgroundColor="#fff">
@@ -132,14 +131,14 @@ export default function Index() {
                     <Col>
                         <Image src={like} alt="like" width={24} height={24} />
                         <Text color="#2e2e2e" center={true}>
-                            ({postDetails.likes.length})
+                            ({postDetails.likes})
                         </Text>
                     </Col>
 
                     <Col>
                         <Image src={bookmark} alt="save" width={24} height={24} />
                         <Text color="#2e2e2e" center={true}>
-                            ({postDetails.saves.length})
+                            ({postDetails.saves})
                         </Text>
                     </Col>
                 </Row>
@@ -156,7 +155,7 @@ export default function Index() {
 
                 <Spacer size="sm" />
 
-                {postDetails.comments.length > 0 ? postDetails.comments.map((comment, index) => (
+                { postDetails.comments && postDetails.comments.length > 0 ? postDetails.comments.map((comment, index) => (
                     <>
                         <Row key={index} between="xs" middle="xs">
                             <Col>
