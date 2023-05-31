@@ -79,6 +79,7 @@ Solução de otimização de corte de bobinas de papel
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
   - [Teste de API](#teste-de-api)
 - [Documentação da API](#documentação-da-api)
+- [Pipeline ETL](#Pipeline-ETL)
 - [Manual do Usuário](#manual-do-usuário)
 - [Referências](#referências)
 - [Apêndice](#apêndice)
@@ -640,6 +641,17 @@ Documentação dos Endpoints com o uso de Postman para testes
 <legend><strong>Get a user</strong></legend>
 </center>
 </picture>
+
+<br>
+
+# Pipeline ETL
+
+<center>
+<img src="./assets/pipeline/Pipeline.png"/>
+<a href="https://lucid.app/lucidchart/efcaa2ae-f241-464c-9a9b-28f431696fa7/edit?viewport_loc=-893%2C-255%2C4286%2C2212%2C0_0&invitationId=inv_6fd5ae69-5e54-4359-8b10-f372980fbd6c">
+  Link para a arquitetura do Pipeline
+</a>
+</center>
 
 <br>
 
