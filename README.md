@@ -68,7 +68,7 @@ Este conjunto de dados pode ser usado para várias aplicações, como:
  Análise de preferências do usuário: A análise de classificação permite identificar as preferências do usuário para determinados tipos de artigos, o que ajuda na estratégia de marketing e desenvolvimento de produtos.
  
 O arquivo CSV está disponíveis aqui:<center>
-<a href="https://docs.google.com/spreadsheets/d/1N_gA6hqtOkeDApBIY4w2T0OIYwImGH5a_wg3ffDW_KQ/edit?usp=sharing">
+<a href="https://drive.google.com/file/d/1YV9u_PUXt-h4qktCDVcy1PPwReQpHPpp/view?usp=share_link">
   Acesse o arquivo csv
 </a>
 </center>
