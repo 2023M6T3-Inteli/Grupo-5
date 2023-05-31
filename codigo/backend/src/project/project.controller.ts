@@ -38,10 +38,15 @@ export class ProjectController {
         "Authorization": token
       }
     }
-    const { data } = await firstValueFrom(
-      this.httpService.post("http://localhost:3001/Project/Create", createProjectDto, config)
-    );
-    return data;
+    try {
+      const { data } = await firstValueFrom(
+        this.httpService.post("http://localhost:3001/Project/Create", createProjectDto, config)
+      );
+      return data;
+    }
+    catch(error) {
+      return error
+    }
     // this.projects.push({
     //   ...createProjectDto,
     //   id: this.projects.length + 1,
