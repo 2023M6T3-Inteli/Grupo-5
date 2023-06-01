@@ -17,7 +17,7 @@ export class ProjectsController {
     description: 'create a new project',
   })
   @UseGuards(AuthGuard('jwt'))
-  @Post("/create")
+  @Post("/create") //OK
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
   @ApiResponse({ status: 409, description: 'Error: Conflict'})
@@ -34,7 +34,7 @@ export class ProjectsController {
     description: 'search for all projects',
   })
   @UseGuards(AuthGuard('jwt'))
-  @Get("/findAll")
+  @Get("/findAll") // FAZER
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
   @ApiResponse({ status: 404, description: 'Error: Not Found'})
@@ -44,7 +44,7 @@ export class ProjectsController {
   }
 
   @UseGuards(AuthGuard('jwt'))
-  @Get("/findByID/:projectId")
+  @Get("/findByID/:projectId") //FAZER
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
   @ApiResponse({ status: 404, description: 'Error: Not Found'})
@@ -54,7 +54,7 @@ export class ProjectsController {
   }
 
   @UseGuards(AuthGuard('jwt'))
-  @Put("/update/:projectId")
+  @Put("/update/:projectId") // OK
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
   @ApiResponse({ status: 404, description: 'Error: Not Found'})
@@ -64,7 +64,7 @@ export class ProjectsController {
   }
 
   @UseGuards(AuthGuard('jwt'))
-  @Delete("/delete/:projectId")
+  @Delete("/delete/:projectId") // OK
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
   @ApiResponse({ status: 404, description: 'Error: Not Found'})
@@ -79,7 +79,7 @@ export class ProjectsController {
   })
   
   @UseGuards(AuthGuard('jwt'))
-  @Post("/filter")
+  @Post("/filter") //FAZER
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
   @ApiResponse({ status: 400, description: 'Error: Bad Request'})
@@ -87,7 +87,7 @@ export class ProjectsController {
     return this.projectsService.filterProject(data);
   }
 
-  @Put("/approve/:token")
+  @Put("/approve/:token") // FAZER
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
   @ApiResponse({ status: 403, description: 'Error: Forbidden'})
   async approve(@Param("token") token: string, @Body() data: any) {

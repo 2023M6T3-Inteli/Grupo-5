@@ -26,52 +26,56 @@ import { AuthGuard } from "src/user/guards/auth.guard";
 @Controller("project")
 export class ProjectController {
   private projects: Project[] = [];
-  
+
   constructor(private readonly httpService: HttpService) {
-    
+
   }
 
   @UseGuards(AuthGuard)
   @NestPost()
-  async create(@Headers() headers, @Body() project: CreateProjectDto) {
+  async create(@Headers() headers, @Body() projectData: CreateProjectDto) {
     const token = headers.authorization
     const config = {
       headers: {
         "Authorization": token
       }
     }
-    try {
-      const { data } = await firstValueFrom(
-        this.httpService.post("http://localhost:3001/Project/Create", project, config)
-      );
-      return data;
-    }
-    catch(error) {
-      return error
-    }
+    const { data } = await firstValueFrom(
+      this.httpService.post("http://localhost:3001/Project/Create", projectData, config)
+    );
+    return data;
   }
 
   @UseGuards(AuthGuard)
   @Put("update/:projectId")
-  async update(@Param("projectId") projectId, @Headers() headers, @Body() project: UpdateProjectDto) {
+  async update(@Param("projectId") projectId, @Headers() headers, @Body() projectData: UpdateProjectDto) {
     const token = headers.authorization
     const config = {
       headers: {
         "Authorization": token
       }
     }
-    try {
-      const { data } = await firstValueFrom(
-        this.httpService.put(`http://localhost:3001/Project/update/${projectId}`, project, config)
-      );
-      return data;
-    }
-    catch(error) {
-      return error
-    }
+    const { data } = await firstValueFrom(
+      this.httpService.put(`http://localhost:3001/Project/update/${projectId}`, projectData, config)
+    );
+    return data;
   }
   // @Delete(":id")
   // remove(@Param("id") id: string) {
   //   this.projects = this.projects.filter((project) => project.id !== +id);
   // }
+  @UseGuards(AuthGuard)
+  @Delete("delete/:projectId")
+  async delete(@Param("projectId") projectId, @Headers() headers) {
+    const token = headers.authorization
+    const config = {
+      headers: {
+        "Authorization": token
+      }
+    }
+    const { data } = await firstValueFrom(
+      this.httpService.delete(`http://localhost:3001/Project/delete/${projectId}`, config)
+    );
+    return data;
+  }
 }
