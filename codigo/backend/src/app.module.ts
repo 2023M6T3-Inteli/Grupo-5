@@ -7,9 +7,11 @@ import { UserModule } from "./user/user.module";
 import { PostModule } from "./post/post.module";
 import { ProjectModule } from "./project/project.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { ApplyModule } from "./applies/apply.module";
 
 @Module({
   imports: [
+    ApplyModule,
     UserModule,
     PostModule,
     ProjectModule,
