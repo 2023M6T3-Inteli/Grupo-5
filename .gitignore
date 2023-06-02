@@ -45,5 +45,6 @@ lerna-debug.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# Rust target
+# Rust
 codigo/machine-learning-api/target/
+Cargo.lock
