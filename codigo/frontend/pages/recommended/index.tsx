@@ -180,10 +180,6 @@ const ProfilePicture = styled(Image)`
 `
 
 const Card = styled(Col)`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: 80vw;
   border-radius: 10px;
   background-color: #FFF;
   padding: 1.25rem 1rem;

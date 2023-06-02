@@ -33,6 +33,7 @@ export class ProjectsController {
     name: 'findAll',
     description: 'search for all projects',
   })
+  @UseGuards(AuthGuard('jwt'))
   @Get("/findAll")
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
@@ -42,7 +43,7 @@ export class ProjectsController {
     return this.projectsService.getAllProjects()
   }
 
-
+  @UseGuards(AuthGuard('jwt'))
   @Get("/findByID/:projectId")
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
@@ -52,7 +53,7 @@ export class ProjectsController {
     return this.projectsService.getProjectById(projectId);
   }
 
-
+  @UseGuards(AuthGuard('jwt'))
   @Put("/update/:projectId")
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
@@ -62,7 +63,7 @@ export class ProjectsController {
     return this.projectsService.updateProject(projectId, data);
   }
 
-
+  @UseGuards(AuthGuard('jwt'))
   @Delete("/delete/:projectId")
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})
@@ -77,6 +78,7 @@ export class ProjectsController {
     description: 'filter projects',
   })
   
+  @UseGuards(AuthGuard('jwt'))
   @Post("/filter")
   //possible error responses
   @ApiResponse({ status: 500, description: 'Error: Internal Server Error'})

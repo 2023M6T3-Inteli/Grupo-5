@@ -15,7 +15,7 @@
 
 . Nome do Projeto: Aplicativo desenvolvimento mobile <br>
 . Nome do Parceiro: Dell Tecnologies <br>
-. Nome do Grupo: xxxx <br>
+. Nome do Grupo: DellHub <br>
 . Integrantes do grupo:
  Emanuel De Oliveira Costa,
   Felipe Saadi Siegert,
@@ -79,6 +79,7 @@ Solução de otimização de corte de bobinas de papel
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
   - [Teste de API](#teste-de-api)
 - [Documentação da API](#documentação-da-api)
+- [Pipeline ETL](#Pipeline-ETL)
 - [Manual do Usuário](#manual-do-usuário)
 - [Referências](#referências)
 - [Apêndice](#apêndice)
@@ -407,6 +408,11 @@ A seção de perfil de usuário da documentação de software é responsável po
 <img src="./assets/arquitetura/infraestrutura-arquitetura-cloudV2.png"/>
 </center>
 
+## Arquitetura do sistema V3:
+<center>
+<img src="./assets/arquitetura/infraestrutura-arquitetura-cloudV3.png"/>
+</center>
+
 <br>
 
 ## Diagrama do fluxo de dados V1:
@@ -433,13 +439,9 @@ O desenvolvimento da aplicação tem como prioridade a interatividade e usabilid
 Assim, uma primeira versão da solução proposta de interface mobile foi prototipada na plataforma Figma e pode ser acessada através do seguinte endereço: <a href="https://www.figma.com/file/cLznFm8xajrbxyqVEKE8da/DellHub?node-id=0-1&t=MvWd3RhCig4XBaMV-0"> Protótipo Interface Mobile </a>. É recomendado o acesso ao Figma para uma visualização melhor qualidade e detalhamento dos objetivos de cada tela. Para visualizar com interação com os botões, basta fazer o atalho do teclado “Ctrl + Alt + Enter” ou basta <a href="https://www.figma.com/proto/cLznFm8xajrbxyqVEKE8da/DellHub?node-id=1-10&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A10&show-proto-sidebar=1"> clicar aqui. </a>
 
 Telas e features pendentes: 
-- Editar projetos e conteúdos;
-- Descrição de projeto;
-- Denúncia de conteúdo;
 - Telas de confirmação e erros;
 - Filtros;
 - Dashboard para Managers e Moderadores;
-- Aprimorar gamificação;
 - Modo escuro;
 - Tela de notificação;
 - Criação de perfil;
@@ -527,7 +529,54 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 
 ## Teste Unitário
 
-Link ou imagem da tabela com dados organizados dos testes realizados
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/post-test-1.png" />
+<center>
+<legend><strong>Post - imagem 1</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/post-test-2.png" />
+<center>
+<legend><strong>Post - imagem 2</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/user-test-1.png" />
+<center>
+<legend><strong>User - imagem 1</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/user-test-2.png" />
+<center>
+<legend><strong>User - imagem 2</strong></legend>
+</center>
+</picture>
+
+<br>
+
+<picture>
+<img width=100% src="./assets/testes/run-tests.png" />
+<center>
+<legend><strong>Rodando os testes</strong></legend>
+</center>
+</picture>
+
+<br>
 
 
 ## Teste de Integração
@@ -642,13 +691,22 @@ Documentação dos Endpoints com o uso de Postman para testes
 
 <br>
 
+# Pipeline ETL
+
+<center>
+<img src="./assets/pipeline/Pipeline.png"/>
+<a href="https://lucid.app/lucidchart/efcaa2ae-f241-464c-9a9b-28f431696fa7/edit?viewport_loc=-893%2C-255%2C4286%2C2212%2C0_0&invitationId=inv_6fd5ae69-5e54-4359-8b10-f372980fbd6c">
+  Link para a arquitetura do Pipeline
+</a>
+</center>
+
+<br>
+
 # Manual do Usuário
 
 Fornecer instruções detalhadas sobre como usar o software corretamente. É uma ferramenta valiosa para ajudar os usuários a compreender as funções do software, instalar o software, configurar as preferências do usuário, entre outras tarefas. O manual do usuário geralmente inclui screenshots, animações e outros recursos visuais para tornar a experiência do usuário mais clara e intuitiva. Além disso, ele também pode incluir informações sobre solução de problemas, dicas e truques, bem como informações de contato para suporte técnico. É importante que a seção de manual do usuário seja atualizada frequentemente para garantir que os usuários tenham acesso à informação mais recente e precisa sobre o software.
 
  
-
-
 
 
 # Referências

@@ -7,6 +7,10 @@ import {
   Patch,
   Param,
   Delete,
+  Req,
+  UseGuards,
+  Headers,
+  Put,
 } from "@nestjs/common";
 
 /** providers */
@@ -15,6 +19,7 @@ import { CreateProjectDto } from "./dto/create-project.dto";
 import { UpdateProjectDto } from "./dto/update-project.dto";
 import { HttpService } from "@nestjs/axios";
 import { firstValueFrom } from "rxjs";
+import { AuthGuard } from "src/user/guards/auth.guard";
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -26,40 +31,47 @@ export class ProjectController {
     
   }
 
+  @UseGuards(AuthGuard)
   @NestPost()
-  async create(@Body() createProjectDto: CreateProjectDto, config: any) {
-    // const { data } = await firstValueFrom(
-    //   this.httpService.post("http://localhost:3001/Project/Create", createProjectDto, config)
-    // );
-    // return data;
-    this.projects.push({
-      ...createProjectDto,
-      id: this.projects.length + 1,
-      userId: 1,
-    });
-    return this.projects[this.projects.length - 1];
+  async create(@Headers() headers, @Body() project: CreateProjectDto) {
+    const token = headers.authorization
+    const config = {
+      headers: {
+        "Authorization": token
+      }
+    }
+    try {
+      const { data } = await firstValueFrom(
+        this.httpService.post("http://localhost:3001/Project/Create", project, config)
+      );
+      return data;
+    }
+    catch(error) {
+      return error
+    }
   }
 
-  @Get()
-  findAll() {
-    return this.projects;
+  @UseGuards(AuthGuard)
+  @Put("update/:projectId")
+  async update(@Param("projectId") projectId, @Headers() headers, @Body() project: UpdateProjectDto) {
+    const token = headers.authorization
+    const config = {
+      headers: {
+        "Authorization": token
+      }
+    }
+    try {
+      const { data } = await firstValueFrom(
+        this.httpService.put(`http://localhost:3001/Project/update/${projectId}`, project, config)
+      );
+      return data;
+    }
+    catch(error) {
+      return error
+    }
   }
-
-  @Get(":id")
-  findOne(@Param("id") id: string) {
-    return this.projects.find((project) => project.id === +id);
-  }
-
-  @Patch(":id")
-  update(@Param("id") id: string, @Body() updateProjectDto: UpdateProjectDto) {
-    this.projects = this.projects.map((project) =>
-      project.id === +id ? { ...project, ...updateProjectDto } : project
-    );
-    return this.projects.find((project) => project.id === +id);
-  }
-
-  @Delete(":id")
-  remove(@Param("id") id: string) {
-    this.projects = this.projects.filter((project) => project.id !== +id);
-  }
+  // @Delete(":id")
+  // remove(@Param("id") id: string) {
+  //   this.projects = this.projects.filter((project) => project.id !== +id);
+  // }
 }
