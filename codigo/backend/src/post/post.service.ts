@@ -14,7 +14,7 @@ export class PostService {
     @InjectRepository(Post) private readonly repository: Repository<Post>,
     private readonly queryRunner: QueryRunnerFactory,
     private readonly userService: UserService
-  ) {}
+  ) { }
 
   async create(createPostDto: CreatePostDto, userId: string): Promise<Post> {
     const foundUser = await this.userService.findOne(userId);
@@ -59,12 +59,42 @@ export class PostService {
     return queryBuilder.getOne();
   }
 
-  update(id: number, updatePostDto: UpdatePostDto) {
+  async update(id: number, updatePostDto: UpdatePostDto) {
     // TODO: password update should be handled differently
-    return "// TODO: implement update method";
+    const postExists = await this.repository.findOne({
+      where: {
+        id,
+      }
+    })
+
+    if (!postExists) {
+      throw new Error('Post does not exist!')
+    }
+
+    try {
+      const update = await this.repository.update(id, updatePostDto)
+      return "Post updated with success";
+    } catch (err) {
+      throw new Error("Something bad happened")
+    }
   }
 
-  remove(id: number) {
-    return "// TODO: implement remove method";
+  async remove(id: number) {
+    const postExists = await this.repository.findOne({
+      where: {
+        id,
+      }
+    })
+
+    if (!postExists) {
+      throw new Error('Post does not exist!')
+    }
+
+    try {
+      const deleted = await this.repository.delete(id)
+      return "Post deleted with success";
+    } catch (err) {
+      throw new Error("Something bad happened")
+    }
   }
 }

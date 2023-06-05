@@ -9,6 +9,7 @@ import {
   Delete,
   Req,
   UseGuards,
+  Put,
 } from "@nestjs/common";
 
 /** service */
@@ -31,7 +32,7 @@ export class PostController {
   constructor(
     private readonly postService: PostService,
     private readonly userService: UserService
-  ) {}
+  ) { }
 
   @UseGuards(AuthGuard)
   @NestPost()
@@ -52,4 +53,15 @@ export class PostController {
   findOne(@Param("id") id: number) {
     return this.postService.findOne(id);
   }
+
+  @Put("update/:id")
+  update(@Param("id") id: number, @Body() data: any) {
+    return this.postService.update(id, data);
+  }
+
+  @Delete("delete/:id")
+  remove(@Param("id") id: number) {
+    return this.postService.remove(id);
+  }
+
 }
