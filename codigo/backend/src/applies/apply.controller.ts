@@ -4,81 +4,46 @@ import {
   Get,
   Post as NestPost,
   Body,
-  Patch,
   Param,
   Delete,
-  Req,
   UseGuards,
   Headers,
   Put,
 } from "@nestjs/common";
 
 /** providers */
-import { Apply } from "./entities/apply.entity";
-import { CreateApplyDto } from "./dto/create-apply.dto";
-import { HttpService } from "@nestjs/axios";
-import { firstValueFrom } from "rxjs";
+import { CreateApplyDto } from "./dto/create-apply.dto";;
 import { AuthGuard } from "src/user/guards/auth.guard";
+import { ApplyService } from "./apply.service";
 
 ////////////////////////////////////////////////////////////////////////////////
 
 @Controller("apply")
 export class ApplyController {
-  constructor(private readonly httpService: HttpService) {}
+  constructor(private readonly applyService: ApplyService) {}
 
   @UseGuards(AuthGuard)
   @NestPost()
-  async create(@Headers() headers, @Body() applyData: CreateApplyDto) {
-    const token = headers.authorization;
-    const config = {
-      headers: {
-        Authorization: token,
-      },
-    };
-    const { data } = await firstValueFrom(
-      this.httpService.post(
-        "http://localhost:3001/Apply/create",
-        applyData,
-        config
-      )
-    );
-    return data;
+  async create(@Headers() headers: any, @Body() applyData: CreateApplyDto) {
+    return this.applyService.create(headers, applyData);
   }
 
   @UseGuards(AuthGuard)
   @Get("/projects/:projectId")
-  async getApplyByProjectId(@Param("projectId") projectId, @Headers() headers) {
-    const token = headers.authorization;
-    const config = {
-      headers: {
-        Authorization: token,
-      },
-    };
-    const { data } = await firstValueFrom(
-      this.httpService.get(
-        `http://localhost:3001/Apply/projects/${projectId}`,
-        config
-      )
-    );
-    return data;
+  async getApplyByProjectId(
+    @Param("projectId") projectId: string,
+    @Headers() headers: any
+  ) {
+    return this.applyService.getApplyByProjectId(projectId, headers);
   }
 
   @UseGuards(AuthGuard)
   @Get("/users/:userId")
-  async getApplyByUserId(@Param("userId") userId, @Headers() headers) {
-    const token = headers.authorization;
-    const config = {
-      headers: {
-        Authorization: token,
-      },
-    };
-    const { data } = await firstValueFrom(
-      this.httpService.get(
-        `http://localhost:3001/Apply/users/${userId}`,
-        config
-      )
-    );
-    return data;
+  async getApplyByUserId(
+    @Param("userId") userId: string,
+    @Headers() headers: any
+  ) {
+    return this.applyService.getApplyByUserId(userId, headers);
   }
 
   @UseGuards(AuthGuard)
@@ -88,96 +53,34 @@ export class ApplyController {
     @Body() applyData: CreateApplyDto,
     @Headers() headers
   ) {
-    const token = headers.authorization;
-    const config = {
-      headers: {
-        Authorization: token,
-      },
-    };
-    const { data } = await firstValueFrom(
-      this.httpService.put(
-        `http://localhost:3001/Apply/update/${id}`,
-        applyData,
-        config
-      )
-    );
-    return data;
+    this.applyService.update(id, applyData, headers);
   }
 
   @UseGuards(AuthGuard)
   @Delete("delete/:id")
-  async delete(@Param("id") id, @Headers() headers) {
-    const token = headers.authorization;
-    const config = {
-      headers: {
-        Authorization: token,
-      },
-    };
-    const { data } = await firstValueFrom(
-      this.httpService.delete(
-        `http://localhost:3001/Apply/delete/${id}`,
-        config
-      )
-    );
-    return data;
+  async delete(@Param("id") id: string, @Headers() headers: any) {
+    return this.applyService.delete(id, headers);
   }
 
   @UseGuards(AuthGuard)
   @Put("updateFeedback/:id")
   async updateFeedback(
-    @Param("id") id,
+    @Param("id") id: string,
     @Body() applyData: any,
-    @Headers() headers
+    @Headers() headers: any
   ) {
-    const token = headers.authorization;
-    const config = {
-      headers: {
-        Authorization: token,
-      },
-    };
-    const { data } = await firstValueFrom(
-      this.httpService.put(
-        `http://localhost:3001/Apply/updateFeedback/${id}`,
-        {
-          feedback: applyData.feedback,
-          status: applyData.status,
-        },
-        config
-      )
-    );
-    return data;
+    return this.applyService.updateFeedback(id, applyData, headers);
   }
 
   @UseGuards(AuthGuard)
   @Get("/approve/:id")
-  async approve(@Param("id") id, @Headers() headers) {
-    const token = headers.authorization;
-    const config = {
-      headers: {
-        Authorization: token,
-      },
-    };
-    const { data } = await firstValueFrom(
-      this.httpService.get(`http://localhost:3001/Apply/approve/${id}`, config)
-    );
-    return data;
+  async approve(@Param("id") id: string, @Headers() headers: any) {
+    this.applyService.approve(id, headers)
   }
 
   @UseGuards(AuthGuard)
   @NestPost("/getApplyByUser")
   async getApply(@Body() applyData: any, @Headers() headers) {
-    const token = headers.authorization;
-    const config = {
-      headers: {
-        Authorization: token,
-      },
-    };
-    const { data } = await firstValueFrom(
-      this.httpService.post(`http://localhost:3001/Apply/getApplyByUser`, {
-        projectId: applyData.projectId,
-        userId: applyData.userId
-      }, config)
-    );
-    return data;
+    this.applyService.getApply(applyData, headers)
   }
 }
