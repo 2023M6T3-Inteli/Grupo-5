@@ -14,14 +14,13 @@ import {
 
 /** service */
 import { PostService } from "./post.service";
-
-/** dependencies */
 import { CreatePostDto } from "./dto/create-post.dto";
 import { Post } from "./entities/post.entity";
 import { User } from "../user/entities/user.entity";
 import { AuthGuard } from "../user/guards/auth.guard";
 import { UserService } from "../user/user.service";
-////////////////////////////////////////////////////////////////////////////////
+import { UpdatePostDto } from "./dto/update-post.dto";
+import { DeletePostDto } from "./dto/delete-post.dto";
 
 export interface PassportRequest extends Request {
   user?: User;
@@ -53,7 +52,6 @@ export class PostController {
   findOne(@Param("id") id: number) {
     return this.postService.findOne(id);
   }
-
   @Put("update/:id")
   update(@Param("id") id: number, @Body() data: any) {
     return this.postService.update(id, data);
@@ -63,5 +61,4 @@ export class PostController {
   remove(@Param("id") id: number) {
     return this.postService.remove(id);
   }
-
 }

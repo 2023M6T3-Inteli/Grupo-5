@@ -23,18 +23,18 @@ export class PostService {
     await this.queryRunner.connect();
     await this.queryRunner.startTransaction();
 
-    // try to save post
+    // try to save the post
     const post = this.repository.create(createPostDto);
     try {
       post.user = Promise.resolve(foundUser);
       await this.queryRunner.commitTransaction(post);
       return post;
     } catch (err) {
-      // rollback changes made in case of error
+      // undo changes made in case of error
       await this.queryRunner.rollbackTransaction();
-      throw new Error("An error ocurred while creating the post.");
+      throw new Error("Ocorreu um erro ao criar o post.");
     } finally {
-      // release queryRunner after transaction
+      // release the query runner after the transaction
       await this.queryRunner.release();
     }
   }
@@ -47,18 +47,17 @@ export class PostService {
   }
 
   async findOne(id: number): Promise<Post | null> {
-    // create queryBuilder with criteria
+    // create a query builder with criteria
     const queryBuilder = this.repository
       .createQueryBuilder("post")
       .where("post.id = :id", { id })
       .leftJoinAndSelect("post.user", "user");
-    // execute queryBuilder and return results
-    let user = (await queryBuilder.getOne()).user
+    // run the query builder and return the results
+    let user = (await queryBuilder.getOne()).user;
     // return queryBuilder.getOne();
-    console.log(user)
+    console.log(user);
     return queryBuilder.getOne();
   }
-
   async update(id: number, updatePostDto: UpdatePostDto) {
     // TODO: password update should be handled differently
     const postExists = await this.repository.findOne({
