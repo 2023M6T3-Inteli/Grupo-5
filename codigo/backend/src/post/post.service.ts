@@ -14,7 +14,7 @@ export class PostService {
     @InjectRepository(Post) private readonly repository: Repository<Post>,
     private readonly queryRunner: QueryRunnerFactory,
     private readonly userService: UserService
-  ) {}
+  ) { }
 
   async create(createPostDto: CreatePostDto, userId: string): Promise<Post> {
     const foundUser = await this.userService.findOne(userId);
@@ -58,40 +58,42 @@ export class PostService {
     console.log(user);
     return queryBuilder.getOne();
   }
+  async update(id: number, updatePostDto: UpdatePostDto) {
+    // TODO: password update should be handled differently
+    const postExists = await this.repository.findOne({
+      where: {
+        id,
+      }
+    })
 
-  async update(id: number, updatePostDto: UpdatePostDto): Promise<Post | null> {
-    // find the post to be updated
-    const post = await this.repository.findOne(({ where: { id: id } }));
-
-    if (!post) {
-      throw new Error("O post não foi encontrado.");
+    if (!postExists) {
+      throw new Error('Post does not exist!')
     }
 
-    // update post fields based on provided DTO
-    if (updatePostDto.imgURL) {
-      post.imgURL = updatePostDto.imgURL;
+    try {
+      const update = await this.repository.update(id, updatePostDto)
+      return "Post updated with success";
+    } catch (err) {
+      throw new Error("Something bad happened")
     }
-    if (updatePostDto.content) {
-      post.content = updatePostDto.content;
-    }
-    if (updatePostDto.tags) {
-      post.tags = updatePostDto.tags;
-    }
-
-    // save changes to database
-    await this.repository.save(post);
-
-    return post;
   }
 
-async remove(id: number): Promise<void> {
-  const post = await this.repository.findOne(({ where: { id: id } }));
+  async remove(id: number) {
+    const postExists = await this.repository.findOne({
+      where: {
+        id,
+      }
+    })
 
-  if (!post) {
-    throw new Error("O post não foi encontrado.");
+    if (!postExists) {
+      throw new Error('Post does not exist!')
+    }
+
+    try {
+      const deleted = await this.repository.delete(id)
+      return "Post deleted with success";
+    } catch (err) {
+      throw new Error("Something bad happened")
+    }
   }
-
-  await this.repository.remove(post);
-}
-
 }

@@ -1,4 +1,18 @@
-import { Controller, Get, Post as NestPost, Body, Patch, Param, Delete, Req, UseGuards } from "@nestjs/common";
+/** nestjs */
+import {
+  Controller,
+  Get,
+  Post as NestPost,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Req,
+  UseGuards,
+  Put,
+} from "@nestjs/common";
+
+/** service */
 import { PostService } from "./post.service";
 import { CreatePostDto } from "./dto/create-post.dto";
 import { Post } from "./entities/post.entity";
@@ -17,7 +31,7 @@ export class PostController {
   constructor(
     private readonly postService: PostService,
     private readonly userService: UserService
-  ) {}
+  ) { }
 
   @UseGuards(AuthGuard)
   @NestPost()
@@ -38,17 +52,13 @@ export class PostController {
   findOne(@Param("id") id: number) {
     return this.postService.findOne(id);
   }
-
-  @Patch(":id")
-  async update(
-    @Param("id") id: number,
-    @Body() updatePostDto: UpdatePostDto
-  ): Promise<Post> {
-    return await this.postService.update(id, updatePostDto);
+  @Put("update/:id")
+  update(@Param("id") id: number, @Body() data: any) {
+    return this.postService.update(id, data);
   }
 
-  @Delete(":id") // Adicionar o decorador @Delete e o parâmetro de rota ":id"
-  async delete(@Param("id") id: number): Promise<void> {
-    await this.postService.remove(id);
+  @Delete("delete/:id")
+  remove(@Param("id") id: number) {
+    return this.postService.remove(id);
   }
 }
