@@ -3,7 +3,7 @@ import { Injectable } from "@nestjs/common";
 import { HttpService } from "@nestjs/axios";
 
 /** dependencies */
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, catchError, of } from "rxjs";
 
 import { LoginDto } from "./dto/login.dto";
 import { LoginResponse } from "./user.controller";
@@ -11,7 +11,6 @@ import { InjectRepository } from "@nestjs/typeorm";
 
 import { User } from "./entities/user.entity";
 import { Repository } from "typeorm";
-////////////////////////////////////////////////////////////////////////////////
 
 @Injectable()
 export class UserService {
@@ -21,9 +20,14 @@ export class UserService {
   ) {}
 
   async login(loginDto: LoginDto): Promise<LoginResponse> {
-    const { data } = await firstValueFrom(
-      this.httpService.post("http://127.0.0.1:3001/auth/login", loginDto)
+    const response$ = this.httpService.post(
+      "http://127.0.0.1:3001/auth/login",
+      loginDto
     );
+
+    const { data } = await firstValueFrom(response$).catch((error) => {
+      throw new Error("Response is not an Observable");
+    });
 
     // check if user exists and create it if not
     const userExists = await this.findOne(data.user.id);
