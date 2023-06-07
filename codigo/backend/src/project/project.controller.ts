@@ -74,4 +74,5 @@ export class ProjectController {
   async finalize(@Param("projectId") projectId, @Req() req: any) {
     return this.projectService.finalize(projectId, req)
   }
+
 }
