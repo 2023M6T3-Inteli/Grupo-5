@@ -50,5 +50,6 @@ export class PostController {
   @Delete(":id") // Adicionar o decorador @Delete e o parâmetro de rota ":id"
   async delete(@Param("id") id: number): Promise<void> {
     await this.postService.remove(id);
+    
   }
 }
