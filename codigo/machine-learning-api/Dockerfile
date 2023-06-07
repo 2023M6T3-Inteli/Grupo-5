@@ -1,38 +1,32 @@
-FROM rust:latest AS builder
+FROM ubuntu:latest
+ARG DEBIAN_FRONTEND=noninteractive
 
-RUN rustup target add x86_64-unknown-linux-musl
-RUN apt update && apt install -y musl-tools musl-dev
-RUN update-ca-certificates
+RUN apt update
+RUN apt install -y build-essential \
+    curl \
+    pkg-config \
+    libssl-dev \
+    postgresql \
+    libpq-dev
 
-ENV USER=app
-ENV UID=10001
+RUN apt update
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+RUN rustup default nightly
+RUN cargo install diesel_cli --no-default-features --features postgres
+RUN USER=root cargo new --bin machine-learning-api
+WORKDIR "/machine-learning-api"
+COPY . .
+RUN cargo build --release
+RUN rm src/*.rs
 
-RUN adduser \
-    --disabled-password \
-    --gecos "" \
-    --home "/nonexistent" \
-    --shell "/sbin/nologin" \
-    --no-create-home \
-    --uid "${UID}" \
-    "${USER}"
+FROM ubuntu:latest
+ARG DEBIAN_FRONTEND=noninteractive
 
-WORKDIR /app
-
-COPY ./ .
-
-RUN cargo build --target x86_64-unknown-linux-musl --release
-
-# ===
-
-FROM scratch
-
-COPY --from=builder /etc/passwd /etc/passwd
-COPY --from=builder /etc/group /etc/group
-
-WORKDIR /app
-
-COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/rust-prime-number-api ./
-
-USER app:app
-
-CMD ["/app/rust-prime-number-api"]
+RUN apt update
+RUN apt install -y libpq-dev
+ENV ROCKET_ADDRESS=0.0.0.0
+EXPOSE 8000
+COPY --from=0 /machine-learning-api/target/release/machine-learning-api /usr/local/bin/machine-learning-api
+WORKDIR /usr/local/bin
+CMD ["machine-learning-api"]

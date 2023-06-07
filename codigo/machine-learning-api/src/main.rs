@@ -70,6 +70,40 @@ fn get_recommendations(body: Json<Body>) -> Json<Response> {
     })
 }
 
+#[derive(Debug, Serialize, Deserialize)]
+struct PythonOutput {
+    based_on: String,
+    amount: u64,
+    movies: Vec<String>,
+}
+
+#[post("/getRecommendations2", data = "<body>")]
+fn get_recommendations2(body: Json<Body>) -> Json<Response> {
+    let movie_id: u64 = body.movie_id;
+    let amount: u64 = body.amount;
+
+    let output = Command::new("python")
+        .args(&[
+            "src/movie_recommender2.py",
+            &movie_id.to_string(),
+            &amount.to_string(),
+        ])
+        .output()
+        .expect("Failed to execute the Python script");
+
+    let stdout = String::from_utf8_lossy(&output.stdout);
+    let python_output: PythonOutput =
+        serde_json::from_str(&stdout).expect("Failed to parse Python output as JSON");
+
+    let response = Response {
+        based_on: python_output.based_on,
+        amount: python_output.amount,
+        movies: python_output.movies,
+    };
+
+    Json(response)
+}
+
 #[rocket::main]
 async fn main() {
     let mut config = rocket::Config::default();
@@ -79,7 +113,10 @@ async fn main() {
 
     let _ = rocket::build()
         .configure(config)
-        .mount("/", routes![index, get_recommendations])
+        .mount(
+            "/",
+            routes![index, get_recommendations, get_recommendations2],
+        )
         .launch()
         .await;
 }
