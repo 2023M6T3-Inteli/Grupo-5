@@ -43,7 +43,7 @@ export class PostController {
   async update(
     @Param("id") id: number,
     @Body() updatePostDto: UpdatePostDto
-  ): Promise<Post> {
+  ): Promise<string> {
     return await this.postService.update(id, updatePostDto);
   }
 
