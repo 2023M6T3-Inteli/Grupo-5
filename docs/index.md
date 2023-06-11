@@ -525,64 +525,43 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 
 # Testes de Software
 
-
-
 ## Teste Unitário
 
-<br>
-
+<br> 
 <picture>
-<img width=100% src="./assets/testes/post-test-1.png" />
+<legend><strong>Testes unitário de servicontrollere de projects</strong></legend>
+<img width=100% src="./assets/testes-projects/projects-teste-unitario-controller.png" />
 <center>
-<legend><strong>Post - imagem 1</strong></legend>
-</center>
 </picture>
+<a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+<br> 
 
-<br>
 
+<br> 
 <picture>
-<img width=100% src="./assets/testes/post-test-2.png" />
+<legend><strong>Testes unitário de service de projects</strong></legend>
+<img width=100% src="./assets/testes-projects/projects-teste-unitario-service.png" />
 <center>
-<legend><strong>Post - imagem 2</strong></legend>
-</center>
 </picture>
-
-<br>
-
-<picture>
-<img width=100% src="./assets/testes/user-test-1.png" />
-<center>
-<legend><strong>User - imagem 1</strong></legend>
-</center>
-</picture>
-
-<br>
-
-<br>
-
-<picture>
-<img width=100% src="./assets/testes/user-test-2.png" />
-<center>
-<legend><strong>User - imagem 2</strong></legend>
-</center>
-</picture>
-
-<br>
-
-<picture>
-<img width=100% src="./assets/testes/run-tests.png" />
-<center>
-<legend><strong>Rodando os testes</strong></legend>
-</center>
-</picture>
-
-<br>
-
+<a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+<br> 
 
 ## Teste de Integração
 
-Link ou imagem da tabela com dados organizados dos testes realizados
-
+<br> 
+<picture>
+<legend><strong>Testes de integração de projects</strong></legend>
+<img width=100% src="./assets/testes-projects/teste-integracao.png" />
+<center>
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+<br> 
 
 ## Teste de Regressão
 
@@ -593,11 +572,19 @@ Link ou imagem da tabela com dados organizados dos testes realizados
 
 Link ou imagem da tabela com dados organizados dos testes realizados
 
+## Teste de Funcionalidade
 
-## Teste de Funcionalidade 
-
-Link ou imagem da tabela com dados organizados dos testes realizados
-
+<br> 
+<picture>
+<legend><strong>Testes de funcionalidade de projects</strong></legend>
+<img width=100% src="./assets/testes-projects/projects-teste-funcional.png" />
+<img width=100% src="./assets/testes-projects/projects-teste-funcional-02.png" />
+<center>
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+<br> 
 
 ## Teste de API 
 
