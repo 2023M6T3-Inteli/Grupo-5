@@ -15,7 +15,7 @@
 
 . Nome do Projeto: Aplicativo desenvolvimento mobile <br>
 . Nome do Parceiro: Dell Tecnologies <br>
-. Nome do Grupo: xxxx <br>
+. Nome do Grupo: DellHub <br>
 . Integrantes do grupo:
  Emanuel De Oliveira Costa,
   Felipe Saadi Siegert,
@@ -63,6 +63,8 @@ Solução de otimização de corte de bobinas de papel
   - [Perfis de Usuários](#perfis-de-usuários)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
   - [Arquitetura do sistema V1:](#arquitetura-do-sistema-v1)
+  - [Arquitetura do sistema V2:](#arquitetura-do-sistema-v2)
+  - [Arquitetura do sistema V3:](#arquitetura-do-sistema-v3)
   - [Diagrama do fluxo de dados V1:](#diagrama-do-fluxo-de-dados-v1)
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframes](#wireframes)
@@ -79,7 +81,7 @@ Solução de otimização de corte de bobinas de papel
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
   - [Teste de API](#teste-de-api)
 - [Documentação da API](#documentação-da-api)
-- [Pipeline ETL](#Pipeline-ETL)
+- [Pipeline ETL](#pipeline-etl)
 - [Manual do Usuário](#manual-do-usuário)
 - [Referências](#referências)
 - [Apêndice](#apêndice)
@@ -525,64 +527,83 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 
 # Testes de Software
 
-
-
 ## Teste Unitário
+	
+<picture>
+<center>
+<legend><strong>Testes unitário de controller de projects</strong></legend>
+</center>
+<img width=100% src="./assets/testes-projects/projects-teste-unitario-controller.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+<br> 
 
-<br>
+<br> 
+	
+<picture>
+<center>
+<legend><strong>Testes unitário de service de projects</strong></legend>
+</center>
+<img width=100% src="./assets/testes-projects/projects-teste-unitario-service.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
 
 <picture>
-<img width=100% src="./assets/testes/post-test-1.png" />
 <center>
-<legend><strong>Post - imagem 1</strong></legend>
+<legend><strong>Testes unitários de controller de user</strong></legend>
 </center>
+<img width=100% src="./assets/testes-users/unitario-controller-user.png" />
 </picture>
+<a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
 
-<br>
 
 <picture>
-<img width=100% src="./assets/testes/post-test-2.png" />
 <center>
-<legend><strong>Post - imagem 2</strong></legend>
+<legend><strong>Testes unitários de service de user</strong></legend>
 </center>
+<img width=100% src="./assets/testes-users/unitario-service-user.png" />
 </picture>
-
-<br>
-
-<picture>
-<img width=100% src="./assets/testes/user-test-1.png" />
-<center>
-<legend><strong>User - imagem 1</strong></legend>
-</center>
-</picture>
-
-<br>
-
-<br>
-
-<picture>
-<img width=100% src="./assets/testes/user-test-2.png" />
-<center>
-<legend><strong>User - imagem 2</strong></legend>
-</center>
-</picture>
-
-<br>
-
-<picture>
-<img width=100% src="./assets/testes/run-tests.png" />
-<center>
-<legend><strong>Rodando os testes</strong></legend>
-</center>
-</picture>
-
-<br>
-
+<a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
 
 ## Teste de Integração
 
-Link ou imagem da tabela com dados organizados dos testes realizados
+<picture>
+<center>
+<legend><strong>Testes de integração de projects</strong></legend>
+</center>
+<img width=100% src="./assets/testes-projects/teste-integracao.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
 
+<picture>
+<center>
+<legend><strong>Testes de integração de user</strong></legend>
+</center>
+<img width=100% src="./assets/testes-users/integracao-user.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
 
 ## Teste de Regressão
 
@@ -593,11 +614,34 @@ Link ou imagem da tabela com dados organizados dos testes realizados
 
 Link ou imagem da tabela com dados organizados dos testes realizados
 
+## Teste de Funcionalidade
 
-## Teste de Funcionalidade 
+<picture>
+<center>
+<legend><strong>Testes de funcionalidade de projects</strong></legend>
+</center>
+<img width=100% src="./assets/testes-projects/projects-teste-funcional.png" />
+</picture>
+<img width=100% src="./assets/testes-projects/projects-teste-funcional-02.png" />
+	
+<a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
 
-Link ou imagem da tabela com dados organizados dos testes realizados
 
+<picture>
+<center>
+<legend><strong>Testes de funcionalidade de user</strong></legend>
+</center>
+<img width=100% src="./assets/testes-users/funcionalidade-user.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
 
 ## Teste de API 
 
@@ -707,8 +751,6 @@ Documentação dos Endpoints com o uso de Postman para testes
 Fornecer instruções detalhadas sobre como usar o software corretamente. É uma ferramenta valiosa para ajudar os usuários a compreender as funções do software, instalar o software, configurar as preferências do usuário, entre outras tarefas. O manual do usuário geralmente inclui screenshots, animações e outros recursos visuais para tornar a experiência do usuário mais clara e intuitiva. Além disso, ele também pode incluir informações sobre solução de problemas, dicas e truques, bem como informações de contato para suporte técnico. É importante que a seção de manual do usuário seja atualizada frequentemente para garantir que os usuários tenham acesso à informação mais recente e precisa sobre o software.
 
  
-
-
 
 
 # Referências

@@ -28,9 +28,9 @@ const transporter = nodemailer.createTransport({
 
 @Injectable()
 export class ProjectsService {
-    constructor(private prisma: PrismaService) {}
+    constructor(private prisma: PrismaService) { }
 
-    async createProject(ownerId: string, data: ProjectDTO){
+    async createProject(ownerId: string, data: ProjectDTO) {
 
         let projectExists = await this.prisma.project.findMany({
             where: {
@@ -38,10 +38,10 @@ export class ProjectsService {
             }
         })
 
-        if(projectExists.length > 0) {
-            throw new BadRequestException("Something bad happened", {cause: new Error(), description: "Project already exists"})
+        if (projectExists.length > 0) {
+            throw new BadRequestException("Something bad happened", { cause: new Error(), description: "Project already exists" })
         }
-    
+
         let project: any;
 
         //Doing the creation
@@ -88,7 +88,7 @@ export class ProjectsService {
             }
         } catch (err) {
             console.log(err)
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
 
         //Sending Email to Manager authorizing the project
@@ -103,7 +103,7 @@ export class ProjectsService {
         let email = "";
         let name = "";
 
-        if(!managerId.includes("@")) {
+        if (!managerId.includes("@")) {
             const manager = await this.prisma.user.findUnique({
                 where: {
                     id: managerId,
@@ -117,11 +117,11 @@ export class ProjectsService {
             name = "Manager";
         }
 
-        const token = jwt.sign({sub: project.projectId}, process.env.JWT_APPROVE);
+        const token = jwt.sign({ sub: project.projectId }, process.env.JWT_APPROVE);
 
         try {
             const emailSent = await transporter.sendMail({
-                from: '"NoReply DELLPROJECTS" <noreply@dellprojects.com>', 
+                from: '"NoReply DELLPROJECTS" <noreply@dellprojects.com>',
                 to: email, // list of receivers
                 subject: "Reset Password", // Subject line
                 html: htmlApprove(name, token, project.projectId) // html body
@@ -129,13 +129,13 @@ export class ProjectsService {
 
             console.log("Message sent: ", emailSent.messageId);
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
 
         return project;
-    }
+    } //ok
 
-    async getAllProjects(){
+    async getAllProjects() {
         try {
             const allProjects = await this.prisma.project.findMany({
                 include: {
@@ -144,12 +144,12 @@ export class ProjectsService {
             });
             return allProjects;
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
-        
-    }
 
-    async getProjectById(projectId: string){
+    } //ok
+
+    async getProjectById(projectId: string) {
         //Verify if the project exists
         const projectExists = await this.prisma.project.findUnique({
             where: {
@@ -157,11 +157,11 @@ export class ProjectsService {
             }
         })
 
-        if(!projectExists) {
-            throw new BadRequestException("Something bad happened", {cause: new Error(), description: "Project not found"})
+        if (!projectExists) {
+            throw new BadRequestException("Something bad happened", { cause: new Error(), description: "Project not found" })
         }
 
-        
+
         try {
             const project = await this.prisma.project.findUnique({
                 where: {
@@ -177,10 +177,10 @@ export class ProjectsService {
             })
             return project;
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
-        
-    }
+
+    } //ok
 
     async updateProject(projectId: string, data: any) {
         //Verify if the project exists
@@ -190,7 +190,7 @@ export class ProjectsService {
             }
         })
 
-        if(!projectExists) {
+        if (!projectExists) {
             throw new Error('Project does not exist!')
         }
 
@@ -209,7 +209,7 @@ export class ProjectsService {
                 }
             })
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
 
         //Get Manager Email and Name
@@ -229,14 +229,14 @@ export class ProjectsService {
 
         const email = manager.email;
         const name = manager.name;
-        
+
 
         //Sending Email to Manager authorizing the project
-        const token = jwt.sign({sub: projectId}, process.env.JWT_APPROVE);
+        const token = jwt.sign({ sub: projectId }, process.env.JWT_APPROVE);
 
         try {
             const emailSent = await transporter.sendMail({
-                from: '"NoReply DELLPROJECTS" <noreply@dellprojects.com>', 
+                from: '"NoReply DELLPROJECTS" <noreply@dellprojects.com>',
                 to: email, // list of receivers
                 subject: "Reset Password", // Subject line
                 html: htmlApprove(name, token, projectId) // html body
@@ -244,13 +244,13 @@ export class ProjectsService {
 
             console.log("Message sent: ", emailSent.messageId);
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
 
         return updateProject;
-    }
+    } //ok
 
-    async deleteProject(projectId: string){
+    async deleteProject(projectId: string) {
         //Verify if the project exists
         const projectExists = await this.prisma.project.findUnique({
             where: {
@@ -258,7 +258,7 @@ export class ProjectsService {
             }
         })
 
-        if(!projectExists) {
+        if (!projectExists) {
             throw new Error('Project does not exist!')
         }
 
@@ -271,42 +271,42 @@ export class ProjectsService {
 
             return deleted;
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
-    }
+    } //ok
 
     async filterProject(data: any) {
         //Filtering the projects
         try {
-           const project = await this.prisma.project.findMany({
+            const project = await this.prisma.project.findMany({
                 where: data,
                 include: {
                     applies: true
                 }
             })
 
-            return project; 
+            return project;
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
-        
-    }
+
+    } //ok
 
     async approveProject(token: string, status: string, feedback: string) {
         //Verifying if the token is valid
         let projectId;
-        
+
         try {
             const sub = jwt.verify(token, process.env.JWT_APPROVE);
 
             projectId = sub.sub;
 
         } catch {
-            throw new UnauthorizedException("Something bad happened", {cause: new Error(), description: "Invalid token"});
+            throw new UnauthorizedException("Something bad happened", { cause: new Error(), description: "Invalid token" });
         }
 
-        if(!projectId) {
-            throw new UnauthorizedException("Something bad happened", {cause: new Error(), description: "Invalid token"});
+        if (!projectId) {
+            throw new UnauthorizedException("Something bad happened", { cause: new Error(), description: "Invalid token" });
         }
 
         //Getting the project
@@ -317,12 +317,12 @@ export class ProjectsService {
         })
 
         //Verifying if the project exists
-        if(!project) {
+        if (!project) {
             throw new Error('Project does not exist!')
         }
 
         //Verifying if the project is already approved
-        if(project.status != "Pending") {
+        if (project.status != "Pending") {
             throw new Error('Project already approved!')
         }
 
@@ -340,7 +340,7 @@ export class ProjectsService {
                 }
             })
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
 
         //Giving points to the owner
@@ -366,7 +366,7 @@ export class ProjectsService {
                 }
             })
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
 
         return projectReturn;
@@ -381,13 +381,13 @@ export class ProjectsService {
         })
 
         //Verifying if the project exists
-        if(!project) {
+        if (!project) {
             throw new Error('Project does not exist!')
         }
 
         //Verifying if is the owner that is canceling the project
-        if(project.ownerId !== id) {
-            throw new UnauthorizedException("Something bad happened", {cause: new Error(), description: "You can't cancel this project"});
+        if (project.ownerId !== id) {
+            throw new UnauthorizedException("Something bad happened", { cause: new Error(), description: "You can't cancel this project" });
         }
 
         //Updating the project
@@ -403,7 +403,7 @@ export class ProjectsService {
             })
             return project;
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
     }
 
@@ -416,7 +416,7 @@ export class ProjectsService {
         })
 
         //Verifying if the project exists
-        if(!project) {
+        if (!project) {
             throw new Error('Project does not exist!')
         }
 
@@ -432,7 +432,7 @@ export class ProjectsService {
             })
             return project;
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
     }
 
@@ -445,13 +445,13 @@ export class ProjectsService {
         })
 
         //Verifying if the project exists
-        if(!project) {
+        if (!project) {
             throw new Error('Project does not exist!')
         }
 
         //Verifying if is the owner that is canceling the project
-        if(project.ownerId !== id && project.coleaderId !== id) {
-            throw new UnauthorizedException("Something bad happened", {cause: new Error(), description: "You can't finalize this project"});
+        if (project.ownerId !== id && project.coleaderId !== id) {
+            throw new UnauthorizedException("Something bad happened", { cause: new Error(), description: "You can't finalize this project" });
         }
 
         let projectReturn: any;
@@ -468,7 +468,7 @@ export class ProjectsService {
                 }
             })
         } catch (err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
 
         //Giving point to everyone that subscribed
@@ -479,7 +479,7 @@ export class ProjectsService {
                 }
             })
 
-            for(let i = 0; i < persons.length; i++) {
+            for (let i = 0; i < persons.length; i++) {
                 const person = await this.prisma.user.findUnique({
                     where: {
                         id: persons[i].userId,
@@ -495,8 +495,9 @@ export class ProjectsService {
                     }
                 })
             }
-        } catch(err) {
-            throw new InternalServerErrorException("Something bad happened", {cause: new Error(), description: err})
+        } catch (err) {
+            throw new InternalServerErrorException("Something bad happened", { cause: new Error(), description: err })
         }
-    }
+    } //ok
 }
+

@@ -1,5 +1,5 @@
 /** nestjs */
-import { Module } from "@nestjs/common";
+import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
 import { ConfigModule } from "@nestjs/config";
 
 /** modules */
@@ -7,12 +7,17 @@ import { UserModule } from "./user/user.module";
 import { PostModule } from "./post/post.module";
 import { ProjectModule } from "./project/project.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { LoggerMiddleware } from "./logger.middleware";
+import { ApplyModule } from "./applies/apply.module";
+import { RecommendationModule } from "./recommendation/recommendation.module";
 
 @Module({
   imports: [
+    ApplyModule,
     UserModule,
     PostModule,
     ProjectModule,
+    RecommendationModule,
     /** runtime environment variables (e.g. OS shell exports) take precedence */
     ConfigModule.forRoot({
       cache: true,
@@ -27,4 +32,8 @@ import { TypeOrmModule } from "@nestjs/typeorm";
     }),
   ],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes("*");
+  }
+}
