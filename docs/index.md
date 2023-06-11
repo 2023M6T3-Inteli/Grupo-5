@@ -63,6 +63,8 @@ Solução de otimização de corte de bobinas de papel
   - [Perfis de Usuários](#perfis-de-usuários)
 - [Arquitetura do Sistema](#arquitetura-do-sistema)
   - [Arquitetura do sistema V1:](#arquitetura-do-sistema-v1)
+  - [Arquitetura do sistema V2:](#arquitetura-do-sistema-v2)
+  - [Arquitetura do sistema V3:](#arquitetura-do-sistema-v3)
   - [Diagrama do fluxo de dados V1:](#diagrama-do-fluxo-de-dados-v1)
 - [UX e UI Design](#ux-e-ui-design)
   - [Wireframes](#wireframes)
@@ -79,7 +81,7 @@ Solução de otimização de corte de bobinas de papel
   - [Teste de Funcionalidade](#teste-de-funcionalidade)
   - [Teste de API](#teste-de-api)
 - [Documentação da API](#documentação-da-api)
-- [Pipeline ETL](#Pipeline-ETL)
+- [Pipeline ETL](#pipeline-etl)
 - [Manual do Usuário](#manual-do-usuário)
 - [Referências](#referências)
 - [Apêndice](#apêndice)
@@ -552,6 +554,31 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 	
 <br> 
 
+<picture>
+<center>
+<legend><strong>Testes unitários de controller de user</strong></legend>
+</center>
+<img width=100% src="./assets/testes-users/unitario-controller-user.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
+
+
+<picture>
+<center>
+<legend><strong>Testes unitários de service de user</strong></legend>
+</center>
+<img width=100% src="./assets/testes-users/unitario-service-user.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
+
 ## Teste de Integração
 
 <picture>
@@ -561,6 +588,18 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 <img width=100% src="./assets/testes-projects/teste-integracao.png" />
 </picture>
 <a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
+
+<picture>
+<center>
+<legend><strong>Testes de integração de user</strong></legend>
+</center>
+<img width=100% src="./assets/testes-users/integracao-user.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
   Link do sheets.
 </a>
 	
@@ -586,6 +625,19 @@ Link ou imagem da tabela com dados organizados dos testes realizados
 <img width=100% src="./assets/testes-projects/projects-teste-funcional-02.png" />
 	
 <a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
+
+
+<picture>
+<center>
+<legend><strong>Testes de funcionalidade de user</strong></legend>
+</center>
+<img width=100% src="./assets/testes-users/funcionalidade-user.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
   Link do sheets.
 </a>
 	
