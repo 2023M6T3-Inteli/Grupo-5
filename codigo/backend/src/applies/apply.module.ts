@@ -2,14 +2,14 @@
 import { Module } from "@nestjs/common";
 
 /** controllers */
-import { ProjectController } from "./project.controller";
+import { ApplyController } from "./apply.controller";
 import { HttpModule } from "@nestjs/axios";
-import { ProjectService } from "./project.service";
+import { ApplyService } from "./apply.service";
 ////////////////////////////////////////////////////////////////////////////////
 
 @Module({
   imports: [HttpModule],
-  controllers: [ProjectController],
-  providers: [ProjectService]
+  controllers: [ApplyController],
+  providers: [ApplyService]
 })
-export class ProjectModule { }
+export class ApplyModule {}

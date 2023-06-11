@@ -7,6 +7,11 @@ import {
   Patch,
   Param,
   Delete,
+  Req,
+  UseGuards,
+  Headers,
+  Put,
+  Header,
 } from "@nestjs/common";
 
 /** providers */
@@ -15,51 +20,59 @@ import { CreateProjectDto } from "./dto/create-project.dto";
 import { UpdateProjectDto } from "./dto/update-project.dto";
 import { HttpService } from "@nestjs/axios";
 import { firstValueFrom } from "rxjs";
+import { AuthGuard } from "../user/guards/auth.guard";
+import { ProjectService } from "./project.service";
 
 ////////////////////////////////////////////////////////////////////////////////
 
 @Controller("project")
 export class ProjectController {
   private projects: Project[] = [];
-  
-  constructor(private readonly httpService: HttpService) {
-    
+
+  constructor(private readonly projectService: ProjectService) {
+
   }
 
+  @UseGuards(AuthGuard)
   @NestPost()
-  async create(@Body() createProjectDto: CreateProjectDto, config: any) {
-    // const { data } = await firstValueFrom(
-    //   this.httpService.post("http://localhost:3001/Project/Create", createProjectDto, config)
-    // );
-    // return data;
-    this.projects.push({
-      ...createProjectDto,
-      id: this.projects.length + 1,
-      userId: 1,
-    });
-    return this.projects[this.projects.length - 1];
+  async create(@Headers() headers, @Body() projectData: CreateProjectDto) {
+    return this.projectService.create(headers, projectData)
   }
 
-  @Get()
-  findAll() {
-    return this.projects;
+  @UseGuards(AuthGuard)
+  @Put("update/:projectId")
+  async update(@Param("projectId") projectId, @Headers() headers, @Body() projectData: UpdateProjectDto) {
+    return this.projectService.update(projectId, headers, projectData)
   }
 
-  @Get(":id")
-  findOne(@Param("id") id: string) {
-    return this.projects.find((project) => project.id === +id);
+  @UseGuards(AuthGuard)
+  @Delete("delete/:projectId")
+  async delete(@Param("projectId") projectId, @Headers() headers) {
+    return this.projectService.delete(projectId, headers)
   }
 
-  @Patch(":id")
-  update(@Param("id") id: string, @Body() updateProjectDto: UpdateProjectDto) {
-    this.projects = this.projects.map((project) =>
-      project.id === +id ? { ...project, ...updateProjectDto } : project
-    );
-    return this.projects.find((project) => project.id === +id);
+  @UseGuards(AuthGuard)
+  @Get("/allProjects")
+  async getAll(@Headers() headers) {
+    return this.projectService.getAll(headers)
   }
 
-  @Delete(":id")
-  remove(@Param("id") id: string) {
-    this.projects = this.projects.filter((project) => project.id !== +id);
+  @UseGuards(AuthGuard)
+  @Get("/:projectId")
+  async getOne(@Param("projectId") projectId, @Headers() Headers) {
+    return this.projectService.getOne(projectId, Headers)
   }
+
+  @UseGuards(AuthGuard)
+  @NestPost("/filterProjects")
+  async filter(@Headers() headers, @Body() projectData: any) {
+    return this.projectService.filter(headers, projectData)
+  }
+
+  @UseGuards(AuthGuard)
+  @Put("/finalize/:projectId")
+  async finalize(@Param("projectId") projectId, @Req() req: any) {
+    return this.projectService.finalize(projectId, req)
+  }
+
 }

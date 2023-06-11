@@ -8,12 +8,16 @@ import { PostModule } from "./post/post.module";
 import { ProjectModule } from "./project/project.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { LoggerMiddleware } from "./logger.middleware";
+import { ApplyModule } from "./applies/apply.module";
+import { RecommendationModule } from "./recommendation/recommendation.module";
 
 @Module({
   imports: [
+    ApplyModule,
     UserModule,
     PostModule,
     ProjectModule,
+    RecommendationModule,
     /** runtime environment variables (e.g. OS shell exports) take precedence */
     ConfigModule.forRoot({
       cache: true,
