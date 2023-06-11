@@ -526,41 +526,44 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 # Testes de Software
 
 ## Teste Unitário
-
-<br> 
+	
 <picture>
-<legend><strong>Testes unitário de servicontrollere de projects</strong></legend>
+<center>
+<legend><strong>Testes unitário de controller de projects</strong></legend>
+</center>
 <img width=100% src="./assets/testes-projects/projects-teste-unitario-controller.png" />
-<center>
 </picture>
 <a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
   Link do sheets.
 </a>
 <br> 
 
-
 <br> 
+	
 <picture>
-<legend><strong>Testes unitário de service de projects</strong></legend>
-<img width=100% src="./assets/testes-projects/projects-teste-unitario-service.png" />
 <center>
+<legend><strong>Testes unitário de service de projects</strong></legend>
+</center>
+<img width=100% src="./assets/testes-projects/projects-teste-unitario-service.png" />
 </picture>
 <a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
   Link do sheets.
 </a>
+	
 <br> 
 
 ## Teste de Integração
 
-<br> 
 <picture>
-<legend><strong>Testes de integração de projects</strong></legend>
-<img width=100% src="./assets/testes-projects/teste-integracao.png" />
 <center>
+<legend><strong>Testes de integração de projects</strong></legend>
+</center>
+<img width=100% src="./assets/testes-projects/teste-integracao.png" />
 </picture>
 <a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
   Link do sheets.
 </a>
+	
 <br> 
 
 ## Teste de Regressão
@@ -574,16 +577,18 @@ Link ou imagem da tabela com dados organizados dos testes realizados
 
 ## Teste de Funcionalidade
 
-<br> 
 <picture>
-<legend><strong>Testes de funcionalidade de projects</strong></legend>
-<img width=100% src="./assets/testes-projects/projects-teste-funcional.png" />
-<img width=100% src="./assets/testes-projects/projects-teste-funcional-02.png" />
 <center>
+<legend><strong>Testes de funcionalidade de projects</strong></legend>
+</center>
+<img width=100% src="./assets/testes-projects/projects-teste-funcional.png" />
 </picture>
+<img width=100% src="./assets/testes-projects/projects-teste-funcional-02.png" />
+	
 <a href="https://docs.google.com/spreadsheets/d/1mrAFxO9Qp-5RFOWCoPFYgBfhC6nM2G5UuOj2t12poiQ/edit?usp=sharing">
   Link do sheets.
 </a>
+	
 <br> 
 
 ## Teste de API 
