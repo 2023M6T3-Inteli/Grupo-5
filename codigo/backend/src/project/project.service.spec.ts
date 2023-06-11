@@ -20,6 +20,7 @@ describe('ProjectsService', () => {
         service = moduleRef.get<ProjectService>(ProjectService);
     });
 
+    // Unit test for the "project service" endpoint function
     it('should be defined', () => {
         expect(service).toBeDefined();
     });
@@ -124,6 +125,7 @@ describe('ProjectsService', () => {
         expect((await service.getAll(token)).length).toBe(projects.length)
     });
 
+    // Unit test for the "get one project" endpoint function
     it('Should return a project by its ID', async () => {
         const projectId = '8080';
         let token = {
@@ -140,13 +142,8 @@ describe('ProjectsService', () => {
             projectType: 'Dev',
             blockedSubscriptions: false,
         };
-
         expect(service.getOne(projectId, token)).toBe(projectToReturn)
     });
-
-    // 
-
-})
-
+});
 
 
