@@ -20,7 +20,7 @@ import { CreateProjectDto } from "./dto/create-project.dto";
 import { UpdateProjectDto } from "./dto/update-project.dto";
 import { HttpService } from "@nestjs/axios";
 import { firstValueFrom } from "rxjs";
-import { AuthGuard } from "src/user/guards/auth.guard";
+import { AuthGuard } from "../user/guards/auth.guard";
 import { ProjectService } from "./project.service";
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -74,4 +74,5 @@ export class ProjectController {
   async finalize(@Param("projectId") projectId, @Req() req: any) {
     return this.projectService.finalize(projectId, req)
   }
+
 }
