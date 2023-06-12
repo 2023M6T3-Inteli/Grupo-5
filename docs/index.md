@@ -677,7 +677,7 @@ Link ou imagem da tabela com dados organizados dos testes realizados
 <center>
 <legend><strong>Testes de funcionalidade de user</strong></legend>
 </center>
-<img width=100% src="./assets/testes-users/funcionalidade-user" />
+<img width=100% src="./assets/testes-users/funcionalidade-user.png" />
 </picture>
 <a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
   Link do sheets.
