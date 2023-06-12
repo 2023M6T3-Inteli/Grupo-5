@@ -579,6 +579,34 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 	
 <br> 
 
+<br> 
+
+<picture>
+<center>
+<legend><strong>Testes unitários de controller do post</strong></legend>
+</center>
+<img width=100% src="./assets/testes-posts/controller-unitario.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1z4JhLFVoyi40192TTelwPLH1jH47_R_8JPXFt0gsnS8/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
+
+<br> 
+
+<picture>
+<center>
+<legend><strong>Testes unitários de service do post</strong></legend>
+</center>
+<img width=100% src="./assets/testes-posts/service-unitario.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1z4JhLFVoyi40192TTelwPLH1jH47_R_8JPXFt0gsnS8/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br>
+
 ## Teste de Integração
 
 <picture>
@@ -600,6 +628,20 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 <img width=100% src="./assets/testes-users/integracao-user.png" />
 </picture>
 <a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
+
+<br> 
+
+<picture>
+<center>
+<legend><strong>Testes de integração de post</strong></legend>
+</center>
+<img width=100% src="./assets/testes-posts/integra%C3%A7%C3%A3o-post.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1z4JhLFVoyi40192TTelwPLH1jH47_R_8JPXFt0gsnS8/edit?usp=sharing">
   Link do sheets.
 </a>
 	
@@ -638,6 +680,22 @@ Link ou imagem da tabela com dados organizados dos testes realizados
 <img width=100% src="./assets/testes-users/funcionalidade-user.png" />
 </picture>
 <a href="https://docs.google.com/spreadsheets/d/1KHLiFU7qy2FTXfq8RHJJ6ibNohmpY39e1eltCKkAmok/edit?usp=sharing">
+  Link do sheets.
+</a>
+	
+<br> 
+
+
+<br> 
+
+
+<picture>
+<center>
+<legend><strong>Testes de funcionalidade de post</strong></legend>
+</center>
+<img width=100% src="./assets/testes-posts/funcionalidade-teste.png" />
+</picture>
+<a href="https://docs.google.com/spreadsheets/d/1z4JhLFVoyi40192TTelwPLH1jH47_R_8JPXFt0gsnS8/edit?usp=sharing">
   Link do sheets.
 </a>
 	
