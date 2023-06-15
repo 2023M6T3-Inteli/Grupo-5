@@ -35,7 +35,7 @@ export class UserService {
       const user = this.repository.create({
         userIdLegacy: data.user.id,
         email: data.user.email,
-        name: data.user.name,
+        name: data.user.name
       });
 
       await this.repository.save(user);

@@ -4,11 +4,12 @@ const mqtt = require("mqtt");
 const protocol = "mqtt";
 const host = "mqtt-dashboard.com";
 const port = "8884";
-const clientId = `recommendation_app`;
+const clientId = `backend_api`;
 // const connectUrl = `${protocol}://${host}:${port}`;
 const connectUrl = `${protocol}://${host}`;
 
-const topic = "IA Recommendation";
+const IATopic = "IA Recommendation";
+const BackendTopic = "Backend API";
 const client = mqtt.connect(connectUrl, {
   clientId,
   clean: false,
@@ -18,26 +19,28 @@ const client = mqtt.connect(connectUrl, {
   // reconnectPeriod: 1000,
 });
 
-let lastMessage = null
-
 client.on("connect", () => {
   console.log("Connected");
-  client.subscribe([topic], () => {
-    console.log(`Subscribe to topic '${topic}'`);
+  client.subscribe([BackendTopic], () => {
+    console.log(`Subscribe to topic '${BackendTopic}'`);
   });
+});
+
+let lastMessage = null
+client.on("message", (BackendTopic, payload) => {
+  lastMessage = payload.toString()
+  console.log("Received Message:", BackendTopic, payload.toString());
 });
 
 export class RecommendationService {
   async recommend(body: ContentDto) {
-    client.publish(topic, body.content)
-    client.on("message", (topic, payload) => {
-      lastMessage = payload.toString()
-      console.log("Received Message:", topic, payload.toString());
-    });
-
+    
+    client.publish(IATopic, body.content)
+    
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(lastMessage);
+        lastMessage = null
       }, 2000);
     });
   }
