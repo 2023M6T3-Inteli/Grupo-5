@@ -18,6 +18,7 @@ const AuthService = {
     signIn: async (email: string, password: string) => {
         try {
             const response = await axios.post("/user/login", { email, password });
+            console.log(response.data)
             const accessToken = response.data.accessToken;
 
             return accessToken;
