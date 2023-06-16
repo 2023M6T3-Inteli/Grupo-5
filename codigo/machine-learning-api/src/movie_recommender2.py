@@ -196,17 +196,20 @@ tfidf_matrix = tfidf.fit_transform(new_df['metadata'])
 # Calculate cosine similarity
 cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
 
+import difflib
 
-def recommend_movie(movie_id, amount, cosine_sim=cosine_sim):
-    try:
-        title = new_df.loc[movie_id, 'title']
-    except KeyError:
-        return {
-            "error":
-            f"Movie with movie_id {movie_id} not found in the dataset."
-        }
 
-    idx = indices[title]
+def recommend_movie(movie_title, amount, cosine_sim=cosine_sim):
+    similar_titles = difflib.get_close_matches(movie_title,
+                                               new_df['title'],
+                                               n=1,
+                                               cutoff=0.6)
+    if not similar_titles:
+        return {"error": f"No similar movie titles found for '{movie_title}'."}
+
+    similar_title = similar_titles[0]
+    idx = new_df[new_df['title'] == similar_title].index[0]
+
     sim_scores = list(enumerate(cosine_sim[idx]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
     sim_scores = sim_scores[1:amount + 1]
@@ -214,7 +217,7 @@ def recommend_movie(movie_id, amount, cosine_sim=cosine_sim):
     recommended_movies = new_df['title'].iloc[movie_indices].tolist()
 
     result = {
-        "based_on": title,
+        "based_on": similar_title,
         "amount": amount,
         "movies": recommended_movies
     }
@@ -223,18 +226,22 @@ def recommend_movie(movie_id, amount, cosine_sim=cosine_sim):
 
 import json
 
-# Example usage
-# params = {"amount": 15, "movie_id": np.random.randint(1, 10000)}
-# recommended_movies = recommend_movie(params["movie_id"], params["amount"])
+# # Example usage
+# params = {"amount": 15, "movie_title": "Jumanji"}
+# recommended_movies = recommend_movie(params["movie_title"], params["amount"])
 
-# print(json.dumps(recommended_movies))
+# print(
+#     # json.dumps(
+#     recommended_movies
+#     # )
+# )
 
 import sys
 
 if __name__ == "__main__":
-    movie_id = int(sys.argv[1])
+    movie_title = str(sys.argv[1])
     amount = int(sys.argv[2])
 
-    recommended_movies = recommend_movie(movie_id, amount)
+    recommended_movies = recommend_movie(movie_title, amount)
 
     print(json.dumps(recommended_movies))
