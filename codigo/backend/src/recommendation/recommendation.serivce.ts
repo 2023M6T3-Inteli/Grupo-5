@@ -19,23 +19,39 @@ const client = mqtt.connect(connectUrl, {
   // reconnectPeriod: 1000,
 });
 
+// client.on("connect", () => {
+//   console.log("Connected");
+//   client.subscribe([BackendTopic], () => {
+//     console.log(`Subscribe to topic '${BackendTopic}'`);
+//   });
+// });
 client.on("connect", () => {
   console.log("Connected");
-  client.subscribe([BackendTopic], () => {
-    console.log(`Subscribe to topic '${BackendTopic}'`);
+  client.subscribe([IATopic], () => {
+    console.log(`Subscribe to topic '${IATopic}'`);
   });
 });
 
 let lastMessage = null
-client.on("message", (BackendTopic, payload) => {
+// client.on("message", (BackendTopic, payload) => {
+//   lastMessage = payload.toString()
+//   console.log("Received Message:", BackendTopic, payload.toString());
+// });
+// console.log("Received Message:", IATopic, payload.toString());
+client.on("message", (IATopic: any, payload: any) => {
   lastMessage = payload.toString()
-  console.log("Received Message:", BackendTopic, payload.toString());
+
+  let user = JSON.parse(payload.toString()).userId
+  const topic = `recommendation/${user}`
+  const recommendation = "Toy Story"
+  
+  client.publish(topic, recommendation)
 });
 
 export class RecommendationService {
   async recommend(body: ContentDto) {
     
-    client.publish(IATopic, body.content)
+    client.publish(IATopic, JSON.stringify(body))
     
     return new Promise((resolve) => {
       setTimeout(() => {
