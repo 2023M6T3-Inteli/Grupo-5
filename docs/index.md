@@ -634,8 +634,6 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 <br> 
 
 <br> 
-
-<picture>
 <center>
 <legend><strong>Testes de integração de post</strong></legend>
 </center>
@@ -645,6 +643,24 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
   Link do sheets.
 </a>
 	
+<br> 
+
+
+# Testes do Modelo de Recomendação
+
+## Teste do modelo
+	
+<picture>
+<center>
+<legend><strong>Teste da recomendação</strong></legend>
+</center>
+<img width=100% src="./assets/teste-de-recomenda%C3%A7%C3%A3o/Testes%20do%20modelo.jpeg" />
+</picture>
+<a href="https://drive.google.com/file/d/1-pRnDXN9s2W-28PCcxPb9uX8K0u3vk9y/view?usp=sharing">
+  Link do drive.
+</a>
+
+<picture>
 <br> 
 
 ## Teste de Regressão
