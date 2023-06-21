@@ -137,10 +137,27 @@ fn main() {
     loop {
         if let Ok(Some(msg)) = rx.recv() {
             println!("Receiving ...");
-            println!("Message received: {}", msg.payload_str());
 
-            let movie_title = msg.payload_str().to_string();
+            // message will come as a json string which might be read as a json object
+            let message: &str = &msg.payload_str();
+            let message_json: serde_json::Value = serde_json::from_str(message).unwrap();
+
+            println!("Received: {:?}\n", message.to_string().replace("\"", ""));
+
+            let movie_title: String = message_json["content"]
+                .to_string()
+                .replace("\"", "")
+                .to_string();
+            println!("Movie title: {}", movie_title);
+
+            let user_id: String = message_json["userId"]
+                .to_string()
+                .replace("\"", "")
+                .to_string();
+            println!("User id: {}\n", user_id);
+
             let result: PythonOutput = get_movie_recommendations(movie_title.clone(), 10);
+            println!("Result: {:?}", result);
 
             if let Some(movies) = result.movies {
                 if movies.is_empty() {
@@ -160,7 +177,7 @@ fn main() {
                 let content = serde_json::to_string(&response.movies).unwrap();
 
                 let message = mqtt::MessageBuilder::new()
-                    .topic("Web App")
+                    .topic("recommendation/".to_string() + &user_id.replace("\"", ""))
                     .payload(content)
                     .qos(1)
                     .finalize();
@@ -172,7 +189,10 @@ fn main() {
                 println!("Received: {:?}", msg.payload_str());
                 println!("Recommendations: {:?}\n\n\n\n\n", movies);
             } else {
-                println!("Missing '{}' field in the Python script output.", msg.payload_str());
+                println!(
+                    "Missing '{}' field in the Python script output.",
+                    msg.payload_str()
+                );
                 continue;
             }
         } else if !cli.is_connected() {
