@@ -34,9 +34,9 @@ client.on("message", (BackendTopic, payload) => {
 
 export class RecommendationService {
   async recommend(body: ContentDto) {
-    
+
     client.publish(IATopic, body.content)
-    
+
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(lastMessage);
