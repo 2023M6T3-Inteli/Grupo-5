@@ -37,6 +37,38 @@ Dell Tecnologies
 
 Criação de um aplicativo mobile para incentivar o aprendizado através de um sistema de recomendação baseado em projetos e documentários rotulados pelos colaboradores da empresa. O sistema permite compartilhamento de comentários e feedbacks construtivos, além de promover uma cultura colaborativa e engajamento dos funcionários. A solução visa otimizar o processo de seleção de conteúdos e aumentar a transparência e comunicação interna na empresa.
 
+## 📁 Estrutura de pastas
+
+|-->codigo<br>
+  &emsp;|--> backend-legacy<br>
+        &emsp;|--> backend<br>
+        &emsp;|--> frontend<br>
+        &emsp;|--> machine-learning-api<br>
+        &emsp;|--> planejadorbr>
+
+
+
+        
+|-->docs<br>
+  &emsp;|-->assets<br>
+  &emsp;|-->_config.yml<br>
+  &emsp;|-->aws_setup_aluno.md<br>
+  &emsp;|-->instalacao_aluno.md<br>
+  &emsp;|-->index.md<br>
+  &emsp;|-->validacao_aluno.md<br>
+  
+  
+<b>Dentre os arquivos presentes na raiz do projeto, definem-se:</b>
+
+<b>readme:</b> arquivo de introdução, contendo informações gerais sobre o projeto - arquivo atual.
+
+<b>documentos:</b> contém as versões de Manual de Instrução para a aplicação em cloud, além do documento oficial da solução,  Doc.
+
+<b>codigo:</b> Possui o código fonte do projeto, tanto as conexão feitas com a AWS, quanto para a aplicação web desenvolvida.
+
+## 💻 Execução do projeto
+
+
 
 # Descrição do Dataset
 
