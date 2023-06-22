@@ -9,6 +9,7 @@ import Button from "../Button";
 import PostService from "@/services/post";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
 
 type Props = {
   submit: Function;
@@ -61,131 +62,118 @@ const CreatePost: React.FC<Props> = ({ submit }: Props) => {
     }
   }
 
-  const charactersUsed = data.content.length;
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const validateFields = () => {
-    if (
-      data.content &&
-      data.tags &&
-      data.tags.length > 0
-    ) {
-      setDisableCreate(false)
-    }
-    else {
-      setDisableCreate(true)
-    }
-  }
-
-  const handleSubmit = async (e: any) => {
-    e.preventDefault()
-
+  const onSubmit = async (data: any) => {
+    console.log(data);
     const response = await PostService.create(data)
 
+
     if (response) {
+      console.log(response.response)
       setLoading(false)
       toast.success('Post created successfully!')
-      setTimeout(() => {
-        router.reload()
-      }, 2000)
     }
     else {
       toast.error("Error to create the post")
     }
   }
 
-  useEffect(() => {
-    validateFields()
-  }, [data])
-
   return (
     <div className={styles.createPost}>
-      {/* <Grid> */}
-      <Row className={styles.row}>
-        <Col xs={12}>
-          <p className={styles.subtitle}>
-            Share your recommendations with the community!
-          </p>
-        </Col>
-      </Row>
-      <Row className={styles.row}>
-        <Col xs={12}>
-          <div className={styles.inputGroup}>
-            <div className={styles.postTitleCounter}>
-              <label>Post Content*</label>
-              <h5>{charactersUsed}/{maxLength}</h5>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {/* <Grid> */}
+        <Row className={styles.row}>
+          <Col xs={12}>
+            <p className={styles.subtitle}>
+              Share your recommendations with the community!
+            </p>
+          </Col>
+        </Row>
+        <Row className={styles.row}>
+          <Col xs={12}>
+            <div className={styles.inputGroup}>
+              <div className={styles.postTitleCounter}>
+                <label>Post Content*</label>
+                <h5>{
+                  data.content.length
+                }/{maxLength}</h5>
+              </div>
+              <textarea
+                placeholder="Share a link to a website, video, podcast..."
+                {...register("content", { required: true, maxLength: 2000 })}
+                required
+              />
+              {errors.content && <span> style={{ color: 'red' }}This field is required</span>}
             </div>
-            <textarea
-              placeholder="Share a link to a website, video, podcast..."
-              required
-              onChange={handleChange}
-              maxLength={maxLength}
-            />
-          </div>
-        </Col>
-      </Row>
-      <Row className={styles.row}>
-        <Col xs={12}>
-          <div className={styles.inputGroup}>
-            <label>Add Image</label>
-            <input
-              className={styles.fileUpload}
-              type="file"
-              aria-required="true"
-            />
-          </div>
-        </Col>
-      </Row>
-      <Row className={styles.row}>
-        <Col xs={12}>
-          <div className={styles.inputGroup}>
-            <label>Tags*</label>
-            <form onSubmit={addTag}>
-              <Input
-                size='large'
+          </Col>
+        </Row>
+        <Row className={styles.row}>
+          <Col xs={12}>
+            <div className={styles.inputGroup}>
+              <label>Add Image</label>
+              <input
+                className={styles.fileUpload}
+                type="file"
+                aria-required="true"
+                {...register("image")}
+              />
+            </div>
+          </Col>
+        </Row>
+        <Row className={styles.row}>
+          <Col xs={12}>
+            <div className={styles.inputGroup}>
+              <label>Tags*</label>
+              <input
                 placeholder={"Enter new tag"}
                 type={"text"}
-                value={tag}
-                autocomplete="off"
-                onChange={(value: any) => setTag(value)}
+                {...register("tags", { required: true })}
               />
-            </form>
-          </div>
-
-          {
-            data.tags &&
-            <div className={styles.tagsContainer}>
-              {
-                data.tags.map((tag: any, index: number) => {
-                  return (
-                    <>
-                      <div className={styles.tag} key={`${tag}-${index}`}>
-                        {tag}
-                        <div className={styles.removeIcon} onClick={() => removeTag(index)}>
-                          <CloseIcon />
-                        </div>
-                      </div>
-                    </>
-
-                  )
-                })
-              }
-              {
-                data.tags.length > 0 &&
-                <div className={styles.tagRemove} onClick={() => removeTag(-1)}>Clear all</div>
-              }
+              {errors.tags && <span style={{ color: 'red' }}>This field is required</span>}
             </div>
-          }
-        </Col>
-      </Row>
-      <Row className={styles.row}>
-        <Col xs={12}>
-          <div className={styles.createContainer}>
-            <Button type="default" text="Create" size="medium" disabled={disableCreate} onClick={(e: any) => handleSubmit(e)} />
-          </div>
-        </Col>
-      </Row>
-      {/* </Grid> */}
+
+            {
+              data.tags &&
+              <div className={styles.tagsContainer}>
+                {
+                  data.tags.map((tag: any, index: number) => {
+                    return (
+                      <>
+                        <div className={styles.tag} key={`${tag}-${index}`}>
+                          {tag}
+                          <div className={styles.removeIcon} onClick={() => removeTag(index)}>
+                            <CloseIcon />
+                          </div>
+                        </div>
+                      </>
+
+                    )
+                  })
+                }
+                {
+                  data.tags.length > 0 &&
+                  <div className={styles.tagRemove} onClick={() => removeTag(-1)}>Clear all</div>
+                }
+              </div>
+            }
+          </Col>
+        </Row>
+        <Row className={styles.row}>
+          <Col xs={12}>
+            <div className={styles.createContainer}>
+              <Button tp="default" text="Create" size="medium" type="submit" />
+            </div>
+          </Col>
+        </Row>
+        {/* </Grid> */}
+      </form>
     </div>
+
   );
 };
 

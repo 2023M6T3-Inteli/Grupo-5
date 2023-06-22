@@ -4,9 +4,9 @@ import { RecommendationService } from "./recommendation.serivce";
 
 @Controller("recommendation")
 export class RecommendationController {
-  constructor(private readonly recommendationService: RecommendationService) {}
+  constructor(private readonly recommendationService: RecommendationService) { }
 
-  // @UseGuards(AuthGuard)
+  // // @UseGuards(AuthGuard)
   @Post()
   async recommend(@Body() content: ContentDto) {
     return await this.recommendationService.recommend(content);

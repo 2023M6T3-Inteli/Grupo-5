@@ -20,6 +20,7 @@ import Link from 'next/link'
 import Modal from '@/components/Modal'
 import { useEffect, useState } from 'react'
 import PostService from '@/services/post'
+import { useRouter } from 'next/router'
 
 // const fetchData = (url: string) => {
 //   const fetcher = async () => {
@@ -112,8 +113,12 @@ export default function Index() {
 const Post = ({
   user, role, imgURL, likes, content, comments, saves, id
 }: PostProps) => {
+  const router = useRouter();
+
+  useEffect(() => { console.log(user) }, [])
+
   return (
-    <Card xs={12}>
+    <Card xs={12} onClick={() => router.push(`/posts/${id}`)}>
       <Row middle='xs'>
         <Col>
           <ProfilePicture loader={
@@ -181,4 +186,9 @@ const Card = styled(Col)`
   background-color: #FFF;
   padding: 1.25rem 1rem;
   margin-bottom: 1.5rem;
+
+  :hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  }
 `

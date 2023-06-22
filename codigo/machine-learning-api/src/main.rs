@@ -159,6 +159,11 @@ fn main() {
             let result: PythonOutput = get_movie_recommendations(movie_title.clone(), 5);
             println!("Result: {:?}", result);
 
+            println!(
+                "Generating recommendations for '{}' for user '{}'",
+                movie_title, user_id
+            );
+
             if let Some(movies) = result.movies {
                 if movies.is_empty() {
                     println!(

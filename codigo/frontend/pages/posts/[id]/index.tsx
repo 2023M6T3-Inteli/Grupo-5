@@ -33,7 +33,12 @@ const fetchData = (url: string) => {
 };
 
 interface PostProps {
-    user: string,
+    __user__: {
+        name: string,
+        email: string,
+        userIdLegacy: string,
+        id: string,
+    },
     role: string,
     imgURL: string,
     content: string,
@@ -55,7 +60,12 @@ export default function Index() {
         likes: 0,
         role: "",
         saves: 0,
-        user: ""
+        __user__: {
+            email: "",
+            id: "",
+            name: "",
+            userIdLegacy: "",
+        }
     })
 
     const { data, isLoading, isError } = fetchData("http://localhost:5500/post/" + id);
@@ -85,7 +95,13 @@ export default function Index() {
                     </Col>
 
                     <Col>
-                        <button onClick={() => router.push("/posts/" + id + "/edit")}>menu</button>
+                        <button style={{
+                            transform: "rotate(90deg)",
+                            background: "none",
+                            border: "none",
+                            color: "#000",
+                            fontWeight: "bold",
+                        }}>. . .</button>
                     </Col>
                 </TopBar>
 
@@ -97,7 +113,7 @@ export default function Index() {
                     </Col>
 
                     <Col xs={10}>
-                        <Title variant='md' color='#000'>{postDetails.user}</Title>
+                        <Title variant="md" color='#000'>{postDetails.__user__.name}</Title>
 
                         <Text color='#000'>
                             {postDetails.role}
@@ -117,13 +133,15 @@ export default function Index() {
 
                 <Spacer size="sm" />
 
-                <Row>
-                    <Col xs={12}>
-                        <img src={postDetails.imgURL || 'https://placehold.co/350x300'} alt='Post' style={{
-                            width: "100%",
-                        }} />
-                    </Col>
-                </Row>
+                {postDetails.imgURL && (
+                    <Row>
+                        <Col xs={12}>
+                            <img src={postDetails.imgURL || 'https://placehold.co/350x300'} alt='Post' style={{
+                                width: "100%",
+                            }} />
+                        </Col>
+                    </Row>
+                )}
 
                 <Spacer size="sm" />
 
@@ -155,7 +173,7 @@ export default function Index() {
 
                 <Spacer size="sm" />
 
-                { postDetails.comments && postDetails.comments.length > 0 ? postDetails.comments.map((comment, index) => (
+                {postDetails.comments && postDetails.comments.length > 0 ? postDetails.comments.map((comment, index) => (
                     <>
                         <Row key={index} between="xs" middle="xs">
                             <Col>
@@ -166,7 +184,7 @@ export default function Index() {
 
                             <Col xs={10}>
                                 <Title variant="sm" color="#2e2e2ed7">
-                                    {postDetails.user}
+                                    {postDetails.__user__.name}
                                 </Title>
                                 <Text color="#2e2e2eb7">
                                     {postDetails.role}

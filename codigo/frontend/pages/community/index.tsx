@@ -38,7 +38,7 @@ export default function Index() {
         </Row>
 
         <Row center='xs'>
-          {Array(10).fill(1).map((_, index) => (
+          {Array(13).fill(1).map((_, index) => (
             <Post key={index} />
           ))}
         </Row>
@@ -51,7 +51,9 @@ const Post = () => {
   return (
     <Card xs={12}>
       <Row middle='xs' between='xs'>
-        <Title color="#2e2e2e">Python Programming</Title>
+        <Title color="#2e2e2e">{
+          ['JavaScript', 'TypeScript', 'Python', 'Java', 'C#', 'C++', 'PHP', 'Ruby', 'Go', 'Rust', 'Kotlin', 'Swift', 'Objective-C', 'Scala', 'R', 'Dart', 'Elixir', 'Clojure', 'Haskell', 'Lua', 'Perl', 'Julia'][Math.floor(Math.random() * 22) + 1]
+        } Programming</Title>
       </Row>
 
       <Spacer size="sm" />
@@ -88,7 +90,9 @@ const Post = () => {
           left: -48,
         }}></div>
 
-        <Text style={{ position: 'relative', left: -32 }} color='#2e2e2e'>+40 participantes</Text>
+        <Text style={{ position: 'relative', left: -32 }} color='#2e2e2e'>+{
+          Math.floor(Math.random() * 100) + 1
+        } participantes</Text>
       </Row>
     </Card>
   )

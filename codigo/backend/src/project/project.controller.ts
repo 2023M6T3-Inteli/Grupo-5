@@ -33,43 +33,43 @@ export class ProjectController {
 
   }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @NestPost()
   async create(@Headers() headers, @Body() projectData: CreateProjectDto) {
     return this.projectService.create(headers, projectData)
   }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Put("update/:projectId")
   async update(@Param("projectId") projectId, @Headers() headers, @Body() projectData: UpdateProjectDto) {
     return this.projectService.update(projectId, headers, projectData)
   }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Delete("delete/:projectId")
   async delete(@Param("projectId") projectId, @Headers() headers) {
     return this.projectService.delete(projectId, headers)
   }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Get("/allProjects")
   async getAll(@Headers() headers) {
     return this.projectService.getAll(headers)
   }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Get("/:projectId")
   async getOne(@Param("projectId") projectId, @Headers() Headers) {
     return this.projectService.getOne(projectId, Headers)
   }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @NestPost("/filterProjects")
   async filter(@Headers() headers, @Body() projectData: any) {
     return this.projectService.filter(headers, projectData)
   }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Put("/finalize/:projectId")
   async finalize(@Param("projectId") projectId, @Req() req: any) {
     return this.projectService.finalize(projectId, req)

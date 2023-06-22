@@ -30,9 +30,9 @@ export class PostController {
   constructor(
     private readonly postService: PostService,
     private readonly userService: UserService
-  ) {}
+  ) { }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @NestPost()
   async create(
     @Req() req: PassportRequest,
@@ -92,7 +92,7 @@ describe("PostController", () => {
         { provide: PostService, useValue: postService },
         { provide: UserService, useValue: userService },
         AuthGuard,
-        JwtService, 
+        JwtService,
       ],
     }).compile();
 

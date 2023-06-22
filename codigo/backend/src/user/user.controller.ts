@@ -29,7 +29,7 @@ export interface LoginResponse {
 @Controller("user")
 
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService) { }
 
   @HttpCode(200)
   @Post("login")
@@ -37,7 +37,7 @@ export class UserController {
     return this.userService.login(loginDto);
   }
 
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   @Get("test")
   testJwt(@Req() req: PassportRequest) {
     return req["user"];
