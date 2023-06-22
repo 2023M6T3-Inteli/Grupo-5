@@ -24,6 +24,7 @@ export interface PassportRequest extends Request {
 
 export interface LoginResponse {
   accessToken: string;
+  userId: string;
 }
 
 @Controller("user")
