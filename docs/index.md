@@ -648,15 +648,19 @@ O modelo lógico de banco de dados é uma representação abstrata e simplificad
 
 # Testes do Modelo de Recomendação
 
-## Teste do modelo
+## Teste do modelo no terminal com várias requisições
 	
 <picture>
 <center>
 <legend><strong>Teste da recomendação</strong></legend>
 </center>
-<img width=100% src="./assets/teste-de-recomenda%C3%A7%C3%A3o/Testes%20do%20modelo.jpeg" />
+<img width=100% src="./assets/teste-de-recomenda%C3%A7%C3%A3o/terminal.jpeg" />
 </picture>
-<a href="https://drive.google.com/file/d/1-pRnDXN9s2W-28PCcxPb9uX8K0u3vk9y/view?usp=sharing">
+<legend><strong>Resposta na mensageria(MQTT)</strong></legend>
+</center>
+<img width=100% src="./assets/teste-de-recomenda%C3%A7%C3%A3o/mensageria.jpeg" />
+</picture>
+<a href="https://drive.google.com/drive/folders/1DbiSvnHDL7VRm_zAifG4LYtbuQWQ5cdG?usp=sharing">
   Link do drive.
 </a>
 
