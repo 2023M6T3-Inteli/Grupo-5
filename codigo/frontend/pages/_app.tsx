@@ -30,34 +30,6 @@ const theme = {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [recommendation, setRecommendation] = useState<any>("")
-
-  useEffect(() => {
-    const host = "mqtt-dashboard.com"
-    const clientId = "c433958d-1fa6-4b22-94ca-014a967013fa"
-    let topic = "recommendation/c433958d-1fa6-4b22-94ca-014a967013fa"
-
-    let client = mqtt.connect(`wss://${host}:8884/mqtt`, { clientId, keepalive: 20 })
-    if (client) {
-      client.on('connect', function () {
-        client.subscribe(topic, function (err: any) {
-          // if (!err) {
-          //   client.publish('presence', 'Hello mqtt')
-          // }
-        })
-      })
-
-      client.on('message', (topic: string, message: any) => {
-        const payload = { topic, message: message.toString() };
-        setRecommendation(payload.message);
-      });
-    }
-  }, [])
-
-  useEffect(() => {
-    console.log(recommendation)
-  }, [recommendation])
-
   return <>
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />

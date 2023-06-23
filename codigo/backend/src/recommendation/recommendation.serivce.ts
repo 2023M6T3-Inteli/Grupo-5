@@ -26,27 +26,15 @@ const client = mqtt.connect(connectUrl, {
 //   });
 // });
 client.on("connect", () => {
-  console.log("Connected");
-  client.subscribe([IATopic], () => {
-    console.log(`Subscribe to topic '${IATopic}'`);
-  });
+  console.log("Connected")
 });
 
 let lastMessage = null
-// client.on("message", (BackendTopic, payload) => {
-//   lastMessage = payload.toString()
-//   console.log("Received Message:", BackendTopic, payload.toString());
-// });
-// console.log("Received Message:", IATopic, payload.toString());
-client.on("message", (IATopic: any, payload: any) => {
+client.on("message", (BackendTopic, payload) => {
   lastMessage = payload.toString()
-
-  let user = JSON.parse(payload.toString()).userId
-  const topic = `recommendation/${user}`
-  const recommendation = "Toy Story"
-  
-  client.publish(topic, recommendation)
+  console.log("Received Message:", BackendTopic, payload.toString());
 });
+console.log("Received Message:", IATopic, payload.toString());
 
 export class RecommendationService {
   async recommend(body: ContentDto) {

@@ -26,11 +26,17 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
         const { email, password } = data;
 
         await AuthService.signIn(email, password).then(
-            (token: string) => {
+            (data: any) => {
                 toast("Redirecting...")
+                console.log(data)
+                const token = data.accessToken
+                const userId = data.userId
 
                 if (token) {
                     localStorage.setItem('accessToken', token)
+                    if (userId) {
+                        localStorage.setItem('userId', userId)
+                    }
                 }
 
                 setTimeout(() => {
