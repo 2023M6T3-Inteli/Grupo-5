@@ -1,6 +1,6 @@
 import axios from "@/utils/axios";
 
-const API_URL = "http://localhost:5500";
+const API_URL = "http://load-balancer-1420159949.us-east-1.elb.amazonaws.com";
 
 const PostService = {
   create: async (data: any) => {
@@ -19,8 +19,13 @@ const PostService = {
     }
   },
   findById: async (id: string) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    };
     try {
-      const response = await axios.get(`${API_URL}/post/${id}`);
+      const response = await axios.get(`${API_URL}/post/${id}`, config);
 
       return response;
     } catch (err) {
@@ -28,6 +33,11 @@ const PostService = {
     }
   },
   findAll: async () => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    };
     try {
       const response = await axios.get(`${API_URL}/post`)
       return response

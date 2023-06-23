@@ -41,7 +41,8 @@ export class UserService {
       await this.repository.save(user);
     }
 
-    return { accessToken: data.token };
+    console.log(data.userId)
+    return { accessToken: data.token, userId: data.user.id };
   }
 
   async findOne(userIdLegacy: string): Promise<User> {

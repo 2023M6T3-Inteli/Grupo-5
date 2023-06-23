@@ -26,11 +26,17 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
         const { email, password } = data;
 
         await AuthService.signIn(email, password).then(
-            (token: string) => {
+            (data: any) => {
                 toast("Redirecting...")
+                console.log(data)
+                const token = data.accessToken
+                const userId = data.userId
 
                 if (token) {
                     localStorage.setItem('accessToken', token)
+                    if (userId) {
+                        localStorage.setItem('userId', userId)
+                    }
                 }
 
                 setTimeout(() => {
@@ -76,7 +82,13 @@ export const Login = ({ slides, currentSlide, setCurrentSlide }: {
                                         </Row>
                                         <Row>
                                             <Col xs={12}>
-                                                <LoginInput {...register("email", { required: true })} placeholder='Email' type="email" />
+                                                <LoginInput {...register("email", {
+                                                    required: true, pattern: {
+                                                        // make it necessary to include @dell.com in the email
+                                                        value: /\S+@\S+\.\S+/,
+                                                        message: "Entered value does not match email format"
+                                                    }
+                                                })} placeholder='Email' type="email" />
                                                 {errors.email?.type === 'required' && <Text color={"#f19336"}>This field is required</Text>}
                                             </Col>
                                         </Row>

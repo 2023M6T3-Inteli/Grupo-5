@@ -1,4 +1,3 @@
-import { Modal } from "@/components/Modal";
 import { InputSearch } from "@/components/inputSearch";
 import exp from "constants";
 import { Col, Grid, Row } from "react-styled-flexboxgrid";

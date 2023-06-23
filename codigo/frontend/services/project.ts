@@ -1,11 +1,16 @@
 import axios from "@/utils/axios"
 
-const API_URL = "http://localhost:5500"
+const API_URL = "http://load-balancer-1420159949.us-east-1.elb.amazonaws.com"
 
 const ProjectService = {
   findByID: async (id: String) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    };
     try {
-      const response = await axios.get(`${API_URL}/project/${id}`)
+      const response = await axios.get(`${API_URL}/project/${id}`, config)
       return response
     }
     catch (error: any) {
@@ -14,8 +19,13 @@ const ProjectService = {
   },
 
   findAll: async () => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    };
     try {
-      const response = await axios.get(`${API_URL}/project`)
+      const response = await axios.get(`${API_URL}/project/allProjects`, config)
       return response
     }
     catch (error: any) {
@@ -26,7 +36,7 @@ const ProjectService = {
     const config = {
       headers: {
         "Authorization": `Bearer ${localStorage.getItem('accessToken')
-      }`
+          }`
       }
     }
 
@@ -56,21 +66,21 @@ const ProjectService = {
       return error.response.data
     }
   },
-  // filter: async (data: any) => {
-  //   const config = {
-  //     headers: {
-  //       "Authorization": `Bearer ${cookie.load("token")}`
-  //     }
-  //   }
+  filter: async (data: any) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    };
 
-  //   try {
-  //     const response = await axios.post(`${API_URL}/Project/filter`, data, config)
-  //     return response
-  //   }
-  //   catch (error: any) {
-  //     return error.response.data
-  //   }
-  // },
+    try {
+      const response = await axios.post(`${API_URL}/project/filterProjects`, data, config)
+      return response
+    }
+    catch (error: any) {
+      return error.response.data
+    }
+  },
   approve: async (token: string, status: string) => {
     try {
       const response = await axios.put(`${API_URL}/Project/approve/${token}`, {

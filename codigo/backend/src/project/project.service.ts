@@ -57,6 +57,7 @@ export class ProjectService {
 
     async getAll(headers) {
         const token = headers.authorization
+        console.log(token)
         const config = {
             headers: {
                 "Authorization": token

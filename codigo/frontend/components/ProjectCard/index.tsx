@@ -36,8 +36,10 @@ export const ProjectCard: React.FC<Props> = ({ data }: Props) => {
                     <Col xs={8}>
                         <Row className={styles.cardTags}>
                             <Row className={styles.cardTags}>
-                                {data.tags.map((tag: any, index: number) => (
-                                    <Tags key={index} text={tag} />
+                                {tags.map((tag: any, index: number) => (
+                                    <div key={index}>
+                                        <Tags key={index} text={tag}/>
+                                    </div>
                                 ))}
                             </Row>
                         </Row>

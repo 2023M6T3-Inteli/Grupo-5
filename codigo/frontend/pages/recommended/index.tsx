@@ -37,7 +37,7 @@ import PostService from '@/services/post'
 // };
 
 interface PostProps {
-  user: any,
+  __user__: any,
   role: string,
   imgURL: string,
   likes: number,
@@ -83,7 +83,7 @@ export default function Index() {
   return (
     <Layout header={navigation} navbar={true} title={"All posts"} active={0} matchs={3}>
       <Col xs={12} md={6} lg={4}>
-      <Row style={{ marginBottom: '8px' }} center='xs'>
+        <Row style={{ marginBottom: '8px' }} center='xs'>
           <Text color='#2e2e2e'>Based on your profile</Text>
         </Row>
         <Row>
@@ -94,10 +94,10 @@ export default function Index() {
           </Col>}
         </Row>
 
-        {/* <Post user={"marcelofeitoza"} role={"Mobile developer"} imgURL={"https://placehold.co/600x400/EEE/31343C"} likes={[1, 2, 3, 4, 5, 6]} comments={["123", "321", "456"]} saves={[1, 2, 3, 4, 5, 6, 7]} /> */}
+        {/* <Post __user__={"marcelofeitoza"} role={"Mobile developer"} imgURL={"https://placehold.co/600x400/EEE/31343C"} likes={[1, 2, 3, 4, 5, 6]} comments={["123", "321", "456"]} saves={[1, 2, 3, 4, 5, 6, 7]} /> */}
 
         {posts && posts.map((post: PostProps, index: number) => (
-          <Post {...post} user={post["__user__"]} key={index} />
+          <Post {...post} __user__={post.__user__} key={index} />
         ))}
 
         {/* {isError && (
@@ -113,7 +113,7 @@ export default function Index() {
 }
 
 const Post = ({
-  user, role, imgURL, likes, content, comments, saves, id
+  __user__, role, imgURL, likes, content, comments, saves, id
 }: PostProps) => {
   return (
     <Card xs={12}>
@@ -125,7 +125,7 @@ const Post = ({
         </Col>
 
         <Col>
-          <Title variant='sm' color='#000'>{user.name}</Title>
+          <Title variant='sm' color='#000'>{__user__.name}</Title>
 
           <Text color='#000'>DevOps</Text>
         </Col>

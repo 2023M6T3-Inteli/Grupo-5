@@ -46,7 +46,7 @@ const Projects = () => {
 
     const deleteProject = async () => {
         const id = '1'
-        alert("Delete project "+id)
+        alert("Delete project " + id)
     }
 
     useEffect(() => {
@@ -62,10 +62,10 @@ const Projects = () => {
 
                 {
                     projects && projects.map((project: any, index: number) => {
-                        try{
+                        try {
                             project.tags = JSON.parse(project.tags)
                         }
-                        catch {}
+                        catch { }
                         return <ProjectCard data={project} key={index} />
                     })
                 }
