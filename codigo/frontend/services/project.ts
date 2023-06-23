@@ -66,21 +66,21 @@ const ProjectService = {
       return error.response.data
     }
   },
-  // filter: async (data: any) => {
-  //   const config = {
-  //     headers: {
-  //       "Authorization": `Bearer ${cookie.load("token")}`
-  //     }
-  //   }
+  filter: async (data: any) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    };
 
-  //   try {
-  //     const response = await axios.post(`${API_URL}/Project/filter`, data, config)
-  //     return response
-  //   }
-  //   catch (error: any) {
-  //     return error.response.data
-  //   }
-  // },
+    try {
+      const response = await axios.post(`${API_URL}/project/filterProjects`, data, config)
+      return response
+    }
+    catch (error: any) {
+      return error.response.data
+    }
+  },
   approve: async (token: string, status: string) => {
     try {
       const response = await axios.put(`${API_URL}/Project/approve/${token}`, {

@@ -32,7 +32,7 @@ const myProjects = () => {
     const [projects, setProjects] = useState<any>()
 
     const getAllProjects = async () => {
-        const response = await ProjectService.findAll()
+        const response = await ProjectService.filter({ownerId: localStorage.getItem("userId") || ''})
         setProjects(response.data)
     }
 
