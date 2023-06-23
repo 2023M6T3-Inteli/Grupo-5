@@ -402,7 +402,7 @@ const EditProject: React.FC<Props> = (props: Props) => {
                   />
               }
             </form>
-            <Button type='terceary' text='Add' size='small' onClick={() => addRoles()}></Button>
+            <Button type='button' tp='terceary' text='Add' size='small' onClick={() => addRoles()}></Button>
           </div>
         </div>
 
@@ -484,7 +484,7 @@ const EditProject: React.FC<Props> = (props: Props) => {
       </div>
 
       <div className={styles.editContainer}>
-        <Button type="default" text="Save" size="medium" disabled={disableEdit} onClick={() => submit()} />
+        <Button type='button' tp="default" text="Save" size="medium" disabled={disableEdit} onClick={() => submit()} />
       </div>
     </div >
   )

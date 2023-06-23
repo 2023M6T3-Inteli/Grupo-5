@@ -1,3 +1,4 @@
+// @ts-ignore
 
 import { Col, Row } from 'react-styled-flexboxgrid'
 import { Layout } from '@/components/Layout'
@@ -38,7 +39,7 @@ import { useRouter } from 'next/router'
 // };
 
 interface PostProps {
-  user: any,
+  __user__: any,
   role: string,
   imgURL: string,
   likes: number,
@@ -69,11 +70,13 @@ export default function Index() {
 
   const [posts, setPosts] = useState<any>()
   const [isLoading, setIsLoading] = useState(true)
+  const [isError, setIsError] = useState(false)
 
   const getAllPosts = async () => {
     const response = await PostService.findAll()
     setPosts(response.data)
     setIsLoading(false)
+    if (response.error) setIsError(true)
     console.log(posts)
   }
 
@@ -92,30 +95,38 @@ export default function Index() {
           </Col>}
         </Row>
 
-        {/* <Post user={"marcelofeitoza"} role={"Mobile developer"} imgURL={"https://placehold.co/600x400/EEE/31343C"} likes={[1, 2, 3, 4, 5, 6]} comments={["123", "321", "456"]} saves={[1, 2, 3, 4, 5, 6, 7]} /> */}
+        {/* <Post __user__={"marcelofeitoza"} role={"Mobile developer"} imgURL={"https://placehold.co/600x400/EEE/31343C"} likes={[1, 2, 3, 4, 5, 6]} comments={["123", "321", "456"]} saves={[1, 2, 3, 4, 5, 6, 7]} /> */}
 
         {posts && posts.map((post: PostProps, index: number) => (
-          <Post {...post} user={post["__user__"]} key={index} />
+          <Post {...post} __user__={post.__user__} key={index} />
         ))}
 
-        {/* {isError && (
+        {posts && posts.length === 0 && (
+          <Col xs={12}>
+            <Text color='#2e2e2e'>
+              No posts yet...
+            </Text>
+          </Col>
+        )}
+
+        {isError && (
           <Col xs={12}>
             <Text color='#2e2e2e'>
               Error!
             </Text>
           </Col>
-        )} */}
+        )}
       </Col>
     </Layout>
   )
 }
 
 const Post = ({
-  user, role, imgURL, likes, content, comments, saves, id
+  __user__, role, imgURL, likes, content, comments, saves, id
 }: PostProps) => {
   const router = useRouter();
 
-  useEffect(() => { console.log(user) }, [])
+  useEffect(() => { console.log(__user__) }, [])
 
   return (
     <Card xs={12} onClick={() => router.push(`/posts/${id}`)}>
@@ -127,7 +138,7 @@ const Post = ({
         </Col>
 
         <Col>
-          <Title variant='sm' color='#000'>{user.name}</Title>
+          <Title variant='sm' color='#000'>{__user__.name}</Title>
 
           <Text color='#000'>DevOps</Text>
         </Col>
@@ -186,6 +197,7 @@ const Card = styled(Col)`
   background-color: #FFF;
   padding: 1.25rem 1rem;
   margin-bottom: 1.5rem;
+width: 100%;
 
   :hover {
     cursor: pointer;

@@ -68,7 +68,7 @@ export default function Index() {
         }
     })
 
-    const { data, isLoading, isError } = fetchData("http://localhost:5500/post/" + id);
+    const { data, isLoading, isError } = fetchData("http://load-balancer-1420159949.us-east-1.elb.amazonaws.com/post/" + id);
 
     isLoading ?? (
         <Layout>
