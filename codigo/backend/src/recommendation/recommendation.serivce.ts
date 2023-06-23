@@ -10,14 +10,14 @@ const connectUrl = `${protocol}://${host}`;
 
 const IATopic = "IA Recommendation";
 const BackendTopic = "Backend API";
-const client = mqtt.connect(connectUrl, {
-  clientId,
-  clean: false,
-  reconnectPeriod: 1,
-  // clean: true,
-  // connectTimeout: 4000,
-  // reconnectPeriod: 1000,
-});
+// const client = mqtt.connect(connectUrl, {
+//   clientId,
+//   clean: false,
+//   reconnectPeriod: 1,
+//   // clean: true,
+//   // connectTimeout: 4000,
+//   // reconnectPeriod: 1000,
+// });
 
 // client.on("connect", () => {
 //   console.log("Connected");
@@ -25,9 +25,9 @@ const client = mqtt.connect(connectUrl, {
 //     console.log(`Subscribe to topic '${BackendTopic}'`);
 //   });
 // });
-client.on("connect", () => {
-  console.log("Connected")
-});
+// client.on("connect", () => {
+//   console.log("Connected")
+// });
 
 let lastMessage = null
 // client.on("message", (BackendTopic, payload) => {
@@ -39,7 +39,7 @@ let lastMessage = null
 export class RecommendationService {
   async recommend(body: ContentDto) {
     
-    client.publish(IATopic, JSON.stringify(body))
+    // client.publish(IATopic, JSON.stringify(body))
     
     return new Promise((resolve) => {
       setTimeout(() => {

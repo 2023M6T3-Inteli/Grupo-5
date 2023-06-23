@@ -241,7 +241,7 @@ const CreateProject: React.FC<Props> = (props: Props) => {
       end: new Date(data.end),
       badge: "",
       endSubscription: new Date(data.endSubscription),
-      coleaderId: data.coleaderId,
+      coleaderId: "",
     })
     console.log(response)
 
@@ -369,7 +369,7 @@ const CreateProject: React.FC<Props> = (props: Props) => {
                   />
               }
             </form>
-            <Button type='terceary' text='Add' size='small' onClick={() => addRoles()}></Button>
+            <Button tp='terceary' type='button' text='Add' size='small' onClick={() => addRoles()}></Button>
           </div>
         </div>
 
@@ -451,7 +451,7 @@ const CreateProject: React.FC<Props> = (props: Props) => {
       </div>
 
       <div className={styles.createContainer}>
-        <Button type="default" text="Create" size="medium" disabled={disableCreate} onClick={() => submit()} />
+        <Button tp="default" type='button' text="Create" size="medium" disabled={disableCreate} onClick={() => submit()} />
       </div>
     </div >
   )
