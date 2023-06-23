@@ -30,11 +30,11 @@ client.on("connect", () => {
 });
 
 let lastMessage = null
-client.on("message", (BackendTopic, payload) => {
-  lastMessage = payload.toString()
-  console.log("Received Message:", BackendTopic, payload.toString());
-});
-console.log("Received Message:", IATopic, payload.toString());
+// client.on("message", (BackendTopic, payload) => {
+//   lastMessage = payload.toString()
+//   console.log("Received Message:", BackendTopic, payload.toString());
+// });
+// console.log("Received Message:", IATopic, payload.toString());
 
 export class RecommendationService {
   async recommend(body: ContentDto) {
