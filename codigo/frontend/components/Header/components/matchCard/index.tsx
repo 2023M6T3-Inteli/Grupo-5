@@ -35,6 +35,7 @@ const MatchCard: React.FC<Props> = (props: Props) => {
       client.on('message', (topic: string, message: any) => {
         const payload = { topic, message: message.toString() };
         setRecommendation(payload.message);
+        client.end()
       });
     }
   }, [])

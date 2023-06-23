@@ -4,8 +4,13 @@ const API_URL = "http://localhost:5500"
 
 const ProjectService = {
   findByID: async (id: String) => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    };
     try {
-      const response = await axios.get(`${API_URL}/project/${id}`)
+      const response = await axios.get(`${API_URL}/project/${id}`, config)
       return response
     }
     catch (error: any) {
@@ -14,8 +19,13 @@ const ProjectService = {
   },
 
   findAll: async () => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    };
     try {
-      const response = await axios.get(`${API_URL}/project`)
+      const response = await axios.get(`${API_URL}/project/allProjects`, config)
       return response
     }
     catch (error: any) {
