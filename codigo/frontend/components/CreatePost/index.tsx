@@ -76,6 +76,9 @@ const CreatePost: React.FC<Props> = ({ submit }: Props) => {
     if (response) {
       setLoading(false)
       toast.success('Post created successfully!')
+      setTimeout(() => {
+        router.reload()
+      }, 2000)
     }
     else {
       toast.error("Error to create the post")
@@ -107,7 +110,7 @@ const CreatePost: React.FC<Props> = ({ submit }: Props) => {
                 {...register("content", { required: true, maxLength: 2000 })}
                 required
               />
-              {errors.content && <span style={{ color: '#ff0000' }}>This field is required</span>}
+              {errors.content && <span style={{ color: 'red' }}> This field is required</span>}
             </div>
           </Col>
         </Row>

@@ -13,7 +13,7 @@ type Props = {
 const Button = (props: Props) => {
   return (
     <div className={styles.dellButton}>
-      <button className={`${props.tp && styles[props.tp]} ${styles[props.size]}`} type={props.type} disabled={props.disabled} onClick={() => props.onClick() || false}>{props.text}</button>
+      <button className={`${props.tp && styles[props.tp]} ${styles[props.size]}`} type={props.type} disabled={props.disabled} onClick={() => props.onClick && props.onClick() || false}>{props.text}</button>
     </div>
   )
 }
